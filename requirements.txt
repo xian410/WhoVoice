@@ -1,0 +1,39 @@
+# ========== WhoVoice 项目依赖 ==========
+
+
+# 声纹识别（VoiceprintRecognition-Pytorch）
+# pip install mvector -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 深度学习框架
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# 音频处理
+librosa>=0.10.0
+soundfile>=0.12.0
+audioread>=3.0.0
+webrtcvad>=2.0.10
+
+# 音频分离
+# spleeter>=2.0.0       # 人声分离
+# demucs>=4.0.0         # 高精度人声分离（备选）
+
+# 向量检索
+# faiss-cpu>=1.7.0      # FAISS 向量索引
+# pymilvus>=2.3.0       # Milvus 客户端（可选）
+
+# 爬虫
+requests>=2.31.0
+# yt-dlp>=2023.0        # 视频/音频下载工具
+# bilibili-api-python>=15.0  # B站 API
+
+# 数据处理
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Web 后端
+django>=4.0,<5.0
+djangorestframework>=3.14
+django-cors-headers>=4.0
+# mysqlclient>=2.1        # 需要 MySQL 客户端库 (brew install mysql-client)
+gunicorn>=20.1

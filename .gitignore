@@ -1,0 +1,42 @@
+# 虚拟环境
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# 前端依赖
+frontend/node_modules/
+
+# 音频/视频数据（太大，下载后可重新生成）
+data/raw/
+data/processed/
+
+# 预训练模型（可自动下载）
+models/
+
+# 日志
+*.log
+batch_pipeline.log
+
+# 个人/敏感信息
+cookies.txt
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 临时文件
+tmp/
+temp/
+
+# 数据库
+*.sqlite3
+backend/db.sqlite3
