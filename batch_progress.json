@@ -1,0 +1,6 @@
+{
+  "faiss_index_celebrities": 127,
+  "total_all_celebrities": 511,
+  "remaining_celebrities": 390,
+  "note": "新机器克隆后：1) pip install -r requirements.txt  2) python scripts/download_pretrained_model.py  3) python scripts/batch_pipeline.py 继续处理"
+}
