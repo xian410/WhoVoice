@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-change-me-in-p
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,.ngrok-free.app,.ngrok.io").split(",")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,.ngrok-free.app,.ngrok-free.dev,.ngrok.io").split(",")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
