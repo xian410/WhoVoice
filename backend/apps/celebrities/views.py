@@ -119,3 +119,45 @@ class CelebrityDetailView(APIView):
             "spk_id": info.get("spk_id", ""),
             "songs": songs[:20],  # 最多返回20首
         })
+
+
+# ─────────────────────────────────────────────
+# 热门歌词模板 API
+# ─────────────────────────────────────────────
+
+LYRICS_PATH = BASE_DIR / "data" / "lyrics" / "famous_lines.json"
+
+
+class LyricsTemplateView(APIView):
+    """
+    返回热门歌曲的经典歌词句子，供用户录音时选择
+    GET /api/celebrities/lyrics-templates/
+    """
+
+    def get(self, request):
+        if not LYRICS_PATH.exists():
+            return Response({"lyrics": [], "count": 0})
+
+        try:
+            with open(LYRICS_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            return Response({"lyrics": [], "count": 0})
+
+        lyrics = data.get("lyrics", [])
+
+        # 支持按歌手筛选
+        singer = request.query_params.get("singer", "")
+        if singer:
+            lyrics = [l for l in lyrics if l["singer"] == singer]
+
+        # 支持按情绪筛选
+        mood = request.query_params.get("mood", "")
+        if mood:
+            lyrics = [l for l in lyrics if l["mood"] == mood]
+
+        return Response({
+            "lyrics": lyrics,
+            "count": len(lyrics),
+            "singers": sorted(set(l["singer"] for l in lyrics)),
+        })

@@ -6,9 +6,11 @@ export const useVoiceStore = defineStore('voice', () => {
   const isRecording = ref(false)
   const isMatching = ref(false)
   const matchResults = ref([])
+  const currentLyric = ref(null)
 
-  async function uploadAndMatch(audioBlob) {
+  async function uploadAndMatch(audioBlob, selectedLyric = null) {
     isMatching.value = true
+    currentLyric.value = selectedLyric
     try {
       const formData = new FormData()
       formData.append('audio', audioBlob, 'recording.webm')

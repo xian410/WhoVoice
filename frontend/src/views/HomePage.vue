@@ -95,10 +95,10 @@ function goToSinger(name) {
   router.push(`/celebrities/${encodeURIComponent(name)}`);
 }
 
-async function handleAudioReady(audioBlob) {
+async function handleAudioReady(audioBlob, selectedLyric) {
   errorMsg.value = "";
   try {
-    await voiceStore.uploadAndMatch(audioBlob);
+    await voiceStore.uploadAndMatch(audioBlob, selectedLyric);
     if (voiceStore.matchResults.length === 0) {
       errorMsg.value = "未匹配到结果，请尝试其他音频";
     }
