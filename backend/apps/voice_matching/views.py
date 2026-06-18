@@ -7,6 +7,7 @@ import sys
 import json
 import numpy as np
 from pathlib import Path
+from typing import Optional
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
@@ -32,6 +33,32 @@ PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 RAW_DIR = PROJECT_ROOT / "data" / "raw"
 
 
+def _resolve_device_from_env() -> Optional[bool]:
+    """
+    从环境变量 INFERENCE_DEVICE 解析推理设备
+
+    返回值传给 VoiceprintRecognizer(use_gpu=...):
+        True  → 强制 GPU
+        False → 强制 CPU
+        None  → 自动检测（推荐，有CUDA则GPU否则CPU）
+
+    环境变量:
+        INFERENCE_DEVICE=auto  自动检测（默认）
+        INFERENCE_DEVICE=gpu   强制 GPU
+        INFERENCE_DEVICE=cpu   强制 CPU
+    """
+    raw = os.environ.get("INFERENCE_DEVICE", "auto").strip().lower()
+    mapping = {
+        "auto": None,
+        "gpu": True,
+        "cpu": False,
+    }
+    result = mapping.get(raw, None)
+    label = {None: "自动检测", True: "GPU", False: "CPU"}
+    print(f"[VoiceMatch] INFERENCE_DEVICE={raw!r} → {label[result]}")
+    return result
+
+
 def _resolve_faiss_path() -> Path:
     """解析 FAISS 索引的绝对路径"""
     rel_path = FAISS["index_path"]
@@ -55,7 +82,7 @@ class VoiceMatchView(APIView):
         """懒加载模型和索引"""
         if self.__class__._recognizer is None:
             print("[VoiceMatch] 加载声纹模型...")
-            self.__class__._recognizer = VoiceprintRecognizer(use_gpu=True)
+            self.__class__._recognizer = VoiceprintRecognizer(use_gpu=_resolve_device_from_env())
 
         if self.__class__._index is None:
             index_path = _resolve_faiss_path()

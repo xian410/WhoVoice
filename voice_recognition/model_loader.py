@@ -46,17 +46,60 @@ class VoiceprintRecognizer:
         recognizer = VoiceprintRecognizer(model_type="cam++")
         embedding = recognizer.extract_embedding("audio.wav")
         similarity = recognizer.compare("audio1.wav", "audio2.wav")
+
+    GPU/CPU 自动切换策略:
+        - use_gpu=True  → 强制 GPU，若不可用则回退 CPU 并告警
+        - use_gpu=False → 强制 CPU
+        - use_gpu=None  → 自动检测，有 CUDA 则 GPU，否则 CPU（推荐）
     """
 
-    def __init__(self, model_path: Optional[str] = None, model_type: str = "cam++", use_gpu: bool = False):
+    @staticmethod
+    def _cuda_available() -> bool:
+        """检查 CUDA 是否可用（惰性导入 torch）"""
+        try:
+            import torch
+            return torch.cuda.is_available()
+        except Exception:
+            return False
+
+    @staticmethod
+    def resolve_device(use_gpu: Optional[bool] = None) -> bool:
+        """
+        解析并确认推理设备
+
+        Args:
+            use_gpu: True=强制GPU, False=强制CPU, None=自动检测
+        Returns:
+            True=最终使用GPU, False=最终使用CPU
+        """
+        if use_gpu is True:
+            if VoiceprintRecognizer._cuda_available():
+                print(f"[VoiceprintRecognizer] 推理设备: 强制 GPU [OK]")
+                return True
+            else:
+                print(f"[VoiceprintRecognizer] !! 强制 GPU 但 CUDA 不可用，回退 CPU")
+                return False
+        elif use_gpu is False:
+            print(f"[VoiceprintRecognizer] 推理设备: 强制 CPU")
+            return False
+        else:  # auto-detect
+            cuda = VoiceprintRecognizer._cuda_available()
+            if cuda:
+                print(f"[VoiceprintRecognizer] 推理设备: 自动检测 -> GPU [OK]")
+            else:
+                print(f"[VoiceprintRecognizer] 推理设备: 自动检测 -> CPU (CUDA 不可用)")
+            return cuda
+
+    def __init__(self, model_path: Optional[str] = None, model_type: str = "cam++",
+                 use_gpu: Optional[bool] = None):
         """
         Args:
             model_path: 预训练模型 .pth 路径，None 则使用默认路径
             model_type: 模型类型，可选 cam++, ecapa_tdnn, eres2net
-            use_gpu: 是否使用 GPU 推理
+            use_gpu: None=自动检测, True=GPU, False=CPU
         """
         self.model_type = model_type
-        self.use_gpu = use_gpu
+        self.use_gpu = self.resolve_device(use_gpu)
 
         if model_path is None:
             model_path = DEFAULT_MODEL_PATHS.get(model_type)
