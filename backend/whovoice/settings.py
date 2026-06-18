@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-change-me-in-p
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,.ngrok-free.app,.ngrok.io").split(",")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -41,10 +41,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "whovoice.urls"
 
+# 静态文件目录（含前端构建产物）
+STATICFILES_DIRS = [
+    BASE_DIR.parent / "frontend" / "dist",
+]
+
+# 模板目录（含 index.html SPA 入口）
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [str(BASE_DIR.parent / "frontend" / "dist")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
