@@ -14,5 +14,13 @@
     "file_path": "data/raw/田震/bilibili/001_【官方MV】田震 - 顺其自然.wav",
     "download_time": "2026-05-31T23:11:05.395671",
     "platform": "bilibili"
+  },
+  {
+    "title": "田震-靠近我",
+    "url": "http://www.bilibili.com/video/av799217582",
+    "duration": 286.928,
+    "file_path": "data\\raw\\田震\\bilibili\\001_田震-靠近我.wav",
+    "download_time": "2026-06-17T10:45:19.599220",
+    "platform": "bilibili"
   }
 ]

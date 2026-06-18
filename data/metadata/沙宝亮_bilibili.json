@@ -14,5 +14,21 @@
     "file_path": "data/raw/沙宝亮/bilibili/001_沙宝亮   青春日记， 好听极了.wav",
     "download_time": "2026-05-31T23:07:30.872984",
     "platform": "bilibili"
+  },
+  {
+    "title": "东方甄选两周年，董宇辉、俞敏洪、沙宝亮 合唱歌曲《鸿雁》",
+    "url": "http://www.bilibili.com/video/av282765192",
+    "duration": 61.903,
+    "file_path": "data\\raw\\沙宝亮\\bilibili\\000_东方甄选两周年，董宇辉、俞敏洪、沙宝亮 合唱歌曲《鸿雁》.wav",
+    "download_time": "2026-06-17T01:00:13.078225",
+    "platform": "bilibili"
+  },
+  {
+    "title": "【官方MV】沙宝亮 - 无名指",
+    "url": "http://www.bilibili.com/video/av972242618",
+    "duration": 249.36,
+    "file_path": "data\\raw\\沙宝亮\\bilibili\\001_【官方MV】沙宝亮 - 无名指.wav",
+    "download_time": "2026-06-17T01:00:17.754164",
+    "platform": "bilibili"
   }
 ]

@@ -14,5 +14,29 @@
     "file_path": "data/raw/刘柏辛/bilibili/001_不可错过的刘柏辛首专歌曲《Strange Things》歌词版.wav",
     "download_time": "2026-05-31T01:20:20.643978",
     "platform": "bilibili"
+  },
+  {
+    "title": "热狗化身小迷弟 刘柏辛旋律说唱《Bossin’》",
+    "url": "http://www.bilibili.com/video/av532911802",
+    "duration": 147.028,
+    "file_path": "data\\raw\\刘柏辛\\bilibili\\001_热狗化身小迷弟 刘柏辛旋律说唱《Bossin’》.wav",
+    "download_time": "2026-06-17T00:05:35.431466",
+    "platform": "bilibili"
+  },
+  {
+    "title": "「爱无限」— 刘柏辛Lexie（官方MV）",
+    "url": "http://www.bilibili.com/video/av563226619",
+    "duration": 263.935,
+    "file_path": "data\\raw\\刘柏辛\\bilibili\\000_「爱无限」— 刘柏辛Lexie（官方MV）.wav",
+    "download_time": "2026-06-18T13:51:16.994410",
+    "platform": "bilibili"
+  },
+  {
+    "title": "「命运」— 刘柏辛Lexie (官方MV)",
+    "url": "http://www.bilibili.com/video/av220413855",
+    "duration": 271.295,
+    "file_path": "data\\raw\\刘柏辛\\bilibili\\001_「命运」— 刘柏辛Lexie (官方MV).wav",
+    "download_time": "2026-06-18T13:51:43.778307",
+    "platform": "bilibili"
   }
 ]

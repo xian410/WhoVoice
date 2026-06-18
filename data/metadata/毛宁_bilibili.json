@@ -14,5 +14,13 @@
     "file_path": "data/raw/毛宁/bilibili/001_[精彩音乐汇]  歌曲_《心中的安妮》 演唱：毛宁.wav",
     "download_time": "2026-05-31T23:09:48.814612",
     "platform": "bilibili"
+  },
+  {
+    "title": "毛宁MTV 离 别",
+    "url": "http://www.bilibili.com/video/av116319022286242",
+    "duration": 105.322,
+    "file_path": "data\\raw\\毛宁\\bilibili\\000_毛宁MTV 离 别.wav",
+    "download_time": "2026-06-17T00:57:22.273045",
+    "platform": "bilibili"
   }
 ]

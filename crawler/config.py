@@ -251,15 +251,16 @@ METADATA_DIR = "data/metadata"
 
 # 下载配置
 DOWNLOAD_DIR = "data/raw"
-MAX_DURATION_MINUTES = 60  # 单个视频最大时长（分钟）
+MAX_DURATION_MINUTES = 6  # 单个视频最大时长（分钟）- 歌曲一般不超过6分钟
 MIN_DURATION_SECONDS = 30  # 单个视频最小时长（秒）
+MAX_FILESIZE_MB = 50      # 单个文件最大大小 (MB) - 防止大文件内存占用
 MAX_VIDEOS_PER_CELEBRITY = 2  # 每个明星最多下载视频数
 
 # B站爬虫配置
 BILIBILI = {
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
-    "search_limit": 50,
-    "categories": ["娱乐", "综艺", "访谈"],
+    "search_limit": 10,  # 减少搜索量，够用即可
+    "categories": ["音乐", "MV", "现场"],
     "cookies_file": "cookies.txt",
 }
 

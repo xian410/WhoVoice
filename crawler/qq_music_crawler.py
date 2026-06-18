@@ -260,9 +260,10 @@ class QqMusicCrawler(BaseCrawler):
         try:
             import subprocess
             import os
+            import sys
 
             base_cmd = [
-                "yt-dlp",
+                sys.executable, "-m", "yt_dlp",
                 "-f", "bestaudio/best",
                 "--extract-audio",
                 "--audio-format", "wav",
@@ -278,7 +279,7 @@ class QqMusicCrawler(BaseCrawler):
             else:
                 cmd = base_cmd + [url]
 
-            subprocess.run(cmd, check=True, capture_output=True, timeout=600)
+            subprocess.run(cmd, check=True, timeout=600)
             return True
 
         except FileNotFoundError:

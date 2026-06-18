@@ -55,7 +55,7 @@ class SpleeterSeparator:
                 "-o", str(output_base),
                 "-p", self.model_name,
             ]
-            subprocess.run(cmd, check=True, capture_output=True, timeout=300)
+            subprocess.run(cmd, check=True, timeout=300)
 
             # spleeter 输出路径: output_base/audio_filename/vocals.wav
             vocal_path = output_base / audio_path.stem / "vocals.wav"

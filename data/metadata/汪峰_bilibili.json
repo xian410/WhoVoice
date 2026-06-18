@@ -14,5 +14,13 @@
     "file_path": "data/raw/汪峰/bilibili/001_【Hi-Res无损音质】汪峰《我爱你中国》这歌原来这么好听 ！经典歌曲最好听的版本 4K60P.wav",
     "download_time": "2026-05-31T01:10:10.939336",
     "platform": "bilibili"
+  },
+  {
+    "title": "汪峰-地心",
+    "url": "http://www.bilibili.com/video/av204149459",
+    "duration": 348.368,
+    "file_path": "data\\raw\\汪峰\\bilibili\\000_汪峰-地心.wav",
+    "download_time": "2026-06-17T00:58:48.705327",
+    "platform": "bilibili"
   }
 ]

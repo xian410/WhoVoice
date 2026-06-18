@@ -14,5 +14,29 @@
     "file_path": "data/raw/万能青年旅店/bilibili/001_【CS2】新音乐盒_万能青年旅店.wav",
     "download_time": "2026-05-31T01:21:34.790981",
     "platform": "bilibili"
+  },
+  {
+    "title": "【Hi-Res】\"最喜欢的一集\" 《山雀》- 万能青年旅店",
+    "url": "http://www.bilibili.com/video/av113954961494905",
+    "duration": 198.058,
+    "file_path": "data\\raw\\万能青年旅店\\bilibili\\000_【Hi-Res】_最喜欢的一集_ 《山雀》- 万能青年旅店.wav",
+    "download_time": "2026-06-16T23:52:01.603485",
+    "platform": "bilibili"
+  },
+  {
+    "title": "《揪心的玩笑与漫长的白日梦》 万能青年旅店",
+    "url": "https://www.bilibili.com/bangumi/play/ep1343440",
+    "duration": 355.243,
+    "file_path": "data\\raw\\万能青年旅店\\bilibili\\000_《揪心的玩笑与漫长的白日梦》 万能青年旅店.wav",
+    "download_time": "2026-06-16T23:56:08.956216",
+    "platform": "bilibili"
+  },
+  {
+    "title": "【万能青年旅店】最棒的现场版绕越",
+    "url": "http://www.bilibili.com/video/av114095521011998",
+    "duration": 199.722,
+    "file_path": "data\\raw\\万能青年旅店\\bilibili\\001_【万能青年旅店】最棒的现场版绕越.wav",
+    "download_time": "2026-06-16T23:56:13.249310",
+    "platform": "bilibili"
   }
 ]

@@ -14,5 +14,21 @@
     "file_path": "data/raw/刘宇宁/bilibili/001_刘宇宁《天问》百万豪装录音棚大声听.wav",
     "download_time": "2026-05-31T01:18:50.822529",
     "platform": "bilibili"
+  },
+  {
+    "title": "刘宇宁《人间》丨南部档案片段自留",
+    "url": "http://www.bilibili.com/video/av116736926028960",
+    "duration": 92.4,
+    "file_path": "data\\raw\\刘宇宁\\bilibili\\000_刘宇宁《人间》丨南部档案片段自留.wav",
+    "download_time": "2026-06-17T00:02:15.200577",
+    "platform": "bilibili"
+  },
+  {
+    "title": "刘宇宁完整版麒麟",
+    "url": "http://www.bilibili.com/video/av115064908614767",
+    "duration": 252.819,
+    "file_path": "data\\raw\\刘宇宁\\bilibili\\001_刘宇宁完整版麒麟.wav",
+    "download_time": "2026-06-17T00:02:19.175163",
+    "platform": "bilibili"
   }
 ]

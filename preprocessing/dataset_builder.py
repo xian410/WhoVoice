@@ -78,7 +78,7 @@ class DatasetBuilder:
         if not manifest_path.exists():
             raise FileNotFoundError(f"清单文件不存在: {manifest_path}")
 
-        with open(manifest_path, "r") as f:
+        with open(manifest_path, "r", encoding="utf-8") as f:
             lines = [line.strip() for line in f if line.strip()]
 
         random.seed(seed)
@@ -123,7 +123,7 @@ class DatasetBuilder:
         map_path = self.processed_dir.parent / "metadata" / "speaker_id_map.txt"
         if map_path.exists():
             mapping = {}
-            with open(map_path, "r") as f:
+            with open(map_path, "r", encoding="utf-8") as f:
                 for line in f:
                     if line.strip():
                         celeb, spk_id = line.strip().split("\t")
@@ -135,7 +135,7 @@ class DatasetBuilder:
         """保存说话人ID映射表"""
         map_path = self.processed_dir.parent / "metadata" / "speaker_id_map.txt"
         map_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(map_path, "w") as f:
+        with open(map_path, "w", encoding="utf-8") as f:
             for celeb, spk_id in sorted(mapping.items()):
                 f.write(f"{celeb}\t{spk_id}\n")
 

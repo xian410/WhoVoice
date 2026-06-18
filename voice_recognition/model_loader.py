@@ -85,7 +85,7 @@ class VoiceprintRecognizer:
                 use_gpu=self.use_gpu,
                 log_level="warning",
             )
-            print(f"[VoiceprintRecognizer] 模型加载成功 ✅")
+            print(f"[VoiceprintRecognizer] 模型加载成功")
 
         except ImportError:
             print("[VoiceprintRecognizer] mvector 未安装，请执行:")

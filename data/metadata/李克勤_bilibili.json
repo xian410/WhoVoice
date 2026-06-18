@@ -14,5 +14,21 @@
     "file_path": "data/raw/李克勤/bilibili/001_【李克勤】《 破晓时分》MV（1991）.wav",
     "download_time": "2026-05-31T01:13:01.719049",
     "platform": "bilibili"
+  },
+  {
+    "title": "【MV】恋爱为何物 - AGA&李克勤",
+    "url": "http://www.bilibili.com/video/av30308641",
+    "duration": 271.765,
+    "file_path": "data\\raw\\李克勤\\bilibili\\000_【MV】恋爱为何物 - AGA&李克勤.wav",
+    "download_time": "2026-06-17T00:42:07.770907",
+    "platform": "bilibili"
+  },
+  {
+    "title": "纸婚 - 李克勤",
+    "url": "http://www.bilibili.com/video/av427856311",
+    "duration": 233.407,
+    "file_path": "data\\raw\\李克勤\\bilibili\\001_纸婚 - 李克勤.wav",
+    "download_time": "2026-06-17T00:42:12.588217",
+    "platform": "bilibili"
   }
 ]

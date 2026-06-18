@@ -5,16 +5,25 @@
 """
 
 import os
+import sys
 import time
 import logging
 from pathlib import Path
 from typing import List, Optional
+
+# 修复 Windows 终端编码
+if os.name == "nt":
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
+    os.system("chcp 65001 > nul 2>&1")
+
 from crawler.config import CELEBRITY_LIST, RAW_DATA_DIR
 from crawler.base_crawler import BaseCrawler
 from crawler.bilibili_crawler import BilibiliCrawler
 from crawler.qq_music_crawler import QqMusicCrawler
+from crawler.youtube_crawler import YouTubeCrawler
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
 # 预估每明星每视频的平均磁盘占用 (原始音视频 + Demucs 分离产物)
@@ -66,11 +75,12 @@ class CrawlerScheduler:
         self.platforms: List[BaseCrawler] = self._init_platforms()
 
     def _init_platforms(self) -> List[BaseCrawler]:
-        """初始化各平台爬虫（B站 + QQ音乐）"""
-        from crawler.config import BILIBILI, QQ_MUSIC
+        """初始化各平台爬虫（B站 + QQ音乐 + YouTube）"""
+        from crawler.config import BILIBILI, QQ_MUSIC, YOUTUBE
         return [
             BilibiliCrawler(BILIBILI),
             QqMusicCrawler(QQ_MUSIC),
+            YouTubeCrawler(YOUTUBE),
         ]
 
     def run(self, max_videos_per_celebrity: int = 2):

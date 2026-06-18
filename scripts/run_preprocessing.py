@@ -7,8 +7,16 @@
     python scripts/run_preprocessing.py --single audio.wav 周杰伦  # 单个文件
 """
 
-import argparse
+import os
 import sys
+
+# 修复 Windows 终端编码
+if os.name == "nt":
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
+    os.system("chcp 65001 > nul 2>&1")
+
+import argparse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))

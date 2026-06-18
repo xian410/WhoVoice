@@ -1,0 +1,948 @@
+{
+  "singers": [
+    {
+      "name": "MC HotDog",
+      "avatar_color": "#e17055",
+      "initial": "M",
+      "video_count": 6,
+      "slice_count": 36,
+      "representative_songs": [
+        "韩流来袭",
+        "我爱台M",
+        "轻熟女27"
+      ],
+      "spk_id": "SPK0002"
+    },
+    {
+      "name": "S.H.E",
+      "avatar_color": "#16213e",
+      "initial": "S",
+      "video_count": 4,
+      "slice_count": 22,
+      "representative_songs": [
+        "五月天",
+        "你曾是少年"
+      ],
+      "spk_id": "SPK0003"
+    },
+    {
+      "name": "万能青年旅店",
+      "avatar_color": "#16213e",
+      "initial": "万",
+      "video_count": 5,
+      "slice_count": 14,
+      "representative_songs": [
+        "山雀",
+        "揪心的玩笑与漫长的白日梦"
+      ],
+      "spk_id": "SPK0005"
+    },
+    {
+      "name": "五月天",
+      "avatar_color": "#2d3436",
+      "initial": "五",
+      "video_count": 3,
+      "slice_count": 25,
+      "representative_songs": [
+        "五月天"
+      ],
+      "spk_id": "SPK0006"
+    },
+    {
+      "name": "信乐团",
+      "avatar_color": "#e94560",
+      "initial": "信",
+      "video_count": 3,
+      "slice_count": 11,
+      "representative_songs": [
+        "死了都要爱"
+      ],
+      "spk_id": "SPK0007"
+    },
+    {
+      "name": "光良",
+      "avatar_color": "#55efc4",
+      "initial": "光",
+      "video_count": 3,
+      "slice_count": 4,
+      "representative_songs": [
+        "烟火",
+        "若無其事"
+      ],
+      "spk_id": "SPK0008"
+    },
+    {
+      "name": "刀郎",
+      "avatar_color": "#55efc4",
+      "initial": "刀",
+      "video_count": 3,
+      "slice_count": 19,
+      "representative_songs": [
+        "打起手鼓唱起歌",
+        "谢谢你",
+        "灰色轨迹"
+      ],
+      "spk_id": "SPK0102"
+    },
+    {
+      "name": "刘宇宁",
+      "avatar_color": "#6c5ce7",
+      "initial": "刘",
+      "video_count": 4,
+      "slice_count": 19,
+      "representative_songs": [
+        "寻一个你",
+        "天问",
+        "人间"
+      ],
+      "spk_id": "SPK0009"
+    },
+    {
+      "name": "刘德华",
+      "avatar_color": "#0984e3",
+      "initial": "刘",
+      "video_count": 5,
+      "slice_count": 25,
+      "representative_songs": [
+        "17岁",
+        "你震撼我的心灵",
+        "巨人",
+        "你别傻了",
+        "高高在下"
+      ],
+      "spk_id": "SPK0010"
+    },
+    {
+      "name": "刘柏辛",
+      "avatar_color": "#636e72",
+      "initial": "刘",
+      "video_count": 5,
+      "slice_count": 16,
+      "representative_songs": [
+        "宾士-Benz",
+        "Strange Things",
+        "Bossin’"
+      ],
+      "spk_id": "SPK0011"
+    },
+    {
+      "name": "刘欢",
+      "avatar_color": "#0984e3",
+      "initial": "刘",
+      "video_count": 4,
+      "slice_count": 23,
+      "representative_songs": [
+        "人生第一次",
+        "在路上",
+        "踏歌行",
+        "急诊科医生"
+      ],
+      "spk_id": "SPK0012"
+    },
+    {
+      "name": "华晨宇",
+      "avatar_color": "#0f3460",
+      "initial": "华",
+      "video_count": 3,
+      "slice_count": 2,
+      "representative_songs": [
+        "好想爱这个世界啊",
+        "齐天大圣",
+        "烟火里的尘埃"
+      ],
+      "spk_id": "SPK0014"
+    },
+    {
+      "name": "单依纯",
+      "avatar_color": "#16213e",
+      "initial": "单",
+      "video_count": 4,
+      "slice_count": 8,
+      "representative_songs": [
+        "想你时风起",
+        "向日葵朝着夜",
+        "纯妹妹",
+        "珠玉"
+      ],
+      "spk_id": "SPK0015"
+    },
+    {
+      "name": "卫兰",
+      "avatar_color": "#2d3436",
+      "initial": "卫",
+      "video_count": 4,
+      "slice_count": 22,
+      "representative_songs": [
+        "就算世界无童话",
+        "心乱如麻"
+      ],
+      "spk_id": "SPK0017"
+    },
+    {
+      "name": "古巨基",
+      "avatar_color": "#dfe6e9",
+      "initial": "古",
+      "video_count": 3,
+      "slice_count": 27,
+      "representative_songs": [
+        "爆了",
+        "Amazing World",
+        "天才与白痴"
+      ],
+      "spk_id": "SPK0018"
+    },
+    {
+      "name": "吴亦凡",
+      "avatar_color": "#00b894",
+      "initial": "吴",
+      "video_count": 4,
+      "slice_count": 27,
+      "representative_songs": [
+        "Freedom",
+        "杏花弦外雨",
+        "我想"
+      ],
+      "spk_id": "SPK0019"
+    },
+    {
+      "name": "吴青峰",
+      "avatar_color": "#636e72",
+      "initial": "吴",
+      "video_count": 3,
+      "slice_count": 13,
+      "representative_songs": [
+        "如果声音不记得",
+        "你講的話"
+      ],
+      "spk_id": "SPK0020"
+    },
+    {
+      "name": "周兴哲",
+      "avatar_color": "#fd79a8",
+      "initial": "周",
+      "video_count": 4,
+      "slice_count": 26,
+      "representative_songs": [
+        "以后别做朋友",
+        "最后一堂课",
+        "永不失联的爱 ",
+        "怎么了"
+      ],
+      "spk_id": "SPK0021"
+    },
+    {
+      "name": "周杰伦",
+      "avatar_color": "#00cec9",
+      "initial": "周",
+      "video_count": 6,
+      "slice_count": 21,
+      "representative_songs": [
+        "千山万水",
+        "爱琴海"
+      ],
+      "spk_id": "SPK0000"
+    },
+    {
+      "name": "周深",
+      "avatar_color": "#0f3460",
+      "initial": "周",
+      "video_count": 3,
+      "slice_count": 3,
+      "representative_songs": [
+        " 门 ",
+        "云裳羽衣曲",
+        "反深代词",
+        "蜃楼"
+      ],
+      "spk_id": "SPK0022"
+    },
+    {
+      "name": "周笔畅",
+      "avatar_color": "#81ecec",
+      "initial": "周",
+      "video_count": 2,
+      "slice_count": 16,
+      "representative_songs": [],
+      "spk_id": "SPK0023"
+    },
+    {
+      "name": "品冠",
+      "avatar_color": "#fdcb6e",
+      "initial": "品",
+      "video_count": 4,
+      "slice_count": 24,
+      "representative_songs": [
+        "双响炮",
+        "我以为",
+        "妥妥"
+      ],
+      "spk_id": "SPK0024"
+    },
+    {
+      "name": "孙悦",
+      "avatar_color": "#0f3460",
+      "initial": "孙",
+      "video_count": 3,
+      "slice_count": 17,
+      "representative_songs": [
+        "哭泣的百合花",
+        "心情不错"
+      ],
+      "spk_id": "SPK0105"
+    },
+    {
+      "name": "孙楠",
+      "avatar_color": "#e94560",
+      "initial": "孙",
+      "video_count": 3,
+      "slice_count": 24,
+      "representative_songs": [],
+      "spk_id": "SPK0025"
+    },
+    {
+      "name": "屠洪刚",
+      "avatar_color": "#81ecec",
+      "initial": "屠",
+      "video_count": 4,
+      "slice_count": 1,
+      "representative_songs": [
+        "中国功夫",
+        "江山无限（完整版）",
+        "大风歌"
+      ],
+      "spk_id": "SPK0125"
+    },
+    {
+      "name": "崔健",
+      "avatar_color": "#fab1a0",
+      "initial": "崔",
+      "video_count": 4,
+      "slice_count": 14,
+      "representative_songs": [
+        "新长征路上的摇滚",
+        "假行僧",
+        "从头再来",
+        "草帽歌"
+      ],
+      "spk_id": "SPK0106"
+    },
+    {
+      "name": "张信哲",
+      "avatar_color": "#fdcb6e",
+      "initial": "张",
+      "video_count": 1,
+      "slice_count": 17,
+      "representative_songs": [
+        "假行僧"
+      ],
+      "spk_id": "SPK0028"
+    },
+    {
+      "name": "张敬轩",
+      "avatar_color": "#2d3436",
+      "initial": "张",
+      "video_count": 3,
+      "slice_count": 13,
+      "representative_songs": [
+        "我的天"
+      ],
+      "spk_id": "SPK0032"
+    },
+    {
+      "name": "张智成",
+      "avatar_color": "#fdcb6e",
+      "initial": "张",
+      "video_count": 3,
+      "slice_count": 24,
+      "representative_songs": [],
+      "spk_id": "SPK0033"
+    },
+    {
+      "name": "张碧晨",
+      "avatar_color": "#a29bfe",
+      "initial": "张",
+      "video_count": 4,
+      "slice_count": 21,
+      "representative_songs": [
+        "梦幻诛仙",
+        "你也",
+        "第二十条",
+        "Interstellar"
+      ],
+      "spk_id": "SPK0035"
+    },
+    {
+      "name": "张艺兴",
+      "avatar_color": "#a29bfe",
+      "initial": "张",
+      "video_count": 3,
+      "slice_count": 16,
+      "representative_songs": [
+        "湖南摇叮阔",
+        "大花轿",
+        "拖拉机"
+      ],
+      "spk_id": "SPK0036"
+    },
+    {
+      "name": "张靓颖",
+      "avatar_color": "#0984e3",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 22,
+      "representative_songs": [
+        "执棋",
+        "野心家"
+      ],
+      "spk_id": "SPK0038"
+    },
+    {
+      "name": "张韶涵",
+      "avatar_color": "#636e72",
+      "initial": "张",
+      "video_count": 4,
+      "slice_count": 25,
+      "representative_songs": [],
+      "spk_id": "SPK0039"
+    },
+    {
+      "name": "戴佩妮",
+      "avatar_color": "#1a1a2e",
+      "initial": "戴",
+      "video_count": 4,
+      "slice_count": 21,
+      "representative_songs": [
+        "怎样"
+      ],
+      "spk_id": "SPK0041"
+    },
+    {
+      "name": "新裤子",
+      "avatar_color": "#a29bfe",
+      "initial": "新",
+      "video_count": 2,
+      "slice_count": 27,
+      "representative_songs": [
+        "Afterparty",
+        "假如生活欺骗了你"
+      ],
+      "spk_id": "SPK0042"
+    },
+    {
+      "name": "易烊千玺",
+      "avatar_color": "#74b9ff",
+      "initial": "易",
+      "video_count": 3,
+      "slice_count": 13,
+      "representative_songs": [
+        "Can&#x27;t take my eyes off you",
+        "宝贝"
+      ],
+      "spk_id": "SPK0044"
+    },
+    {
+      "name": "朴树",
+      "avatar_color": "#16213e",
+      "initial": "朴",
+      "video_count": 3,
+      "slice_count": 18,
+      "representative_songs": [
+        "白桦林"
+      ],
+      "spk_id": "SPK0045"
+    },
+    {
+      "name": "李佳薇",
+      "avatar_color": "#55efc4",
+      "initial": "李",
+      "video_count": 3,
+      "slice_count": 16,
+      "representative_songs": [
+        "天后",
+        "天堂 悬崖"
+      ],
+      "spk_id": "SPK0046"
+    },
+    {
+      "name": "李健",
+      "avatar_color": "#e17055",
+      "initial": "李",
+      "video_count": 3,
+      "slice_count": 4,
+      "representative_songs": [
+        "从黄昏到午夜",
+        "传奇",
+        "绽放"
+      ],
+      "spk_id": "SPK0047"
+    },
+    {
+      "name": "李克勤",
+      "avatar_color": "#55efc4",
+      "initial": "李",
+      "video_count": 4,
+      "slice_count": 24,
+      "representative_songs": [
+        "月半小夜曲",
+        " 破晓时分"
+      ],
+      "spk_id": "SPK0048"
+    },
+    {
+      "name": "李宇春",
+      "avatar_color": "#1a1a2e",
+      "initial": "李",
+      "video_count": 3,
+      "slice_count": 8,
+      "representative_songs": [
+        "Shut Up and Dance"
+      ],
+      "spk_id": "SPK0049"
+    },
+    {
+      "name": "李泉",
+      "avatar_color": "#6c5ce7",
+      "initial": "李",
+      "video_count": 3,
+      "slice_count": 15,
+      "representative_songs": [
+        "走钢索的人",
+        "哭了"
+      ],
+      "spk_id": "SPK0107"
+    },
+    {
+      "name": "李玲玉",
+      "avatar_color": "#e94560",
+      "initial": "李",
+      "video_count": 4,
+      "slice_count": 14,
+      "representative_songs": [
+        "情网",
+        "祝福",
+        "窗外"
+      ],
+      "spk_id": "SPK0108"
+    },
+    {
+      "name": "杨坤",
+      "avatar_color": "#2d3436",
+      "initial": "杨",
+      "video_count": 4,
+      "slice_count": 20,
+      "representative_songs": [
+        "答案",
+        "集结号",
+        "兄弟"
+      ],
+      "spk_id": "SPK0053"
+    },
+    {
+      "name": "杨钰莹",
+      "avatar_color": "#00cec9",
+      "initial": "杨",
+      "video_count": 3,
+      "slice_count": 6,
+      "representative_songs": [
+        "等你一万年"
+      ],
+      "spk_id": "SPK0109"
+    },
+    {
+      "name": "林依轮",
+      "avatar_color": "#1a1a2e",
+      "initial": "林",
+      "video_count": 3,
+      "slice_count": 20,
+      "representative_songs": [
+        "透过开满鲜花的月亮",
+        "爱情鸟"
+      ],
+      "spk_id": "SPK0110"
+    },
+    {
+      "name": "梅艳芳",
+      "avatar_color": "#636e72",
+      "initial": "梅",
+      "video_count": 3,
+      "slice_count": 16,
+      "representative_songs": [
+        "我本善良",
+        "女人花",
+        "川岛方子",
+        "路始终告一段"
+      ],
+      "spk_id": "SPK0059"
+    },
+    {
+      "name": "毛不易",
+      "avatar_color": "#a29bfe",
+      "initial": "毛",
+      "video_count": 3,
+      "slice_count": 16,
+      "representative_songs": [
+        "一程山路",
+        "看得最远的地方",
+        "感觉自己是巨星"
+      ],
+      "spk_id": "SPK0060"
+    },
+    {
+      "name": "毛宁",
+      "avatar_color": "#ff7675",
+      "initial": "毛",
+      "video_count": 3,
+      "slice_count": 9,
+      "representative_songs": [
+        "涛声依旧",
+        "心中的安妮"
+      ],
+      "spk_id": "SPK0111"
+    },
+    {
+      "name": "毛阿敏",
+      "avatar_color": "#e17055",
+      "initial": "毛",
+      "video_count": 2,
+      "slice_count": 12,
+      "representative_songs": [
+        "掌声响起来",
+        "相思"
+      ],
+      "spk_id": "SPK0112"
+    },
+    {
+      "name": "汪峰",
+      "avatar_color": "#fd79a8",
+      "initial": "汪",
+      "video_count": 3,
+      "slice_count": 22,
+      "representative_songs": [
+        "加德满都的风铃",
+        "我爱你中国"
+      ],
+      "spk_id": "SPK0061"
+    },
+    {
+      "name": "汪苏泷",
+      "avatar_color": "#16213e",
+      "initial": "汪",
+      "video_count": 3,
+      "slice_count": 22,
+      "representative_songs": [
+        "三国杀",
+        "情歌",
+        "问你一个人类梦寐以求的深奥问题（旷野版）"
+      ],
+      "spk_id": "SPK0062"
+    },
+    {
+      "name": "沙宝亮",
+      "avatar_color": "#fab1a0",
+      "initial": "沙",
+      "video_count": 4,
+      "slice_count": 16,
+      "representative_songs": [
+        "鸿雁"
+      ],
+      "spk_id": "SPK0113"
+    },
+    {
+      "name": "满文军",
+      "avatar_color": "#fab1a0",
+      "initial": "满",
+      "video_count": 4,
+      "slice_count": 18,
+      "representative_songs": [
+        "今生今世"
+      ],
+      "spk_id": "SPK0114"
+    },
+    {
+      "name": "潘玮柏",
+      "avatar_color": "#a29bfe",
+      "initial": "潘",
+      "video_count": 3,
+      "slice_count": 18,
+      "representative_songs": [
+        "高音质 / 动态歌词Lyrics"
+      ],
+      "spk_id": "SPK0063"
+    },
+    {
+      "name": "王俊凯",
+      "avatar_color": "#6c5ce7",
+      "initial": "王",
+      "video_count": 3,
+      "slice_count": 13,
+      "representative_songs": [
+        "遥遥故乡",
+        "无人乐园",
+        "Champion My Way"
+      ],
+      "spk_id": "SPK0064"
+    },
+    {
+      "name": "王源",
+      "avatar_color": "#e17055",
+      "initial": "王",
+      "video_count": 3,
+      "slice_count": 20,
+      "representative_songs": [
+        "雪崩"
+      ],
+      "spk_id": "SPK0067"
+    },
+    {
+      "name": "王铮亮",
+      "avatar_color": "#636e72",
+      "initial": "王",
+      "video_count": 4,
+      "slice_count": 9,
+      "representative_songs": [
+        "月亮照山川",
+        "满满",
+        "三叉戟",
+        "不凡（动画《凡人修仙传"
+      ],
+      "spk_id": "SPK0115"
+    },
+    {
+      "name": "田震",
+      "avatar_color": "#2d3436",
+      "initial": "田",
+      "video_count": 3,
+      "slice_count": 22,
+      "representative_songs": [],
+      "spk_id": "SPK0116"
+    },
+    {
+      "name": "窦唯",
+      "avatar_color": "#e94560",
+      "initial": "窦",
+      "video_count": 3,
+      "slice_count": 16,
+      "representative_songs": [
+        "明天更漫长",
+        "噢！乖",
+        "窗外"
+      ],
+      "spk_id": "SPK0117"
+    },
+    {
+      "name": "胡夏",
+      "avatar_color": "#0f3460",
+      "initial": "胡",
+      "video_count": 4,
+      "slice_count": 19,
+      "representative_songs": [
+        "我会等",
+        "知否知否"
+      ],
+      "spk_id": "SPK0118"
+    },
+    {
+      "name": "腾格尔",
+      "avatar_color": "#fdcb6e",
+      "initial": "腾",
+      "video_count": 3,
+      "slice_count": 14,
+      "representative_songs": [
+        "天堂",
+        "绒花",
+        "万古仙穹"
+      ],
+      "spk_id": "SPK0119"
+    },
+    {
+      "name": "艾怡良",
+      "avatar_color": "#2d3436",
+      "initial": "艾",
+      "video_count": 3,
+      "slice_count": 22,
+      "representative_songs": [],
+      "spk_id": "SPK0072"
+    },
+    {
+      "name": "萧敬腾",
+      "avatar_color": "#0984e3",
+      "initial": "萧",
+      "video_count": 3,
+      "slice_count": 18,
+      "representative_songs": [
+        "王妃",
+        "怎么说我不爱你"
+      ],
+      "spk_id": "SPK0074"
+    },
+    {
+      "name": "蔡徐坤",
+      "avatar_color": "#e17055",
+      "initial": "蔡",
+      "video_count": 3,
+      "slice_count": 7,
+      "representative_songs": [
+        "Deadman",
+        "情人",
+        "Colder"
+      ],
+      "spk_id": "SPK0077"
+    },
+    {
+      "name": "袁娅维",
+      "avatar_color": "#74b9ff",
+      "initial": "袁",
+      "video_count": 4,
+      "slice_count": 23,
+      "representative_songs": [
+        "一生等你",
+        "吻合",
+        "为你而来",
+        "梦回"
+      ],
+      "spk_id": "SPK0079"
+    },
+    {
+      "name": "谢安琪",
+      "avatar_color": "#fdcb6e",
+      "initial": "谢",
+      "video_count": 3,
+      "slice_count": 20,
+      "representative_songs": [
+        "喜帖街"
+      ],
+      "spk_id": "SPK0081"
+    },
+    {
+      "name": "那英",
+      "avatar_color": "#fd79a8",
+      "initial": "那",
+      "video_count": 4,
+      "slice_count": 18,
+      "representative_songs": [
+        "默",
+        "雾里看花"
+      ],
+      "spk_id": "SPK0086"
+    },
+    {
+      "name": "郑钧",
+      "avatar_color": "#a29bfe",
+      "initial": "郑",
+      "video_count": 3,
+      "slice_count": 14,
+      "representative_songs": [
+        "回到拉萨"
+      ],
+      "spk_id": "SPK0121"
+    },
+    {
+      "name": "陈楚生",
+      "avatar_color": "#fd79a8",
+      "initial": "陈",
+      "video_count": 3,
+      "slice_count": 10,
+      "representative_songs": [
+        "经过",
+        "我愿意",
+        "信仰"
+      ],
+      "spk_id": "SPK0122"
+    },
+    {
+      "name": "韦唯",
+      "avatar_color": "#1a1a2e",
+      "initial": "韦",
+      "video_count": 2,
+      "slice_count": 12,
+      "representative_songs": [
+        "心愿",
+        "在水一方"
+      ],
+      "spk_id": "SPK0123"
+    },
+    {
+      "name": "韩磊",
+      "avatar_color": "#1a1a2e",
+      "initial": "韩",
+      "video_count": 4,
+      "slice_count": 12,
+      "representative_songs": [
+        "花房姑娘 "
+      ],
+      "spk_id": "SPK0124"
+    },
+    {
+      "name": "韩红",
+      "avatar_color": "#00cec9",
+      "initial": "韩",
+      "video_count": 3,
+      "slice_count": 15,
+      "representative_songs": [
+        "我爱祖国的蓝天"
+      ],
+      "spk_id": "SPK0094"
+    },
+    {
+      "name": "飞儿乐团",
+      "avatar_color": "#fd79a8",
+      "initial": "飞",
+      "video_count": 3,
+      "slice_count": 21,
+      "representative_songs": [
+        "我们的爱"
+      ],
+      "spk_id": "SPK0095"
+    },
+    {
+      "name": "鹿晗",
+      "avatar_color": "#fd79a8",
+      "initial": "鹿",
+      "video_count": 3,
+      "slice_count": 13,
+      "representative_songs": [
+        "勋章",
+        "吹吹风",
+        "慢慢"
+      ],
+      "spk_id": "SPK0097"
+    },
+    {
+      "name": "黄义达",
+      "avatar_color": "#636e72",
+      "initial": "黄",
+      "video_count": 3,
+      "slice_count": 20,
+      "representative_songs": [
+        "那女孩对我说"
+      ],
+      "spk_id": "SPK0098"
+    },
+    {
+      "name": "黄子韬",
+      "avatar_color": "#fdcb6e",
+      "initial": "黄",
+      "video_count": 3,
+      "slice_count": 19,
+      "representative_songs": [
+        "夜空中最闪亮的星",
+        "Beggar",
+        "舍不得"
+      ],
+      "spk_id": "SPK0099"
+    },
+    {
+      "name": "黎明",
+      "avatar_color": "#a29bfe",
+      "initial": "黎",
+      "video_count": 3,
+      "slice_count": 12,
+      "representative_songs": [
+        "黎明前的黑暗",
+        "黎明"
+      ],
+      "spk_id": "SPK0101"
+    }
+  ],
+  "total": 78
+}

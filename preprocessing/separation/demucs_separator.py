@@ -5,6 +5,7 @@ Demucs 人声分离实现
 
 import subprocess
 import sys
+import os
 from pathlib import Path
 from typing import Optional
 
@@ -12,14 +13,14 @@ from typing import Optional
 class DemucsSeparator:
     """Demucs 人声分离器（备选方案，质量更高但更慢）"""
 
-    def __init__(self, model_name: str = "htdemucs", device: str = "cpu"):
+    def __init__(self, model_name: str = "htdemucs", device: str = "cuda"):
         """
         Args:
             model_name: Demucs 模型名称
                 - "htdemucs": 最新混合 Transformer + Demucs 模型 (推荐)
                 - "demucs": 原始 Demucs 模型
                 - "hdemucs": 高分辨率 Demucs
-            device: 运行设备 "cpu" 或 "cuda"
+            device: 运行设备 "cpu" 或 "cuda" (当前使用 GPU)
         """
         self.model_name = model_name
         self.device = device
@@ -41,11 +42,20 @@ class DemucsSeparator:
             output_dir: 输出目录
         Returns:
             分离后的人声文件路径，失败返回 None
+        优化: 只保留人声文件，立即清理无用中间文件
         """
+        import gc
+
         try:
             audio_path = Path(audio_path)
             if not audio_path.exists():
                 print(f"[Demucs] 输入文件不存在: {audio_path}")
+                return None
+
+            # 检查文件大小，过大则跳过
+            file_size_mb = audio_path.stat().st_size / (1024 * 1024)
+            if file_size_mb > 100:
+                print(f"[Demucs] 文件太大 ({file_size_mb:.0f}MB)，跳过分离")
                 return None
 
             output_base = Path(output_dir) if output_dir else audio_path.parent / "demucs_output"
@@ -56,13 +66,26 @@ class DemucsSeparator:
                 "-n", self.model_name,
                 "-o", str(output_base),
                 "--device", self.device,
+                "--overlap", "0.1",              # 减少overlap加速处理
                 str(audio_path),
             ]
-            subprocess.run(cmd, check=True, capture_output=True, timeout=600)
+            subprocess.run(cmd, check=True, timeout=600, env={
+                **os.environ,
+                "TQDM_DISABLE": "1",  # 禁用 tqdm 进度条，避免终端乱码
+            })
 
             # demucs 输出路径: output_base/model_name/audio_filename/vocals.wav
-            vocal_path = output_base / self.model_name / audio_path.stem / "vocals.wav"
+            out_dir = output_base / self.model_name / audio_path.stem
+            vocal_path = out_dir / "vocals.wav"
             if vocal_path.exists():
+                # 清理无用中间文件（no_vocals.wav等），只保留人声
+                for f in out_dir.iterdir():
+                    if f.name != "vocals.wav":
+                        try:
+                            f.unlink()
+                        except OSError:
+                            pass
+                gc.collect()  # 提示回收内存
                 return str(vocal_path)
             else:
                 print(f"[Demucs] 未找到人声文件: {vocal_path}")

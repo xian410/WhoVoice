@@ -14,5 +14,21 @@
     "file_path": "data/raw/吴亦凡/bilibili/001_【Hi-Res无损音质】CRITTY《杏花弦外雨》这歌原来这么好听 ！经典歌曲最好听的版本 4K60P.wav",
     "download_time": "2026-05-31T01:19:57.966295",
     "platform": "bilibili"
+  },
+  {
+    "title": "法老《我想》MV，看看2016年的法老，那时他还很青涩……",
+    "url": "http://www.bilibili.com/video/av632442525",
+    "duration": 330.791,
+    "file_path": "data\\raw\\吴亦凡\\bilibili\\000_法老《我想》MV，看看2016年的法老，那时他还很青涩…….wav",
+    "download_time": "2026-06-17T00:12:09.725376",
+    "platform": "bilibili"
+  },
+  {
+    "title": "Kris的Stronger than you",
+    "url": "http://www.bilibili.com/video/av42347031",
+    "duration": 180.1,
+    "file_path": "data\\raw\\吴亦凡\\bilibili\\001_Kris的Stronger than you.wav",
+    "download_time": "2026-06-17T00:12:13.678677",
+    "platform": "bilibili"
   }
 ]

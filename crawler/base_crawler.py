@@ -43,7 +43,7 @@ class BaseCrawler(ABC):
                 "-y",                      # 覆盖输出文件
                 audio_path
             ]
-            subprocess.run(cmd, check=True, capture_output=True)
+            subprocess.run(cmd, check=True)
             return True
         except (subprocess.CalledProcessError, FileNotFoundError) as e:
             print(f"[{self.platform_name}] 音频提取失败: {e}")

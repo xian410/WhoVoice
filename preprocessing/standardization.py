@@ -55,21 +55,52 @@ class AudioStandardizer:
         ]
 
         try:
-            subprocess.run(cmd, check=True, capture_output=True, timeout=120)
+            subprocess.run(cmd, check=True, timeout=120)
             return output_path
         except subprocess.CalledProcessError as e:
-            raise RuntimeError(f"音频标准化失败: {e.stderr.decode()}")
+            raise RuntimeError(f"音频标准化失败")
 
     def get_audio_info(self, audio_path: str) -> dict:
-        """获取音频文件信息"""
-        import audioread
-        with audioread.audio_open(audio_path) as f:
+        """
+        获取音频文件信息
+        使用 ffprobe（比 audioread 更轻量，不加载音频数据到内存）
+        """
+        import json
+        cmd = [
+            "ffprobe",
+            "-v", "quiet",
+            "-print_format", "json",
+            "-show_streams",
+            audio_path,
+        ]
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+            data = json.loads(result.stdout)
+            stream = data.get("streams", [{}])[0]
+            duration_str = stream.get("duration", "0")
+            try:
+                duration = float(duration_str)
+            except (ValueError, TypeError):
+                duration = 0
             return {
-                "channels": f.channels,
-                "samplerate": f.samplerate,
-                "duration": f.duration,
-                "format": f.format,
+                "channels": stream.get("channels", 1),
+                "samplerate": int(stream.get("sample_rate", 16000)),
+                "duration": duration,
+                "format": stream.get("codec_name", "pcm_s16le"),
             }
+        except (subprocess.TimeoutExpired, json.JSONDecodeError, IndexError, KeyError):
+            # 兜底：用 audioread
+            try:
+                import audioread
+                with audioread.audio_open(audio_path) as f:
+                    return {
+                        "channels": f.channels,
+                        "samplerate": f.samplerate,
+                        "duration": f.duration,
+                        "format": str(f.format),
+                    }
+            except Exception:
+                return {"channels": 1, "samplerate": 16000, "duration": 0, "format": "unknown"}
 
     def normalize_volume(self, audio_path: str, target_db: float = -3.0) -> str:
         """
@@ -86,7 +117,7 @@ class AudioStandardizer:
         ]
 
         try:
-            subprocess.run(cmd, check=True, capture_output=True, timeout=120)
+            subprocess.run(cmd, check=True, timeout=120)
             return output_path
         except subprocess.CalledProcessError as e:
-            raise RuntimeError(f"音量归一化失败: {e.stderr.decode()}")
+            raise RuntimeError(f"音量归一化失败")

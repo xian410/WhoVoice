@@ -14,5 +14,13 @@
     "file_path": "data/raw/鹿晗/bilibili/001_【Hi-Res无损】鹿晗新歌《吹吹风》纯享，好浪漫！.wav",
     "download_time": "2026-05-31T01:19:42.219402",
     "platform": "bilibili"
+  },
+  {
+    "title": "鹿晗动漫MV版《慢慢》",
+    "url": "http://www.bilibili.com/video/av502777093",
+    "duration": 147.074,
+    "file_path": "data\\raw\\鹿晗\\bilibili\\001_鹿晗动漫MV版《慢慢》.wav",
+    "download_time": "2026-06-17T11:01:04.290365",
+    "platform": "bilibili"
   }
 ]

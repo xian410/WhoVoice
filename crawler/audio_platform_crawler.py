@@ -122,7 +122,7 @@ class AudioPlatformCrawler(BaseCrawler):
                 "--ignore-errors",
                 url,
             ]
-            subprocess.run(cmd, check=True, capture_output=True, timeout=600)
+            subprocess.run(cmd, check=True, timeout=600)
             return True
         except FileNotFoundError:
             print("[音频平台] yt-dlp 未安装，请先安装: brew install yt-dlp")

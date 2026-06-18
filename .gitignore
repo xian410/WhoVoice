@@ -33,10 +33,49 @@ Thumbs.db
 *.swp
 *.swo
 
-# 临时文件
-tmp/
-temp/
-
 # 数据库
 *.sqlite3
 backend/db.sqlite3
+
+# 临时输出文件
+*_out.txt
+*_plan.txt
+*_status.txt
+*_report.txt
+
+# 临时二进制文件
+_tmp_*.bin
+_tmp_*.*
+
+# 测试脚本（发布版不包含）
+scripts/test_*.py
+scripts/check_*.py
+scripts/debug_*.py
+scripts/export_*.py
+scripts/cdp_*.py
+scripts/analyze_*.py
+scripts/update_*.py
+scripts/generate_celeb_info.py
+scripts/recrawl_*.py
+scripts/batch_full_*.py
+scripts/decrypt_*.py
+scripts/edge_cookies*.py
+scripts/chrome_cookies*.py
+scripts/vss_copy_*.py
+scripts/chrome_*.py
+scripts/debug_*.py
+scripts/check_*.py
+scripts/bash_*.py
+scripts/*.ps1
+
+# 临时目录
+tmp/
+temp/
+
+# 浏览器Cookie导出
+edge_cookies*
+chrome_cookies*
+cookies_copy*
+
+# 启动脚本（开发用）
+backend/start_server.py

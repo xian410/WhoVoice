@@ -14,5 +14,13 @@
     "file_path": "data/raw/李佳薇/bilibili/001_【Official MV】强求 - 李佳薇  （《天堂 悬崖》2014）.wav",
     "download_time": "2026-05-31T01:18:42.006066",
     "platform": "bilibili"
+  },
+  {
+    "title": "像天堂的悬崖-李佳薇",
+    "url": "http://www.bilibili.com/video/av1706162735",
+    "duration": 297.214,
+    "file_path": "data\\raw\\李佳薇\\bilibili\\000_像天堂的悬崖-李佳薇.wav",
+    "download_time": "2026-06-17T00:41:17.199931",
+    "platform": "bilibili"
   }
 ]

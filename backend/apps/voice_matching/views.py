@@ -27,6 +27,11 @@ from vector_database.config import FAISS, EMBEDDING_DIM
 import faiss
 
 
+# 预处理的音频样本目录
+PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+RAW_DIR = PROJECT_ROOT / "data" / "raw"
+
+
 def _resolve_faiss_path() -> Path:
     """解析 FAISS 索引的绝对路径"""
     rel_path = FAISS["index_path"]
@@ -50,7 +55,7 @@ class VoiceMatchView(APIView):
         """懒加载模型和索引"""
         if self.__class__._recognizer is None:
             print("[VoiceMatch] 加载声纹模型...")
-            self.__class__._recognizer = VoiceprintRecognizer()
+            self.__class__._recognizer = VoiceprintRecognizer(use_gpu=True)
 
         if self.__class__._index is None:
             index_path = _resolve_faiss_path()
@@ -93,7 +98,8 @@ class VoiceMatchView(APIView):
             )
 
         # 保存临时文件
-        tmp_dir = Path("/tmp/whovoice_uploads")
+        import tempfile
+        tmp_dir = Path(tempfile.gettempdir()) / "whovoice_uploads"
         tmp_dir.mkdir(parents=True, exist_ok=True)
         tmp_path = tmp_dir / audio_file.name
         with open(tmp_path, "wb") as f:
@@ -156,3 +162,54 @@ class VoiceMatchView(APIView):
                     tmp_path.unlink()
             except Exception:
                 pass
+
+
+class AudioSampleView(APIView):
+    """
+    获取歌手音频样本，用于前端试听
+    GET /api/voice-matching/sample/<str:name>/
+    返回一个随机的预处理切片 WAV 文件
+    """
+
+    def get(self, request, name):
+        # 优先从 processed 目录找（预处理切片，较短）
+        proc_dir = PROCESSED_DIR / name
+        candidates = []
+        if proc_dir.is_dir():
+            candidates = list(proc_dir.rglob("*.wav"))
+
+        # 如果没有预处理切片，从 raw 目录找（原始音频）
+        if not candidates:
+            raw_dir = RAW_DIR / name
+            if raw_dir.is_dir():
+                candidates = [
+                    f for f in raw_dir.rglob("*.wav")
+                    if "demucs_output" not in f.parts and "tmp" not in f.parts
+                ]
+
+        if not candidates:
+            return Response(
+                {"error": f"未找到 [{name}] 的音频样本"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+        # 随机选一个（避免每次返回同一个）
+        import random
+        sample_path = random.choice(candidates)
+
+        try:
+            from django.http import FileResponse, HttpResponseNotFound
+            # 读取文件并返回
+            with open(sample_path, "rb") as f:
+                audio_data = f.read()
+            from django.http import HttpResponse
+            response = HttpResponse(audio_data, content_type="audio/wav")
+            response["Content-Disposition"] = f'inline; filename="{sample_path.name}"'
+            # 添加缓存控制（浏览器缓存1小时）
+            response["Cache-Control"] = "public, max-age=3600"
+            return response
+        except Exception as e:
+            return Response(
+                {"error": f"读取音频文件失败: {str(e)}"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )

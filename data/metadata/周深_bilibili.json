@@ -14,5 +14,13 @@
     "file_path": "data/raw/周深/bilibili/001_周深《云裳羽衣曲》百万豪装录音棚大声听.wav",
     "download_time": "2026-05-31T01:10:02.920271",
     "platform": "bilibili"
+  },
+  {
+    "title": "周深专辑《反深代词》先行曲《蜃楼》MV",
+    "url": "http://www.bilibili.com/video/av1303140342",
+    "duration": 327.423,
+    "file_path": "data\\raw\\周深\\bilibili\\000_周深专辑《反深代词》先行曲《蜃楼》MV.wav",
+    "download_time": "2026-06-17T00:13:55.228722",
+    "platform": "bilibili"
   }
 ]

@@ -14,5 +14,13 @@
     "file_path": "data/raw/古巨基/bilibili/001_《天才与白痴》歌手  古巨基  华语乐坛经典粤语歌  单曲循环  影视歌曲.wav",
     "download_time": "2026-05-31T01:12:37.246338",
     "platform": "bilibili"
+  },
+  {
+    "title": "古巨基 - 怪物",
+    "url": "http://www.bilibili.com/video/av670851453",
+    "duration": 324.846,
+    "file_path": "data\\raw\\古巨基\\bilibili\\001_古巨基 - 怪物.wav",
+    "download_time": "2026-06-17T00:11:07.893227",
+    "platform": "bilibili"
   }
 ]

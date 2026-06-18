@@ -14,5 +14,21 @@
     "file_path": "data/raw/单依纯/bilibili/001_单依纯《向日葵朝着夜》国粤语版 单姐又升级了.wav",
     "download_time": "2026-05-31T01:20:05.508633",
     "platform": "bilibili"
+  },
+  {
+    "title": "【单依纯《纯妹妹》】MV",
+    "url": "http://www.bilibili.com/video/av115766414286220",
+    "duration": 235.093,
+    "file_path": "data\\raw\\单依纯\\bilibili\\000_【单依纯《纯妹妹》】MV.wav",
+    "download_time": "2026-06-17T00:09:09.251131",
+    "platform": "bilibili"
+  },
+  {
+    "title": "【单依纯《珠玉》】MV",
+    "url": "http://www.bilibili.com/video/av116578918342608",
+    "duration": 209.173,
+    "file_path": "data\\raw\\单依纯\\bilibili\\001_【单依纯《珠玉》】MV.wav",
+    "download_time": "2026-06-17T00:09:13.327875",
+    "platform": "bilibili"
   }
 ]

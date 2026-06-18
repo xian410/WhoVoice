@@ -14,5 +14,21 @@
     "file_path": "data/raw/张韶涵/bilibili/001_张韶涵、苏打绿-蓝眼睛.wav",
     "download_time": "2026-05-31T01:15:09.678567",
     "platform": "bilibili"
+  },
+  {
+    "title": "【官方MV】张韶涵 - 终于",
+    "url": "http://www.bilibili.com/video/av332162590",
+    "duration": 271.274,
+    "file_path": "data\\raw\\张韶涵\\bilibili\\000_【官方MV】张韶涵 - 终于.wav",
+    "download_time": "2026-06-17T00:35:46.778870",
+    "platform": "bilibili"
+  },
+  {
+    "title": "【4K修复】张韶涵 - 潘朵拉",
+    "url": "http://www.bilibili.com/video/av249878379",
+    "duration": 238.997,
+    "file_path": "data\\raw\\张韶涵\\bilibili\\001_【4K修复】张韶涵 - 潘朵拉.wav",
+    "download_time": "2026-06-17T00:35:51.142518",
+    "platform": "bilibili"
   }
 ]

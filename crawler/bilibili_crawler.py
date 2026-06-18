@@ -82,11 +82,11 @@ class BilibiliCrawler(BaseCrawler):
         # ====================== 核心修改 1 ======================
         # 只搜索歌曲相关，彻底去掉访谈/采访/综艺
         search_queries = [
-            f"bilibili:{keyword} 歌曲",
-            f"bilibili:{keyword} MV",
-            f"bilibili:{keyword} 原唱",
-            f"bilibili:{keyword} 完整版",
-            f"bilibili:{keyword} 现场演唱",
+            f"bilisearch{limit}:{keyword} 歌曲",
+            f"bilisearch{limit}:{keyword} MV",
+            f"bilisearch{limit}:{keyword} 原唱",
+            f"bilisearch{limit}:{keyword} 完整版",
+            f"bilisearch{limit}:{keyword} 现场演唱",
         ]
 
         try:
@@ -96,10 +96,10 @@ class BilibiliCrawler(BaseCrawler):
 
                 cmd = [
                     sys.executable, "-m", "yt_dlp",
-                    f"ytsearch{limit}:{query}",
+                    "--proxy", "",
+                    query,
                     "--dump-json",
                     "--no-playlist",
-                    "--default-search", "ytsearch",
                     "--ignore-errors",
                 ]
                 output = subprocess.run(
@@ -223,10 +223,16 @@ class BilibiliCrawler(BaseCrawler):
         """
         使用 yt-dlp 下载 B站 视频并提取音频
         输出: 16kHz 单声道 WAV
+        优化: 限制文件大小、限制时长、不缓存输出、清理失败文件
         """
         try:
+            from crawler.config import MAX_DURATION_MINUTES, MAX_FILESIZE_MB
+            max_sec = MAX_DURATION_MINUTES * 60
+            max_bytes = MAX_FILESIZE_MB * 1024 * 1024
+
             cmd = [
                 sys.executable, "-m", "yt_dlp",
+                "--proxy", "",
                 "-f", "bestaudio/best",
                 "--extract-audio",
                 "--audio-format", "wav",
@@ -234,6 +240,11 @@ class BilibiliCrawler(BaseCrawler):
                 "--postprocessor-args", "ffmpeg:-ac 1 -ar 16000",
                 "-o", save_path.replace(".wav", ".%(ext)s"),
                 "--ignore-errors",
+                "--no-part",  # 不产生.part临时文件
+                "--no-mtime",  # 不保留原始时间戳
+                "--playlist-end", "1",  # 只下载合集/系列的第一个（避免B站合集几百集）
+                "--max-filesize", f"{MAX_FILESIZE_MB}M",  # 限制文件大小
+                "--match-filter", f"duration < {max_sec}",  # 下载时过滤时长
             ]
 
             # 如果有Cookie文件，带上它（B站下载需要Cookie）
@@ -242,14 +253,35 @@ class BilibiliCrawler(BaseCrawler):
 
             cmd.append(url)
 
-            subprocess.run(cmd, check=True, capture_output=True, timeout=600)
+            # 不捕获输出（避免内存浪费），流式输出到控制台
+            subprocess.run(cmd, check=True, timeout=600)
             return True
         except FileNotFoundError:
             print("[Bilibili] yt-dlp 未安装，请先安装: pip install yt-dlp")
+            # 清理可能的残留文件
+            self._cleanup_failed(save_path)
+            return False
+        except subprocess.TimeoutExpired:
+            print(f"[Bilibili] 下载超时(10分钟): {url}")
+            self._cleanup_failed(save_path)
             return False
         except Exception as e:
             print(f"[Bilibili] 下载失败 {url}: {e}")
+            # 清理可能产生的部分文件
+            self._cleanup_failed(save_path)
             return False
+
+    def _cleanup_failed(self, save_path: str):
+        """清理下载失败产生的残留文件"""
+        base = Path(save_path.replace(".wav", ""))
+        for suffix in [".wav", ".mp3", ".m4a", ".webm", ".part", ".ytdl"]:
+            f = base.with_suffix(suffix)
+            if f.exists():
+                try:
+                    f.unlink()
+                    print(f"  [Bilibili] 清理残留文件: {f.name}")
+                except OSError:
+                    pass
 
     def _is_valid_duration(self, duration_seconds: int) -> bool:
         """

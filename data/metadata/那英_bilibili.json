@@ -14,5 +14,21 @@
     "file_path": "data/raw/那英/bilibili/001_那英经典歌曲《雾里看花》，借我一双慧眼，把这世界看得清清楚楚.wav",
     "download_time": "2026-05-31T01:10:19.565002",
     "platform": "bilibili"
+  },
+  {
+    "title": "那英「雾里看花」正版 MV",
+    "url": "http://www.bilibili.com/video/av227502304",
+    "duration": 249.288,
+    "file_path": "data\\raw\\那英\\bilibili\\000_那英「雾里看花」正版 MV.wav",
+    "download_time": "2026-06-17T10:54:29.861783",
+    "platform": "bilibili"
+  },
+  {
+    "title": "那英 - 认了吧(KTV版) 标清MV",
+    "url": "http://www.bilibili.com/video/av376617966",
+    "duration": 218.12,
+    "file_path": "data\\raw\\那英\\bilibili\\001_那英 - 认了吧(KTV版) 标清MV.wav",
+    "download_time": "2026-06-17T10:54:34.226827",
+    "platform": "bilibili"
   }
 ]
