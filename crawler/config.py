@@ -279,6 +279,14 @@ AUDIO_PLATFORM = {
     "ximalaya_cookie": "",
 }
 
+# 酷我音乐爬虫配置（第一优先级）
+KUWO_MUSIC = {
+    "search_limit": 10,
+    "timeout": 15,
+    "min_duration": 30,
+    "max_duration": 600,
+}
+
 # QQ音乐爬虫配置
 QQ_MUSIC = {
     "search_limit": 30,
