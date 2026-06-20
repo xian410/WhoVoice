@@ -66,8 +66,8 @@ class KuwoMusicCrawler(BaseCrawler):
 
         for item in data.get("abslist", []):
             artist = item.get("ARTIST", "")
-            # 只收录精确匹配的歌曲（忽略混入的其他歌手结果）
-            if artist != keyword:
+            # 歌手名匹配：作品名包含关键词 或 完全匹配（兼容 G.E.M. 邓紫棋 等格式）
+            if artist != keyword and keyword not in artist:
                 continue
 
             music_id = item.get("MUSICRID", "")
