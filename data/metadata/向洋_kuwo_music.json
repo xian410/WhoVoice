@@ -1,0 +1,18 @@
+[
+  {
+    "title": "向洋 - 有没有",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_159965747",
+    "duration": 228,
+    "file_path": "data\\raw\\向洋\\kuwo_music\\000_向洋 - 有没有.wav",
+    "download_time": "2026-06-21T18:00:10.074200",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "向洋 - 口水旋律Vol.8",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_316770446",
+    "duration": 69,
+    "file_path": "data\\raw\\向洋\\kuwo_music\\001_向洋 - 口水旋律Vol.8.wav",
+    "download_time": "2026-06-21T18:00:13.010893",
+    "platform": "kuwo_music"
+  }
+]

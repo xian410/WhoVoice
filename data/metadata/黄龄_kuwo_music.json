@@ -1,0 +1,18 @@
+[
+  {
+    "title": "黄龄 - 琵琶行",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_343986036",
+    "duration": 363,
+    "file_path": "data\\raw\\黄龄\\kuwo_music\\000_黄龄 - 琵琶行.wav",
+    "download_time": "2026-06-21T13:06:55.943097",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "黄龄 - 锁",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_551249297",
+    "duration": 197,
+    "file_path": "data\\raw\\黄龄\\kuwo_music\\001_黄龄 - 锁.wav",
+    "download_time": "2026-06-21T13:07:00.900630",
+    "platform": "kuwo_music"
+  }
+]

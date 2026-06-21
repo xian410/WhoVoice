@@ -1,0 +1,18 @@
+[
+  {
+    "title": "庞龙 - 杯水情歌",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_189085891",
+    "duration": 353,
+    "file_path": "data\\raw\\庞龙\\kuwo_music\\000_庞龙 - 杯水情歌.wav",
+    "download_time": "2026-06-21T13:13:33.947360",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "庞龙 - 幸福的两口子",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_23543888",
+    "duration": 221,
+    "file_path": "data\\raw\\庞龙\\kuwo_music\\001_庞龙 - 幸福的两口子.wav",
+    "download_time": "2026-06-21T13:13:36.554779",
+    "platform": "kuwo_music"
+  }
+]

@@ -54,5 +54,21 @@
     "file_path": "data\\raw\\郑钧\\kuwo_music\\002_郑钧 - 灰姑娘.wav",
     "download_time": "2026-06-21T11:42:50.481868",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "郑钧 - 灰姑娘",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_334443446",
+    "duration": 317,
+    "file_path": "data\\raw\\郑钧\\kuwo_music\\000_郑钧 - 灰姑娘.wav",
+    "download_time": "2026-06-21T12:19:56.493543",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "郑钧 - 流星",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_51446669",
+    "duration": 269,
+    "file_path": "data\\raw\\郑钧\\kuwo_music\\001_郑钧 - 流星.wav",
+    "download_time": "2026-06-21T12:19:59.333781",
+    "platform": "kuwo_music"
   }
 ]

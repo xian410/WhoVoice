@@ -70,5 +70,29 @@
     "file_path": "data\\raw\\孙楠\\kuwo_music\\000_孙楠 - 小哪吒-《哪吒传奇》片头曲_1.wav",
     "download_time": "2026-06-21T11:57:44.819363",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "孙楠 - 小哪吒-《哪吒传奇》片头曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_204571221",
+    "duration": 89,
+    "file_path": "data\\raw\\孙楠\\kuwo_music\\000_孙楠 - 小哪吒-《哪吒传奇》片头曲.wav",
+    "download_time": "2026-06-21T12:13:07.769652",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "孙楠 - 红旗飘飘",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_51463948",
+    "duration": 255,
+    "file_path": "data\\raw\\孙楠\\kuwo_music\\001_孙楠 - 红旗飘飘.wav",
+    "download_time": "2026-06-21T12:13:10.420123",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "孙楠 - 小哪吒-《哪吒传奇》片头曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_204571221",
+    "duration": 89,
+    "file_path": "data\\raw\\孙楠\\kuwo_music\\000_孙楠 - 小哪吒-《哪吒传奇》片头曲_1.wav",
+    "download_time": "2026-06-21T19:58:19.427545",
+    "platform": "kuwo_music"
   }
 ]

@@ -70,5 +70,21 @@
     "file_path": "data\\raw\\许巍\\kuwo_music\\002_许巍 - 像风一样自由.wav",
     "download_time": "2026-06-21T11:30:48.279353",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "许巍 - 蓝莲花",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_280734753",
+    "duration": 264,
+    "file_path": "data\\raw\\许巍\\kuwo_music\\000_许巍 - 蓝莲花.wav",
+    "download_time": "2026-06-21T12:21:16.222522",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "许巍 - 曾经的你",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_140666120",
+    "duration": 257,
+    "file_path": "data\\raw\\许巍\\kuwo_music\\001_许巍 - 曾经的你.wav",
+    "download_time": "2026-06-21T12:21:30.246630",
+    "platform": "kuwo_music"
   }
 ]

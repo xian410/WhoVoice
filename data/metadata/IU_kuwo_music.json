@@ -1,0 +1,18 @@
+[
+  {
+    "title": "IU - 深夜自白",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_599077670",
+    "duration": 228,
+    "file_path": "data\\raw\\IU\\kuwo_music\\000_IU - 深夜自白.wav",
+    "download_time": "2026-06-21T18:27:39.393933",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "IU - 雨夜念旧情",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_599075961",
+    "duration": 238,
+    "file_path": "data\\raw\\IU\\kuwo_music\\001_IU - 雨夜念旧情.wav",
+    "download_time": "2026-06-21T18:27:43.112100",
+    "platform": "kuwo_music"
+  }
+]

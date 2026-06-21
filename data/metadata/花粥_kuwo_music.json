@@ -1,0 +1,18 @@
+[
+  {
+    "title": "花粥 - 归去来兮",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_179781166",
+    "duration": 206,
+    "file_path": "data\\raw\\花粥\\kuwo_music\\000_花粥 - 归去来兮.wav",
+    "download_time": "2026-06-21T13:33:49.223139",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "花粥 - 遥不可及的你",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_28579571",
+    "duration": 150,
+    "file_path": "data\\raw\\花粥\\kuwo_music\\001_花粥 - 遥不可及的你.wav",
+    "download_time": "2026-06-21T13:33:51.770037",
+    "platform": "kuwo_music"
+  }
+]

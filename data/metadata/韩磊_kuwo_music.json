@@ -70,5 +70,21 @@
     "file_path": "data\\raw\\韩磊\\kuwo_music\\002_韩磊 - 向天再借五百年-《康熙王朝》电视剧主题曲.wav",
     "download_time": "2026-06-21T11:32:12.819742",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "韩磊 - 最后的倾诉",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_1098846",
+    "duration": 126,
+    "file_path": "data\\raw\\韩磊\\kuwo_music\\000_韩磊 - 最后的倾诉.wav",
+    "download_time": "2026-06-21T12:25:12.560789",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "韩磊 - 在此刻-《少帅》电视剧主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_22813732",
+    "duration": 229,
+    "file_path": "data\\raw\\韩磊\\kuwo_music\\001_韩磊 - 在此刻-《少帅》电视剧主题曲.wav",
+    "download_time": "2026-06-21T12:25:15.280119",
+    "platform": "kuwo_music"
   }
 ]

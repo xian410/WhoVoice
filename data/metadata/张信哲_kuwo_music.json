@@ -1,0 +1,18 @@
+[
+  {
+    "title": "张信哲 - 白月光",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_22798874",
+    "duration": 267,
+    "file_path": "data\\raw\\张信哲\\kuwo_music\\000_张信哲 - 白月光.wav",
+    "download_time": "2026-06-21T12:47:47.580954",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "张信哲 - 过火",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_489377645",
+    "duration": 153,
+    "file_path": "data\\raw\\张信哲\\kuwo_music\\001_张信哲 - 过火.wav",
+    "download_time": "2026-06-21T12:48:03.483462",
+    "platform": "kuwo_music"
+  }
+]

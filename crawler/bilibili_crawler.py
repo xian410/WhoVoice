@@ -1,6 +1,8 @@
 import subprocess
 import json
+import shutil
 import sys
+import os
 import requests
 import re
 from pathlib import Path
@@ -247,6 +249,11 @@ class BilibiliCrawler(BaseCrawler):
                 "--match-filter", f"duration < {max_sec}",  # 下载时过滤时长
             ]
 
+            # 指定 ffmpeg 路径（需要 ffmpeg + ffprobe 同时存在）
+            ffmpeg_dir = self._find_ffmpeg_dir()
+            if ffmpeg_dir:
+                cmd += ["--ffmpeg-location", ffmpeg_dir]
+
             # 如果有Cookie文件，带上它（B站下载需要Cookie）
             if self.cookies and Path(self.cookies_file).exists():
                 cmd += ["--cookies", self.cookies_file]
@@ -270,6 +277,27 @@ class BilibiliCrawler(BaseCrawler):
             # 清理可能产生的部分文件
             self._cleanup_failed(save_path)
             return False
+
+    @staticmethod
+    def _find_ffmpeg_dir() -> str:
+        """
+        查找同时包含 ffmpeg 和 ffprobe 的目录
+        优先级: WinGet Links > PATH > WinGet 完整路径
+        """
+        candidates = []
+        # 1. Windows WinGet Links（同时包含 ffmpeg + ffprobe 的软链接）
+        if os.name == "nt":
+            winget_links = Path(os.path.expanduser("~")) / "AppData" / "Local" / "Microsoft" / "WinGet" / "Links"
+            if (winget_links / "ffmpeg.exe").exists() and (winget_links / "ffprobe.exe").exists():
+                candidates.insert(0, str(winget_links))
+        # 2. shutil.which 找到的路径（需要同时有 ffprobe）
+        ffmpeg_bin = shutil.which("ffmpeg")
+        if ffmpeg_bin:
+            parent = str(Path(ffmpeg_bin).parent)
+            ffprobe_sibling = Path(ffmpeg_bin).parent / ("ffprobe.exe" if os.name == "nt" else "ffprobe")
+            if ffprobe_sibling.exists() and parent not in candidates:
+                candidates.append(parent)
+        return candidates[0] if candidates else ""
 
     def _cleanup_failed(self, save_path: str):
         """清理下载失败产生的残留文件"""

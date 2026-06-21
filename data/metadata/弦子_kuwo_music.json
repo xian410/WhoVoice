@@ -1,0 +1,18 @@
+[
+  {
+    "title": "弦子 - 喜欢",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_40486079",
+    "duration": 274,
+    "file_path": "data\\raw\\弦子\\kuwo_music\\000_弦子 - 喜欢.wav",
+    "download_time": "2026-06-21T16:51:59.225817",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "弦子 - 风",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_587690747",
+    "duration": 222,
+    "file_path": "data\\raw\\弦子\\kuwo_music\\001_弦子 - 风.wav",
+    "download_time": "2026-06-21T16:52:01.596051",
+    "platform": "kuwo_music"
+  }
+]

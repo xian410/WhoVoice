@@ -1,0 +1,18 @@
+[
+  {
+    "title": "李代沫 - 我的歌声里",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_289503740",
+    "duration": 209,
+    "file_path": "data\\raw\\李代沫\\kuwo_music\\000_李代沫 - 我的歌声里.wav",
+    "download_time": "2026-06-21T13:43:24.009909",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "李代沫 - 如果没有你",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_257308869",
+    "duration": 134,
+    "file_path": "data\\raw\\李代沫\\kuwo_music\\001_李代沫 - 如果没有你.wav",
+    "download_time": "2026-06-21T13:43:29.616833",
+    "platform": "kuwo_music"
+  }
+]

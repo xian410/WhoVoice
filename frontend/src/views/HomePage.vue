@@ -33,6 +33,7 @@
       <ResultCard
         v-if="voiceStore.matchResults.length && !voiceStore.isMatching"
         :results="voiceStore.matchResults"
+        :poster-data="voiceStore.posterData"
         @error="handlePreviewError"
       />
 

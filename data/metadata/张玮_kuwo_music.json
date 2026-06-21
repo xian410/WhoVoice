@@ -1,0 +1,18 @@
+[
+  {
+    "title": "张玮 - 悟空传",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_71209120",
+    "duration": 250,
+    "file_path": "data\\raw\\张玮\\kuwo_music\\000_张玮 - 悟空传.wav",
+    "download_time": "2026-06-21T14:21:59.287483",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "张玮 - 蝶",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_563753651",
+    "duration": 249,
+    "file_path": "data\\raw\\张玮\\kuwo_music\\001_张玮 - 蝶.wav",
+    "download_time": "2026-06-21T14:22:02.501567",
+    "platform": "kuwo_music"
+  }
+]

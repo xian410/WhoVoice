@@ -22,5 +22,21 @@
     "file_path": "data\\raw\\毛宁\\kuwo_music\\002_毛宁 - 涛声依旧.wav",
     "download_time": "2026-06-21T11:27:32.567656",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "毛宁 - 涛声依旧",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_177644705",
+    "duration": 275,
+    "file_path": "data\\raw\\毛宁\\kuwo_music\\000_毛宁 - 涛声依旧.wav",
+    "download_time": "2026-06-21T12:44:19.508130",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "毛宁 - 大中国",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_469891932",
+    "duration": 248,
+    "file_path": "data\\raw\\毛宁\\kuwo_music\\001_毛宁 - 大中国.wav",
+    "download_time": "2026-06-21T12:44:35.211182",
+    "platform": "kuwo_music"
   }
 ]

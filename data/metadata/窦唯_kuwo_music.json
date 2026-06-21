@@ -54,5 +54,21 @@
     "file_path": "data\\raw\\窦唯\\kuwo_music\\002_窦唯 - 高级动物.wav",
     "download_time": "2026-06-21T11:31:44.292224",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "窦唯 - 怕你为自己流泪",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_22814868",
+    "duration": 296,
+    "file_path": "data\\raw\\窦唯\\kuwo_music\\000_窦唯 - 怕你为自己流泪.wav",
+    "download_time": "2026-06-21T12:23:12.999650",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "窦唯 - 别来纠缠我",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_171463140",
+    "duration": 290,
+    "file_path": "data\\raw\\窦唯\\kuwo_music\\001_窦唯 - 别来纠缠我.wav",
+    "download_time": "2026-06-21T12:23:20.446572",
+    "platform": "kuwo_music"
   }
 ]

@@ -70,5 +70,21 @@
     "file_path": "data\\raw\\崔健\\kuwo_music\\002_崔健 - 花房姑娘-《老炮儿》电影片尾曲.wav",
     "download_time": "2026-06-21T11:30:56.730482",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "崔健 - 新长征路上的摇滚-《九五2班》网络电影插曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_224902",
+    "duration": 281,
+    "file_path": "data\\raw\\崔健\\kuwo_music\\000_崔健 - 新长征路上的摇滚-《九五2班》网络电影插曲.wav",
+    "download_time": "2026-06-21T12:22:14.865649",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "崔健 - 假行僧",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_224891",
+    "duration": 297,
+    "file_path": "data\\raw\\崔健\\kuwo_music\\001_崔健 - 假行僧.wav",
+    "download_time": "2026-06-21T12:22:17.641812",
+    "platform": "kuwo_music"
   }
 ]

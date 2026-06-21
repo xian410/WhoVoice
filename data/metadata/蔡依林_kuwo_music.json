@@ -1,0 +1,18 @@
+[
+  {
+    "title": "蔡依林 - 日不落",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_404760",
+    "duration": 226,
+    "file_path": "data\\raw\\蔡依林\\kuwo_music\\000_蔡依林 - 日不落.wav",
+    "download_time": "2026-06-21T16:37:46.204636",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "蔡依林 - 天空",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_622233",
+    "duration": 278,
+    "file_path": "data\\raw\\蔡依林\\kuwo_music\\001_蔡依林 - 天空.wav",
+    "download_time": "2026-06-21T16:38:22.483529",
+    "platform": "kuwo_music"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Yanni - 河西走廊之梦",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_382271794",
+    "duration": 305,
+    "file_path": "data\\raw\\Yanni\\kuwo_music\\000_Yanni - 河西走廊之梦.wav",
+    "download_time": "2026-06-21T18:32:45.936860",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "Yanni - 和兰花在一起",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_223234",
+    "duration": 306,
+    "file_path": "data\\raw\\Yanni\\kuwo_music\\001_Yanni - 和兰花在一起.wav",
+    "download_time": "2026-06-21T18:32:48.723489",
+    "platform": "kuwo_music"
+  }
+]

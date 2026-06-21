@@ -78,5 +78,29 @@
     "file_path": "data\\raw\\刀郎\\kuwo_music\\000_刀郎 - 我的祖国.wav",
     "download_time": "2026-06-21T12:00:05.870660",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "刀郎 - 我的祖国",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_376964",
+    "duration": 340,
+    "file_path": "data\\raw\\刀郎\\kuwo_music\\000_刀郎 - 我的祖国.wav",
+    "download_time": "2026-06-21T12:15:58.067553",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "刀郎 - 我的祖国",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_376964",
+    "duration": 340,
+    "file_path": "data\\raw\\刀郎\\kuwo_music\\000_刀郎 - 我的祖国_1.wav",
+    "download_time": "2026-06-21T19:18:00.172380",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "刀郎 - 我的祖国",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_376964",
+    "duration": 340,
+    "file_path": "data\\raw\\刀郎\\kuwo_music\\000_刀郎 - 我的祖国_2.wav",
+    "download_time": "2026-06-21T19:24:29.570610",
+    "platform": "kuwo_music"
   }
 ]

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "王宏恩 - 月光",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_51509889",
+    "duration": 335,
+    "file_path": "data\\raw\\王宏恩\\kuwo_music\\000_王宏恩 - 月光.wav",
+    "download_time": "2026-06-21T17:34:37.641669",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "王宏恩 - 不要担心我",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_152830684",
+    "duration": 328,
+    "file_path": "data\\raw\\王宏恩\\kuwo_music\\001_王宏恩 - 不要担心我.wav",
+    "download_time": "2026-06-21T17:34:48.993856",
+    "platform": "kuwo_music"
+  }
+]

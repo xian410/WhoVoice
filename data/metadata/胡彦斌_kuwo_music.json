@@ -38,5 +38,21 @@
     "file_path": "data\\raw\\胡彦斌\\kuwo_music\\000_胡彦斌 - 心太软.wav",
     "download_time": "2026-06-21T11:46:20.789332",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "胡彦斌 - 心太软",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_601764398",
+    "duration": 297,
+    "file_path": "data\\raw\\胡彦斌\\kuwo_music\\000_胡彦斌 - 心太软.wav",
+    "download_time": "2026-06-21T12:32:14.132294",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "胡彦斌 - 为你我受冷风吹",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_3965811",
+    "duration": 279,
+    "file_path": "data\\raw\\胡彦斌\\kuwo_music\\001_胡彦斌 - 为你我受冷风吹.wav",
+    "download_time": "2026-06-21T12:32:23.592337",
+    "platform": "kuwo_music"
   }
 ]

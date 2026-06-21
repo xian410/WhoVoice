@@ -1,0 +1,18 @@
+[
+  {
+    "title": "石头 - 乡念",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_598752695",
+    "duration": 268,
+    "file_path": "data\\raw\\石头\\kuwo_music\\000_石头 - 乡念.wav",
+    "download_time": "2026-06-21T14:24:41.758317",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "石头 - 雨花石（独唱版）",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_12903601",
+    "duration": 335,
+    "file_path": "data\\raw\\石头\\kuwo_music\\001_石头 - 雨花石（独唱版）.wav",
+    "download_time": "2026-06-21T14:24:44.664710",
+    "platform": "kuwo_music"
+  }
+]

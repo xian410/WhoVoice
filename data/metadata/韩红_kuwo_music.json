@@ -190,5 +190,29 @@
     "file_path": "data\\raw\\韩红\\kuwo_music\\000_韩红 - 珊瑚颂_1.wav",
     "download_time": "2026-06-21T11:57:01.528722",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "韩红 - 珊瑚颂",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_931208",
+    "duration": 223,
+    "file_path": "data\\raw\\韩红\\kuwo_music\\000_韩红 - 珊瑚颂.wav",
+    "download_time": "2026-06-21T12:12:12.990293",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "韩红 - 天路",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_45800355",
+    "duration": 262,
+    "file_path": "data\\raw\\韩红\\kuwo_music\\001_韩红 - 天路.wav",
+    "download_time": "2026-06-21T12:12:20.127746",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "韩红 - 珊瑚颂",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_931208",
+    "duration": 223,
+    "file_path": "data\\raw\\韩红\\kuwo_music\\000_韩红 - 珊瑚颂_1.wav",
+    "download_time": "2026-06-21T19:57:35.457847",
+    "platform": "kuwo_music"
   }
 ]

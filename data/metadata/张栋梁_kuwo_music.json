@@ -1,0 +1,18 @@
+[
+  {
+    "title": "张栋梁 - 孤单北半球",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_343747343",
+    "duration": 369,
+    "file_path": "data\\raw\\张栋梁\\kuwo_music\\000_张栋梁 - 孤单北半球.wav",
+    "download_time": "2026-06-21T18:01:03.115881",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "张栋梁 - 失踪",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_265292859",
+    "duration": 219,
+    "file_path": "data\\raw\\张栋梁\\kuwo_music\\001_张栋梁 - 失踪.wav",
+    "download_time": "2026-06-21T18:01:10.265324",
+    "platform": "kuwo_music"
+  }
+]

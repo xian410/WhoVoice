@@ -1,0 +1,18 @@
+[
+  {
+    "title": "叶蓓 - 白桦林",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_28362899",
+    "duration": 232,
+    "file_path": "data\\raw\\叶蓓\\kuwo_music\\000_叶蓓 - 白桦林.wav",
+    "download_time": "2026-06-21T12:52:19.258312",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "叶蓓 - 白桦树",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_22800770",
+    "duration": 232,
+    "file_path": "data\\raw\\叶蓓\\kuwo_music\\001_叶蓓 - 白桦树.wav",
+    "download_time": "2026-06-21T12:52:22.960104",
+    "platform": "kuwo_music"
+  }
+]

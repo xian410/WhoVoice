@@ -1,0 +1,18 @@
+[
+  {
+    "title": "李谷一 - 我和我的祖国",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_77840196",
+    "duration": 238,
+    "file_path": "data\\raw\\李谷一\\kuwo_music\\000_李谷一 - 我和我的祖国.wav",
+    "download_time": "2026-06-21T13:44:08.042928",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "李谷一 - 浏阳河",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_77839718",
+    "duration": 133,
+    "file_path": "data\\raw\\李谷一\\kuwo_music\\001_李谷一 - 浏阳河.wav",
+    "download_time": "2026-06-21T13:44:10.628921",
+    "platform": "kuwo_music"
+  }
+]

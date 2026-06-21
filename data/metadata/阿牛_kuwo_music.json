@@ -1,0 +1,18 @@
+[
+  {
+    "title": "阿牛 - 爱我久久",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_69506252",
+    "duration": 211,
+    "file_path": "data\\raw\\阿牛\\kuwo_music\\000_阿牛 - 爱我久久.wav",
+    "download_time": "2026-06-21T18:05:35.511893",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "阿牛 - 桃花朵朵开",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_185903690",
+    "duration": 210,
+    "file_path": "data\\raw\\阿牛\\kuwo_music\\001_阿牛 - 桃花朵朵开.wav",
+    "download_time": "2026-06-21T18:05:38.331471",
+    "platform": "kuwo_music"
+  }
+]

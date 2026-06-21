@@ -22,5 +22,21 @@
     "file_path": "data\\raw\\华晨宇\\kuwo_music\\002_华晨宇 - 好想我回来啊.wav",
     "download_time": "2026-06-21T11:48:37.734588",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "华晨宇 - 好想我回来啊",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_262965040",
+    "duration": 289,
+    "file_path": "data\\raw\\华晨宇\\kuwo_music\\000_华晨宇 - 好想我回来啊.wav",
+    "download_time": "2026-06-21T12:38:49.683312",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "华晨宇 - 烟火里的尘埃",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_450491257",
+    "duration": 123,
+    "file_path": "data\\raw\\华晨宇\\kuwo_music\\001_华晨宇 - 烟火里的尘埃.wav",
+    "download_time": "2026-06-21T12:38:55.219105",
+    "platform": "kuwo_music"
   }
 ]

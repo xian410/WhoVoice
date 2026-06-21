@@ -1,0 +1,18 @@
+[
+  {
+    "title": "张智成 - 可爱可不爱",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_490208",
+    "duration": 180,
+    "file_path": "data\\raw\\张智成\\kuwo_music\\000_张智成 - 可爱可不爱.wav",
+    "download_time": "2026-06-21T17:46:15.664376",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "张智成 - 金玉良言",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_1100262",
+    "duration": 272,
+    "file_path": "data\\raw\\张智成\\kuwo_music\\001_张智成 - 金玉良言.wav",
+    "download_time": "2026-06-21T17:46:27.654278",
+    "platform": "kuwo_music"
+  }
+]

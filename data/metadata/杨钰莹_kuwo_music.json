@@ -6,5 +6,21 @@
     "file_path": "data\\raw\\杨钰莹\\kuwo_music\\000_杨钰莹 - 我在春天等你.wav",
     "download_time": "2026-06-21T11:27:54.632077",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "杨钰莹 - 茶山情歌",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_225993023",
+    "duration": 236,
+    "file_path": "data\\raw\\杨钰莹\\kuwo_music\\000_杨钰莹 - 茶山情歌.wav",
+    "download_time": "2026-06-21T12:45:26.790606",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "杨钰莹 - 风含情，水含笑",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_38945670",
+    "duration": 257,
+    "file_path": "data\\raw\\杨钰莹\\kuwo_music\\001_杨钰莹 - 风含情，水含笑.wav",
+    "download_time": "2026-06-21T12:45:29.689453",
+    "platform": "kuwo_music"
   }
 ]

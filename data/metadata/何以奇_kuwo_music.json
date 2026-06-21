@@ -1,0 +1,18 @@
+[
+  {
+    "title": "何以奇 - 反正",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_129534",
+    "duration": 262,
+    "file_path": "data\\raw\\何以奇\\kuwo_music\\000_何以奇 - 反正.wav",
+    "download_time": "2026-06-21T17:47:16.929315",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "何以奇 - 让你飞",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_129540",
+    "duration": 322,
+    "file_path": "data\\raw\\何以奇\\kuwo_music\\001_何以奇 - 让你飞.wav",
+    "download_time": "2026-06-21T17:47:20.849300",
+    "platform": "kuwo_music"
+  }
+]

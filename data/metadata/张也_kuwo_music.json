@@ -1,0 +1,18 @@
+[
+  {
+    "title": "张也 - 走进新时代",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_469795448",
+    "duration": 250,
+    "file_path": "data\\raw\\张也\\kuwo_music\\000_张也 - 走进新时代.wav",
+    "download_time": "2026-06-21T14:15:55.894073",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "张也 - 红梅赞",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_2764116",
+    "duration": 205,
+    "file_path": "data\\raw\\张也\\kuwo_music\\001_张也 - 红梅赞.wav",
+    "download_time": "2026-06-21T14:15:58.483607",
+    "platform": "kuwo_music"
+  }
+]

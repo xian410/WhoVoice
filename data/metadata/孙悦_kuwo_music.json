@@ -14,5 +14,21 @@
     "file_path": "data\\raw\\孙悦\\kuwo_music\\001_孙悦__u0026邰正宵 - 好人好梦.wav",
     "download_time": "2026-06-21T11:26:03.513965",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "孙悦 - 大家一起来",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_291434",
+    "duration": 221,
+    "file_path": "data\\raw\\孙悦\\kuwo_music\\000_孙悦 - 大家一起来.wav",
+    "download_time": "2026-06-21T12:43:16.890517",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "孙悦 - 祝你平安",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_239212662",
+    "duration": 250,
+    "file_path": "data\\raw\\孙悦\\kuwo_music\\001_孙悦 - 祝你平安.wav",
+    "download_time": "2026-06-21T12:43:19.749326",
+    "platform": "kuwo_music"
   }
 ]

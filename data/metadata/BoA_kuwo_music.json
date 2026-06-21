@@ -1,0 +1,18 @@
+[
+  {
+    "title": "BoA - 永遠",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_485353",
+    "duration": 274,
+    "file_path": "data\\raw\\BoA\\kuwo_music\\000_BoA - 永遠.wav",
+    "download_time": "2026-06-21T18:28:33.098745",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "BoA - 奇蹟",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_567975",
+    "duration": 261,
+    "file_path": "data\\raw\\BoA\\kuwo_music\\001_BoA - 奇蹟.wav",
+    "download_time": "2026-06-21T18:28:40.451748",
+    "platform": "kuwo_music"
+  }
+]

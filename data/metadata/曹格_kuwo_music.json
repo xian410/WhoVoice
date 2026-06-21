@@ -1,0 +1,18 @@
+[
+  {
+    "title": "曹格 - 梁山伯与茱丽叶",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_251032",
+    "duration": 251,
+    "file_path": "data\\raw\\曹格\\kuwo_music\\000_曹格 - 梁山伯与茱丽叶.wav",
+    "download_time": "2026-06-21T16:17:31.801211",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "曹格 - 背叛",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_51574747",
+    "duration": 321,
+    "file_path": "data\\raw\\曹格\\kuwo_music\\001_曹格 - 背叛.wav",
+    "download_time": "2026-06-21T16:17:53.110351",
+    "platform": "kuwo_music"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "祁隆 - 秋恋",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_217971295",
+    "duration": 261,
+    "file_path": "data\\raw\\祁隆\\kuwo_music\\000_祁隆 - 秋恋.wav",
+    "download_time": "2026-06-21T14:10:21.355105",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "祁隆 - 如果有下辈子",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_517101972",
+    "duration": 247,
+    "file_path": "data\\raw\\祁隆\\kuwo_music\\001_祁隆 - 如果有下辈子.wav",
+    "download_time": "2026-06-21T14:10:37.526456",
+    "platform": "kuwo_music"
+  }
+]

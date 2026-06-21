@@ -1,0 +1,18 @@
+[
+  {
+    "title": "JS - 杀破狼",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_88136638",
+    "duration": 281,
+    "file_path": "data\\raw\\JS\\kuwo_music\\000_JS - 杀破狼.wav",
+    "download_time": "2026-06-21T17:44:43.678539",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "JS - 相逢在梦中",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_28148438",
+    "duration": 252,
+    "file_path": "data\\raw\\JS\\kuwo_music\\001_JS - 相逢在梦中.wav",
+    "download_time": "2026-06-21T17:44:47.458211",
+    "platform": "kuwo_music"
+  }
+]

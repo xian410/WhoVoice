@@ -22,5 +22,21 @@
     "file_path": "data\\raw\\满文军\\kuwo_music\\002_满文军 - 望乡.wav",
     "download_time": "2026-06-21T11:25:35.813238",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "满文军 - 望乡",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_150299",
+    "duration": 236,
+    "file_path": "data\\raw\\满文军\\kuwo_music\\000_满文军 - 望乡.wav",
+    "download_time": "2026-06-21T12:42:22.208500",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "满文军 - 懂你",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_61266524",
+    "duration": 324,
+    "file_path": "data\\raw\\满文军\\kuwo_music\\001_满文军 - 懂你.wav",
+    "download_time": "2026-06-21T12:42:25.063437",
+    "platform": "kuwo_music"
   }
 ]

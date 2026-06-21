@@ -1,0 +1,18 @@
+[
+  {
+    "title": "蕾哈娜 - Diamonds",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_290665885",
+    "duration": 228,
+    "file_path": "data\\raw\\蕾哈娜\\kuwo_music\\000_蕾哈娜 - Diamonds.wav",
+    "download_time": "2026-06-21T18:11:50.095539",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "蕾哈娜 - 开场",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_371848333",
+    "duration": 312,
+    "file_path": "data\\raw\\蕾哈娜\\kuwo_music\\001_蕾哈娜 - 开场.wav",
+    "download_time": "2026-06-21T18:11:54.157182",
+    "platform": "kuwo_music"
+  }
+]

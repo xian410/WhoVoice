@@ -30,5 +30,29 @@
     "file_path": "data\\raw\\吴亦凡\\bilibili\\001_Kris的Stronger than you.wav",
     "download_time": "2026-06-17T00:12:13.678677",
     "platform": "bilibili"
+  },
+  {
+    "title": "『下架歌曲』《Bad Girl》KRIS（附下载链接）",
+    "url": "https://www.bilibili.com/video/BV16k4y1N79b",
+    "duration": 200,
+    "file_path": "data\\raw\\吴亦凡\\bilibili\\000_『下架歌曲』《Bad Girl》KRIS（附下载链接）.wav",
+    "download_time": "2026-06-21T20:15:58.890875",
+    "platform": "bilibili"
+  },
+  {
+    "title": "『下架歌曲』《Like That》KRIS（附下载链接）",
+    "url": "https://www.bilibili.com/video/BV1N4421F7x6",
+    "duration": 229,
+    "file_path": "data\\raw\\吴亦凡\\bilibili\\001_『下架歌曲』《Like That》KRIS（附下载链接）.wav",
+    "download_time": "2026-06-21T20:16:24.308064",
+    "platform": "bilibili"
+  },
+  {
+    "title": "《B.M.》-Kris Wu",
+    "url": "https://www.bilibili.com/video/BV1FRYhzXEwJ",
+    "duration": 172,
+    "file_path": "data\\raw\\吴亦凡\\bilibili\\000_《B.M.》-Kris Wu.wav",
+    "download_time": "2026-06-21T20:16:49.819114",
+    "platform": "bilibili"
   }
 ]

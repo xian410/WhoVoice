@@ -1,0 +1,18 @@
+[
+  {
+    "title": "张含韵 - 相思遥",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_461537029",
+    "duration": 193,
+    "file_path": "data\\raw\\张含韵\\kuwo_music\\000_张含韵 - 相思遥.wav",
+    "download_time": "2026-06-21T14:06:44.524467",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "张含韵 - 冰雪奇缘",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_345428626",
+    "duration": 146,
+    "file_path": "data\\raw\\张含韵\\kuwo_music\\001_张含韵 - 冰雪奇缘.wav",
+    "download_time": "2026-06-21T14:07:02.952702",
+    "platform": "kuwo_music"
+  }
+]

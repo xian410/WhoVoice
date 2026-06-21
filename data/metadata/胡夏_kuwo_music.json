@@ -38,5 +38,21 @@
     "file_path": "data\\raw\\胡夏\\kuwo_music\\002_胡夏 - 渡尘寰-《仙逆》动画插曲.wav",
     "download_time": "2026-06-21T11:47:53.901633",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "胡夏 - 同桌的你-《同桌的你》电影片尾主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_4094359",
+    "duration": 270,
+    "file_path": "data\\raw\\胡夏\\kuwo_music\\000_胡夏 - 同桌的你-《同桌的你》电影片尾主题曲.wav",
+    "download_time": "2026-06-21T12:36:31.024521",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "胡夏 - 渡尘寰-《仙逆》动画插曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_564994145",
+    "duration": 284,
+    "file_path": "data\\raw\\胡夏\\kuwo_music\\001_胡夏 - 渡尘寰-《仙逆》动画插曲.wav",
+    "download_time": "2026-06-21T12:36:33.778753",
+    "platform": "kuwo_music"
   }
 ]

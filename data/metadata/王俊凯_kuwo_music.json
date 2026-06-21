@@ -1,0 +1,18 @@
+[
+  {
+    "title": "王俊凯 - 告白气球",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_15193067",
+    "duration": 94,
+    "file_path": "data\\raw\\王俊凯\\kuwo_music\\000_王俊凯 - 告白气球.wav",
+    "download_time": "2026-06-21T13:20:32.726451",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "王俊凯 - 晴天",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_468697796",
+    "duration": 118,
+    "file_path": "data\\raw\\王俊凯\\kuwo_music\\001_王俊凯 - 晴天.wav",
+    "download_time": "2026-06-21T13:20:37.503024",
+    "platform": "kuwo_music"
+  }
+]

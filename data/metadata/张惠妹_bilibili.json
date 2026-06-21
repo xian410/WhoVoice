@@ -14,5 +14,21 @@
     "file_path": "data/raw/张惠妹/bilibili/001_张惠妹-开门见山 (KTV版)(高清MV).wav",
     "download_time": "2026-05-31T01:09:06.040774",
     "platform": "bilibili"
+  },
+  {
+    "title": "【4K官方修复】张惠妹《我无所谓》官方MV",
+    "url": "https://www.bilibili.com/video/BV1zqLR68EA8",
+    "duration": 293,
+    "file_path": "data\\raw\\张惠妹\\bilibili\\000_【4K官方修复】张惠妹《我无所谓》官方MV.wav",
+    "download_time": "2026-06-21T19:16:28.953103",
+    "platform": "bilibili"
+  },
+  {
+    "title": "张惠妹-勇敢",
+    "url": "https://www.bilibili.com/video/BV1fN411d7qd",
+    "duration": 254,
+    "file_path": "data\\raw\\张惠妹\\bilibili\\001_张惠妹-勇敢.wav",
+    "download_time": "2026-06-21T19:16:54.365313",
+    "platform": "bilibili"
   }
 ]

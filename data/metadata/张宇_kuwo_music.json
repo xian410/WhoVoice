@@ -1,0 +1,18 @@
+[
+  {
+    "title": "张宇 - 雨一直下",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_61226",
+    "duration": 294,
+    "file_path": "data\\raw\\张宇\\kuwo_music\\000_张宇 - 雨一直下.wav",
+    "download_time": "2026-06-21T15:51:29.825835",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "张宇 - 月亮惹的祸",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_329415127",
+    "duration": 252,
+    "file_path": "data\\raw\\张宇\\kuwo_music\\001_张宇 - 月亮惹的祸.wav",
+    "download_time": "2026-06-21T15:51:48.389924",
+    "platform": "kuwo_music"
+  }
+]

@@ -22,5 +22,21 @@
     "file_path": "data\\raw\\毛不易\\kuwo_music\\002_毛不易 - 消愁.wav",
     "download_time": "2026-06-21T11:22:51.762253",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "毛不易 - 无问-《无问西东》电影宣传曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_40365425",
+    "duration": 258,
+    "file_path": "data\\raw\\毛不易\\kuwo_music\\000_毛不易 - 无问-《无问西东》电影宣传曲.wav",
+    "download_time": "2026-06-21T12:37:48.623584",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "毛不易 - 平凡的一天",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_56855301",
+    "duration": 281,
+    "file_path": "data\\raw\\毛不易\\kuwo_music\\001_毛不易 - 平凡的一天.wav",
+    "download_time": "2026-06-21T12:37:55.887640",
+    "platform": "kuwo_music"
   }
 ]

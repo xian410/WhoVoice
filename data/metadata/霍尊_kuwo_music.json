@@ -1,0 +1,18 @@
+[
+  {
+    "title": "霍尊 - 钉子",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_599127613",
+    "duration": 234,
+    "file_path": "data\\raw\\霍尊\\kuwo_music\\000_霍尊 - 钉子.wav",
+    "download_time": "2026-06-21T14:05:39.226283",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "霍尊 - 卷珠帘",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_51564671",
+    "duration": 272,
+    "file_path": "data\\raw\\霍尊\\kuwo_music\\001_霍尊 - 卷珠帘.wav",
+    "download_time": "2026-06-21T14:05:44.229873",
+    "platform": "kuwo_music"
+  }
+]

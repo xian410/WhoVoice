@@ -1,0 +1,18 @@
+[
+  {
+    "title": "侧田 - 情歌",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_4805214",
+    "duration": 300,
+    "file_path": "data\\raw\\侧田\\kuwo_music\\000_侧田 - 情歌.wav",
+    "download_time": "2026-06-21T15:01:03.519159",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "侧田 - Forget",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_567800633",
+    "duration": 132,
+    "file_path": "data\\raw\\侧田\\kuwo_music\\001_侧田 - Forget.wav",
+    "download_time": "2026-06-21T15:01:18.539905",
+    "platform": "kuwo_music"
+  }
+]

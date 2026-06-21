@@ -1,0 +1,18 @@
+[
+  {
+    "title": "张智霖 - 天梯",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_3142264",
+    "duration": 280,
+    "file_path": "data\\raw\\张智霖\\kuwo_music\\000_张智霖 - 天梯.wav",
+    "download_time": "2026-06-21T15:04:35.989124",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "张智霖 - 想你",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_1103398",
+    "duration": 325,
+    "file_path": "data\\raw\\张智霖\\kuwo_music\\001_张智霖 - 想你.wav",
+    "download_time": "2026-06-21T15:04:45.549975",
+    "platform": "kuwo_music"
+  }
+]

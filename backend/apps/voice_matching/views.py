@@ -23,6 +23,7 @@ os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
 os.environ.setdefault("OMP_NUM_THREADS", "1")
 
 from voice_recognition.model_loader import VoiceprintRecognizer
+from voice_recognition.audio_analyzer import analyze_audio, compute_star_mix, build_share_text
 from vector_database.config import FAISS, EMBEDDING_DIM
 
 import faiss
@@ -174,7 +175,28 @@ class VoiceMatchView(APIView):
                     results[0]["note"] = "❌ 声纹特征差异很大，不是同一个人"
                     results[0]["likely_match"] = False
 
-            return Response({"results": results})
+            # ── 生成声纹海报数据 ──
+            poster_data = None
+            try:
+                audio_analysis = analyze_audio(str(tmp_path))
+                star_mix = compute_star_mix(results)
+                share_text = build_share_text(star_mix, audio_analysis["fun_title"])
+                poster_data = {
+                    "radar": audio_analysis["radar"],
+                    "radar_labels": ["磁性", "甜美", "力量", "清澈", "独特"],
+                    "voice_tags": audio_analysis["voice_tags"],
+                    "fun_title": audio_analysis["fun_title"],
+                    "star_mix": star_mix,
+                    "share_text": share_text,
+                }
+            except Exception as e:
+                print(f"[VoiceMatch] 海报数据分析失败 (不影响匹配结果): {e}")
+
+            response_data = {"results": results}
+            if poster_data:
+                response_data["poster_data"] = poster_data
+
+            return Response(response_data)
 
         except Exception as e:
             print(f"[VoiceMatch] 匹配失败: {e}")

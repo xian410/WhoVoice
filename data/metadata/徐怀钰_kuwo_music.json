@@ -1,0 +1,18 @@
+[
+  {
+    "title": "徐怀钰 - 纷飞",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_14281290",
+    "duration": 70,
+    "file_path": "data\\raw\\徐怀钰\\kuwo_music\\000_徐怀钰 - 纷飞.wav",
+    "download_time": "2026-06-21T16:45:21.168149",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "徐怀钰 - 叮咚",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_296029604",
+    "duration": 84,
+    "file_path": "data\\raw\\徐怀钰\\kuwo_music\\001_徐怀钰 - 叮咚.wav",
+    "download_time": "2026-06-21T16:45:28.213878",
+    "platform": "kuwo_music"
+  }
+]

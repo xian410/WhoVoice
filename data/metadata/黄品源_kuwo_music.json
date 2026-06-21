@@ -1,0 +1,18 @@
+[
+  {
+    "title": "黄品源 - 小薇",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_145460",
+    "duration": 257,
+    "file_path": "data\\raw\\黄品源\\kuwo_music\\000_黄品源 - 小薇.wav",
+    "download_time": "2026-06-21T15:52:46.814215",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "黄品源 - 海浪",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_145458",
+    "duration": 280,
+    "file_path": "data\\raw\\黄品源\\kuwo_music\\001_黄品源 - 海浪.wav",
+    "download_time": "2026-06-21T15:52:50.294133",
+    "platform": "kuwo_music"
+  }
+]

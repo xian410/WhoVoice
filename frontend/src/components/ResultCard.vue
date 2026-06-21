@@ -74,22 +74,37 @@
       <p>🔶 10%~30% → 略微相似</p>
       <p>❌ &lt; 10% → 差异很大，不是同一个人</p>
     </div>
+
+    <!-- 声纹身份证海报 -->
+    <div v-if="posterData" class="poster-section">
+      <button class="poster-toggle-btn" @click="showPoster = !showPoster">
+        <span>🎫</span>
+        {{ showPoster ? '收起声纹身份证' : '生成声纹身份证' }}
+      </button>
+      <VoiceprintPoster v-if="showPoster" :poster-data="posterData" />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import VoiceprintPoster from "./VoiceprintPoster.vue";
 
 const props = defineProps({
   results: {
     type: Array,
     default: () => [],
   },
+  posterData: {
+    type: Object,
+    default: null,
+  },
 });
 
 const emit = defineEmits(["error"]);
 const router = useRouter();
+const showPoster = ref(false);
 
 const AVATAR_COLORS = [
   "#1a1a2e", "#e94560", "#0f3460", "#16213e",
@@ -394,5 +409,34 @@ function onAudioError() {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* 声纹身份证海报区域 */
+.poster-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.poster-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a1a2e, #2d1b69);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.poster-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(26, 26, 46, 0.4);
 }
 </style>

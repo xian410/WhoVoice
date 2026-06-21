@@ -1,0 +1,18 @@
+[
+  {
+    "title": "小曲儿 - 关山月",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_599549836",
+    "duration": 145,
+    "file_path": "data\\raw\\小曲儿\\kuwo_music\\000_小曲儿 - 关山月.wav",
+    "download_time": "2026-06-21T14:13:52.812251",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "小曲儿 - 上邪",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_27781762",
+    "duration": 253,
+    "file_path": "data\\raw\\小曲儿\\kuwo_music\\001_小曲儿 - 上邪.wav",
+    "download_time": "2026-06-21T14:13:55.590299",
+    "platform": "kuwo_music"
+  }
+]

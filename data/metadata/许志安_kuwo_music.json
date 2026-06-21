@@ -1,0 +1,18 @@
+[
+  {
+    "title": "许志安 - 上弦月",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_120266",
+    "duration": 225,
+    "file_path": "data\\raw\\许志安\\kuwo_music\\000_许志安 - 上弦月.wav",
+    "download_time": "2026-06-21T14:53:24.334995",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "许志安 - 真心真意",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_274032",
+    "duration": 240,
+    "file_path": "data\\raw\\许志安\\kuwo_music\\001_许志安 - 真心真意.wav",
+    "download_time": "2026-06-21T14:53:29.151559",
+    "platform": "kuwo_music"
+  }
+]

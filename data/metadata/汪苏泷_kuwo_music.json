@@ -22,5 +22,21 @@
     "file_path": "data\\raw\\汪苏泷\\kuwo_music\\002_汪苏泷 - 像晴天像雨天-电视剧《难哄》心动曲.wav",
     "download_time": "2026-06-21T11:21:57.380976",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "汪苏泷 - 1424",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_557982906",
+    "duration": 232,
+    "file_path": "data\\raw\\汪苏泷\\kuwo_music\\000_汪苏泷 - 1424.wav",
+    "download_time": "2026-06-21T12:34:40.577765",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "汪苏泷 - 就要活得不懂艺术",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_557982903",
+    "duration": 185,
+    "file_path": "data\\raw\\汪苏泷\\kuwo_music\\001_汪苏泷 - 就要活得不懂艺术.wav",
+    "download_time": "2026-06-21T12:34:45.418096",
+    "platform": "kuwo_music"
   }
 ]

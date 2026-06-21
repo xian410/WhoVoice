@@ -1,0 +1,18 @@
+[
+  {
+    "title": "黎明 - 甜蜜蜜",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_596242911",
+    "duration": 148,
+    "file_path": "data\\raw\\黎明\\kuwo_music\\000_黎明 - 甜蜜蜜.wav",
+    "download_time": "2026-06-21T14:50:57.973496",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "黎明 - 堆积情感",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_149479",
+    "duration": 224,
+    "file_path": "data\\raw\\黎明\\kuwo_music\\001_黎明 - 堆积情感.wav",
+    "download_time": "2026-06-21T14:51:04.187692",
+    "platform": "kuwo_music"
+  }
+]

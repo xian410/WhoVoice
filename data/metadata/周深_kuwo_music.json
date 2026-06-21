@@ -46,5 +46,21 @@
     "file_path": "data\\raw\\周深\\kuwo_music\\002_周深 - 渡-《四渡》电影主题曲.wav",
     "download_time": "2026-06-21T11:49:00.927283",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "周深 - 浮生若梦-《云秀行》影视剧主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_599791020",
+    "duration": 254,
+    "file_path": "data\\raw\\周深\\kuwo_music\\000_周深 - 浮生若梦-《云秀行》影视剧主题曲.wav",
+    "download_time": "2026-06-21T12:39:32.078459",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "周深 - 赤子-《问心2》电视剧片尾主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_598760372",
+    "duration": 171,
+    "file_path": "data\\raw\\周深\\kuwo_music\\001_周深 - 赤子-《问心2》电视剧片尾主题曲.wav",
+    "download_time": "2026-06-21T12:39:34.600914",
+    "platform": "kuwo_music"
   }
 ]

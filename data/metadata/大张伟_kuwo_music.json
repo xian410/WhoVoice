@@ -22,5 +22,21 @@
     "file_path": "data\\raw\\大张伟\\kuwo_music\\002_大张伟 - 我怎么这么好看-《青春芒果节》主题曲.wav",
     "download_time": "2026-06-21T11:24:30.429427",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "大张伟 - 我怎么这么好看-《青春芒果节》主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_49169797",
+    "duration": 180,
+    "file_path": "data\\raw\\大张伟\\kuwo_music\\000_大张伟 - 我怎么这么好看-《青春芒果节》主题曲.wav",
+    "download_time": "2026-06-21T12:40:19.396020",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "大张伟 - 她似蜜",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_570435937",
+    "duration": 206,
+    "file_path": "data\\raw\\大张伟\\kuwo_music\\001_大张伟 - 她似蜜.wav",
+    "download_time": "2026-06-21T12:40:28.926102",
+    "platform": "kuwo_music"
   }
 ]

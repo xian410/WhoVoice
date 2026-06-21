@@ -1,0 +1,18 @@
+[
+  {
+    "title": "金池 - 夜夜夜夜",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_567140210",
+    "duration": 69,
+    "file_path": "data\\raw\\金池\\kuwo_music\\000_金池 - 夜夜夜夜.wav",
+    "download_time": "2026-06-21T14:22:48.535752",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "金池 - 好好过",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_6109420",
+    "duration": 241,
+    "file_path": "data\\raw\\金池\\kuwo_music\\001_金池 - 好好过.wav",
+    "download_time": "2026-06-21T14:22:55.874503",
+    "platform": "kuwo_music"
+  }
+]

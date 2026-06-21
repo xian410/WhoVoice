@@ -1,0 +1,18 @@
+[
+  {
+    "title": "文章 - 恋人",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_3424653",
+    "duration": 124,
+    "file_path": "data\\raw\\文章\\kuwo_music\\000_文章 - 恋人.wav",
+    "download_time": "2026-06-21T15:59:04.059683",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "文章 - 儿歌三百首-《西游·降魔篇》电影插曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_6842858",
+    "duration": 78,
+    "file_path": "data\\raw\\文章\\kuwo_music\\001_文章 - 儿歌三百首-《西游·降魔篇》电影插曲.wav",
+    "download_time": "2026-06-21T15:59:09.700335",
+    "platform": "kuwo_music"
+  }
+]

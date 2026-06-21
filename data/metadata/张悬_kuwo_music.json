@@ -1,0 +1,18 @@
+[
+  {
+    "title": "张悬 - 载我回家",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_351522980",
+    "duration": 221,
+    "file_path": "data\\raw\\张悬\\kuwo_music\\000_张悬 - 载我回家.wav",
+    "download_time": "2026-06-21T13:36:26.631617",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "张悬 - 张三的歌",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_3200949",
+    "duration": 167,
+    "file_path": "data\\raw\\张悬\\kuwo_music\\001_张悬 - 张三的歌.wav",
+    "download_time": "2026-06-21T13:36:32.665208",
+    "platform": "kuwo_music"
+  }
+]

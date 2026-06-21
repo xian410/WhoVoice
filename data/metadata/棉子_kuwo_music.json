@@ -1,0 +1,18 @@
+[
+  {
+    "title": "棉子 - 零度沙丘",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_596308419",
+    "duration": 225,
+    "file_path": "data\\raw\\棉子\\kuwo_music\\000_棉子 - 零度沙丘.wav",
+    "download_time": "2026-06-21T14:33:35.273589",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "棉子 - 空",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_278526740",
+    "duration": 41,
+    "file_path": "data\\raw\\棉子\\kuwo_music\\001_棉子 - 空.wav",
+    "download_time": "2026-06-21T14:33:39.997606",
+    "platform": "kuwo_music"
+  }
+]

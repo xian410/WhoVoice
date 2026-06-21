@@ -1,0 +1,18 @@
+[
+  {
+    "title": "平安 - 我爱你中国",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_23884178",
+    "duration": 153,
+    "file_path": "data\\raw\\平安\\kuwo_music\\000_平安 - 我爱你中国.wav",
+    "download_time": "2026-06-21T13:41:44.618557",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "平安 - 我爱你，中国",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_66047798",
+    "duration": 313,
+    "file_path": "data\\raw\\平安\\kuwo_music\\001_平安 - 我爱你，中国.wav",
+    "download_time": "2026-06-21T13:41:47.438917",
+    "platform": "kuwo_music"
+  }
+]

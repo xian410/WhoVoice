@@ -1,0 +1,18 @@
+[
+  {
+    "title": "祖海 - 为了谁",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_185495975",
+    "duration": 273,
+    "file_path": "data\\raw\\祖海\\kuwo_music\\000_祖海 - 为了谁.wav",
+    "download_time": "2026-06-21T14:05:11.923872",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "祖海 - 好运来",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_41378936",
+    "duration": 213,
+    "file_path": "data\\raw\\祖海\\kuwo_music\\001_祖海 - 好运来.wav",
+    "download_time": "2026-06-21T14:05:14.706798",
+    "platform": "kuwo_music"
+  }
+]

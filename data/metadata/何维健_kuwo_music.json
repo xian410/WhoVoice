@@ -1,0 +1,18 @@
+[
+  {
+    "title": "何维健 - 晴天",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_6713017",
+    "duration": 207,
+    "file_path": "data\\raw\\何维健\\kuwo_music\\000_何维健 - 晴天.wav",
+    "download_time": "2026-06-21T17:59:06.569585",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "何维健 - 不值得",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_6962534",
+    "duration": 294,
+    "file_path": "data\\raw\\何维健\\kuwo_music\\001_何维健 - 不值得.wav",
+    "download_time": "2026-06-21T17:59:15.537332",
+    "platform": "kuwo_music"
+  }
+]

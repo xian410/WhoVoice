@@ -62,5 +62,29 @@
     "file_path": "data\\raw\\朴树\\kuwo_music\\001_朴树 - 蓝莲花.wav",
     "download_time": "2026-06-21T12:01:58.393642",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "朴树 - 平凡之路",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_300458968",
+    "duration": 301,
+    "file_path": "data\\raw\\朴树\\kuwo_music\\000_朴树 - 平凡之路.wav",
+    "download_time": "2026-06-21T12:18:02.253183",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "朴树 - 蓝莲花",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_4226805",
+    "duration": 265,
+    "file_path": "data\\raw\\朴树\\kuwo_music\\001_朴树 - 蓝莲花.wav",
+    "download_time": "2026-06-21T12:18:13.675444",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "朴树 - 平凡之路",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_300458968",
+    "duration": 301,
+    "file_path": "data\\raw\\朴树\\kuwo_music\\000_朴树 - 平凡之路_1.wav",
+    "download_time": "2026-06-21T20:02:41.754966",
+    "platform": "kuwo_music"
   }
 ]

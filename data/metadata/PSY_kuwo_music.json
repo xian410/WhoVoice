@@ -1,0 +1,18 @@
+[
+  {
+    "title": "PSY - 江南Style",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_152802181",
+    "duration": 157,
+    "file_path": "data\\raw\\PSY\\kuwo_music\\000_PSY - 江南Style.wav",
+    "download_time": "2026-06-21T18:29:38.974095",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "PSY - 챔피언",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_22798059",
+    "duration": 195,
+    "file_path": "data\\raw\\PSY\\kuwo_music\\001_PSY - 챔피언.wav",
+    "download_time": "2026-06-21T18:29:44.011242",
+    "platform": "kuwo_music"
+  }
+]

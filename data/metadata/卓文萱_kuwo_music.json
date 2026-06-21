@@ -1,0 +1,18 @@
+[
+  {
+    "title": "卓文萱 - 洛丽塔",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_294536115",
+    "duration": 197,
+    "file_path": "data\\raw\\卓文萱\\kuwo_music\\000_卓文萱 - 洛丽塔.wav",
+    "download_time": "2026-06-21T16:52:39.187202",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "卓文萱 - 读心术",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_563374459",
+    "duration": 240,
+    "file_path": "data\\raw\\卓文萱\\kuwo_music\\001_卓文萱 - 读心术.wav",
+    "download_time": "2026-06-21T16:52:50.984689",
+    "platform": "kuwo_music"
+  }
+]

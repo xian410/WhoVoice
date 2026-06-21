@@ -1,0 +1,18 @@
+[
+  {
+    "title": "邓丽君 - 小城故事",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_597030288",
+    "duration": 65,
+    "file_path": "data\\raw\\邓丽君\\kuwo_music\\000_邓丽君 - 小城故事.wav",
+    "download_time": "2026-06-21T16:24:57.171795",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "邓丽君 - 在水一方",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_596243184",
+    "duration": 179,
+    "file_path": "data\\raw\\邓丽君\\kuwo_music\\001_邓丽君 - 在水一方.wav",
+    "download_time": "2026-06-21T16:25:08.562394",
+    "platform": "kuwo_music"
+  }
+]

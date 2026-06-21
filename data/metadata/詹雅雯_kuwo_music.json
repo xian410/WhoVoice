@@ -1,0 +1,18 @@
+[
+  {
+    "title": "詹雅雯 - 黄昏",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_349044490",
+    "duration": 239,
+    "file_path": "data\\raw\\詹雅雯\\kuwo_music\\000_詹雅雯 - 黄昏.wav",
+    "download_time": "2026-06-21T17:22:51.243724",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "詹雅雯 - 回乡",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_2770715",
+    "duration": 201,
+    "file_path": "data\\raw\\詹雅雯\\kuwo_music\\001_詹雅雯 - 回乡.wav",
+    "download_time": "2026-06-21T17:22:55.307218",
+    "platform": "kuwo_music"
+  }
+]
