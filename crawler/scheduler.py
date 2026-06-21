@@ -97,23 +97,30 @@ class CrawlerScheduler:
 
             for platform in self.platforms:
                 try:
-                    # 检查歌手总目录是否已有足够文件（酷我成功后跳过后续平台）
+                    # 检查现有有效文件数量
                     celeb_raw = Path(RAW_DATA_DIR) / celebrity
                     existing = len(list(celeb_raw.rglob("*.wav"))) if celeb_raw.exists() else 0
                     if existing >= max_videos_per_celebrity:
                         logger.info(f"    已有 {existing} 个文件，跳过 {platform.platform_name}")
                         continue
 
+                    # 搜索（用较大搜索量，保证过滤合唱/预览后有足够结果）
                     logger.info(f"  -> 在 {platform.platform_name} 上搜索...")
-                    results = platform.search(celebrity, max_results=max_videos_per_celebrity)
+                    results = platform.search(celebrity, max_results=20)
                     logger.info(f"     找到 {len(results)} 个资源")
 
-                    for i, item in enumerate(results[:max_videos_per_celebrity]):
+                    # 逐个下载直到凑满 max_videos_per_celebrity 首有效歌曲
+                    downloaded = 0
+                    for i, item in enumerate(results):
+                        need = max_videos_per_celebrity - existing
+                        if downloaded >= need:
+                            break
+
                         save_dir = platform.get_save_dir(celebrity)
-                        filename = platform.sanitize_filename(f"{i:03d}_{item['title']}")
+                        filename = platform.sanitize_filename(f"{downloaded:03d}_{item['title']}")
                         save_path = str(save_dir / f"{filename}.wav")
 
-                        logger.info(f"     下载 [{i+1}/{len(results[:max_videos_per_celebrity])}]: {item['title'][:40]}...")
+                        logger.info(f"     下载 [{downloaded+1}/{need}]: {item['title'][:40]}...")
                         success = platform.download(item["url"], save_path)
 
                         if success:
@@ -123,9 +130,11 @@ class CrawlerScheduler:
                                 "duration": item["duration"],
                                 "file_path": save_path,
                             })
-                            logger.info(f"     下载成功")
+                            downloaded += 1
+                            existing += 1
+                            logger.info(f"     下载成功 ({downloaded}/{need})")
 
-                        time.sleep(2)  # 请求间隔，避免触发反爬
+                        time.sleep(2)
 
                 except Exception as e:
                     logger.error(f"     [{platform.platform_name}] 爬取失败: {e}")

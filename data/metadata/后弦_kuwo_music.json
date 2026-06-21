@@ -22,5 +22,13 @@
     "file_path": "data\\raw\\后弦\\kuwo_music\\002_后弦 - 西厢.wav",
     "download_time": "2026-06-21T11:22:04.822173",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "后弦 - 娃娃脸",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_645824",
+    "duration": 212,
+    "file_path": "data\\raw\\后弦\\kuwo_music\\001_后弦 - 娃娃脸.wav",
+    "download_time": "2026-06-21T11:47:30.315780",
+    "platform": "kuwo_music"
   }
 ]
