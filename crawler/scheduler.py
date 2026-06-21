@@ -106,7 +106,7 @@ class CrawlerScheduler:
 
                     # 搜索（用较大搜索量，保证过滤合唱/预览后有足够结果）
                     logger.info(f"  -> 在 {platform.platform_name} 上搜索...")
-                    results = platform.search(celebrity, max_results=20)
+                    results = platform.search(celebrity, max_results=30)
                     logger.info(f"     找到 {len(results)} 个资源")
 
                     # 逐个下载直到凑满 max_videos_per_celebrity 首有效歌曲
