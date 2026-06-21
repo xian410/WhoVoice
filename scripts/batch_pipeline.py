@@ -100,7 +100,7 @@ def main():
 
     print("=" * 56)
     print("  WhoVoice 全量流水线 v2")
-    print("  酷我 > 酷狗 > B站 | 3首/人 | GPU加速")
+    print("  酷我音乐 | 3首/人 | GPU加速 | 保留原音频")
     print("=" * 56)
 
     total = len(CELEBRITY_LIST)

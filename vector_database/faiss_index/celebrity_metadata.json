@@ -1,0 +1,12 @@
+{
+  "celebrities": [
+    "刘欢"
+  ],
+  "embedding_dim": 192,
+  "num_celebrities": 1,
+  "model_type": "cam++",
+  "index_path": "vector_database/faiss_index/celebrity.index",
+  "name_to_id": {
+    "刘欢": 4890752900584056981
+  }
+}
