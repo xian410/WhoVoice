@@ -46,5 +46,29 @@
     "file_path": "data\\raw\\许巍\\kuwo_music\\002_许巍 - 像风一样自由.wav",
     "download_time": "2026-06-21T11:23:36.325467",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "许巍 - 曾经的你-《夏洛特烦恼》电影插曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_237910",
+    "duration": 261,
+    "file_path": "data\\raw\\许巍\\kuwo_music\\000_许巍 - 曾经的你-《夏洛特烦恼》电影插曲.wav",
+    "download_time": "2026-06-21T11:30:43.889830",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "许巍 - 蓝莲花",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_23542423",
+    "duration": 270,
+    "file_path": "data\\raw\\许巍\\kuwo_music\\001_许巍 - 蓝莲花.wav",
+    "download_time": "2026-06-21T11:30:46.091945",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "许巍 - 像风一样自由",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_125852",
+    "duration": 221,
+    "file_path": "data\\raw\\许巍\\kuwo_music\\002_许巍 - 像风一样自由.wav",
+    "download_time": "2026-06-21T11:30:48.279353",
+    "platform": "kuwo_music"
   }
 ]

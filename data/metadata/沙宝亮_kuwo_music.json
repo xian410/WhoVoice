@@ -46,5 +46,29 @@
     "file_path": "data\\raw\\沙宝亮\\kuwo_music\\002_沙宝亮 - 斑马斑马.wav",
     "download_time": "2026-06-21T11:25:29.336503",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "沙宝亮 - 暗香-《金粉世家》电视剧片头曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_1653957",
+    "duration": 281,
+    "file_path": "data\\raw\\沙宝亮\\kuwo_music\\000_沙宝亮 - 暗香-《金粉世家》电视剧片头曲.wav",
+    "download_time": "2026-06-21T11:32:15.424845",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "沙宝亮 - 暗香-电视剧《金粉世界》主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_70793821",
+    "duration": 277,
+    "file_path": "data\\raw\\沙宝亮\\kuwo_music\\001_沙宝亮 - 暗香-电视剧《金粉世界》主题曲.wav",
+    "download_time": "2026-06-21T11:32:17.639506",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "沙宝亮 - 斑马斑马",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_6560847",
+    "duration": 269,
+    "file_path": "data\\raw\\沙宝亮\\kuwo_music\\002_沙宝亮 - 斑马斑马.wav",
+    "download_time": "2026-06-21T11:32:19.851424",
+    "platform": "kuwo_music"
   }
 ]

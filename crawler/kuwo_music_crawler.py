@@ -138,6 +138,12 @@ class KuwoMusicCrawler(BaseCrawler):
             if os.path.exists(tmp_mp3):
                 os.remove(tmp_mp3)
 
+            # 校验时长：酷我常返回11秒预览片段
+            if not self._check_duration(save_path, min_sec=15):
+                os.remove(save_path)
+                print(f"[酷我音乐] 预览片段(不足15s)，跳过")
+                return False
+
             print(f"[酷我音乐] 下载成功: {save_path}")
             return True
 
@@ -172,6 +178,20 @@ class KuwoMusicCrawler(BaseCrawler):
 
         print(f"[酷我音乐] 所有格式均无法获取下载链接: {music_id}")
         return ""
+
+    @staticmethod
+    def _check_duration(wav_path: str, min_sec: int = 15) -> bool:
+        """用 ffprobe 检查 WAV 时长，过滤预览片段"""
+        import subprocess, json
+        ffprobe = r"C:\Users\17367\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg.Essentials_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-essentials_build\bin\ffprobe.exe"
+        try:
+            r = subprocess.run([ffprobe, "-v", "quiet", "-print_format", "json", "-show_streams", wav_path],
+                             capture_output=True, text=True, timeout=10)
+            d = json.loads(r.stdout)
+            dur = float(d.get("streams", [{}])[0].get("duration", 0))
+            return dur >= min_sec
+        except Exception:
+            return True  # 无法检查时放行
 
     @staticmethod
     def _is_collaboration(song_name: str) -> bool:

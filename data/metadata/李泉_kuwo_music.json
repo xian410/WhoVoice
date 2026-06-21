@@ -46,5 +46,29 @@
     "file_path": "data\\raw\\李泉\\kuwo_music\\002_李泉 - 走钢索的人.wav",
     "download_time": "2026-06-21T11:25:36.989190",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "李泉 - 听闻山上有路",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_591012752",
+    "duration": 213,
+    "file_path": "data\\raw\\李泉\\kuwo_music\\000_李泉 - 听闻山上有路.wav",
+    "download_time": "2026-06-21T11:32:22.808794",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "李泉 - 活着就要快乐",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_577560092",
+    "duration": 236,
+    "file_path": "data\\raw\\李泉\\kuwo_music\\001_李泉 - 活着就要快乐.wav",
+    "download_time": "2026-06-21T11:32:25.458835",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "李泉 - 走钢索的人",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_147786",
+    "duration": 288,
+    "file_path": "data\\raw\\李泉\\kuwo_music\\002_李泉 - 走钢索的人.wav",
+    "download_time": "2026-06-21T11:32:27.674157",
+    "platform": "kuwo_music"
   }
 ]
