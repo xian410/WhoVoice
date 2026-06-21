@@ -119,6 +119,12 @@ class CrawlerScheduler:
                         save_dir = platform.get_save_dir(celebrity)
                         filename = platform.sanitize_filename(f"{downloaded:03d}_{item['title']}")
                         save_path = str(save_dir / f"{filename}.wav")
+                        # 避免覆盖已有文件（旧版流水线残留的同名无效文件）
+                        counter = 0
+                        while os.path.exists(save_path):
+                            counter += 1
+                            filename = platform.sanitize_filename(f"{downloaded:03d}_{item['title']}_{counter}")
+                            save_path = str(save_dir / f"{filename}.wav")
 
                         logger.info(f"     下载 [{downloaded+1}/{need}]: {item['title'][:40]}...")
                         success = platform.download(item["url"], save_path)
