@@ -75,14 +75,11 @@ class CrawlerScheduler:
         self.platforms: List[BaseCrawler] = self._init_platforms()
 
     def _init_platforms(self) -> List[BaseCrawler]:
-        """初始化各平台爬虫（酷我音乐 > 酷狗音乐 > B站）"""
-        from crawler.config import BILIBILI, KUWO_MUSIC, KUGOU_MUSIC
+        """初始化爬虫（仅酷我音乐）"""
+        from crawler.config import KUWO_MUSIC
         from crawler.kuwo_music_crawler import KuwoMusicCrawler
-        from crawler.kugou_music_crawler import KugouMusicCrawler
         return [
-            KuwoMusicCrawler(KUWO_MUSIC),   # 第一选择：酷我音乐
-            KugouMusicCrawler(KUGOU_MUSIC),  # 第二选择：酷狗音乐
-            BilibiliCrawler(BILIBILI),       # 第三选择：B站
+            KuwoMusicCrawler(KUWO_MUSIC),
         ]
 
     def run(self, max_videos_per_celebrity: int = 2):

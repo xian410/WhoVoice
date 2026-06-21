@@ -49,8 +49,7 @@ def process_singer(celebrity, recognizer, builder, pbar):
     # 1. 爬取
     scheduler = CrawlerScheduler(celebrities=[celebrity])
     scheduler.run(max_videos_per_celebrity=MAX_VIDEOS_PER_CELEBRITY)
-    celeb_raw = RAW_DIR / celebrity
-    if not celeb_raw.exists() or len(list(celeb_raw.rglob("*"))) == 0:
+    if not (RAW_DIR / celebrity).exists() or len(list((RAW_DIR / celebrity).rglob("*"))) == 0:
         pbar.set_postfix_str("无资源")
         return
     # 2. 预处理
@@ -77,9 +76,7 @@ def process_singer(celebrity, recognizer, builder, pbar):
         avg_emb = np.mean(embeddings, axis=0).astype(np.float32)
         avg_emb = avg_emb / np.linalg.norm(avg_emb)
         builder.add_to_faiss(embeddings=avg_emb[np.newaxis, :], celeb_names=[celebrity])
-    # 4. 清理
-    if celeb_raw.exists():
-        shutil.rmtree(str(celeb_raw))
+    # 4. 清理（只删除预处理切片，保留原始音频）
     if proc_dir.exists():
         shutil.rmtree(str(proc_dir))
     gc.collect()
