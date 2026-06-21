@@ -2,10 +2,10 @@
 """
 WhoVoice 全量流水线 v2
 流程: 遍历 502 位歌手 逐位完成:
-  1. 爬取 (酷我 > 酷狗 > B站, 3首)
+  1. 爬取 (酷我音乐, 3首)
   2. 预处理 (人声分离 + VAD + 切片)
   3. GPU 声纹提取 + 增量 FAISS
-  4. 清理 raw + processed
+  4. 删除预处理切片（原始音频保留在 data/raw/）
 
 用法:
   python scripts/batch_pipeline.py --rebuild   全量重建

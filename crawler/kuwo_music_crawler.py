@@ -74,6 +74,11 @@ class KuwoMusicCrawler(BaseCrawler):
             song_name = item.get("NAME", "")
             duration_sec = int(item.get("DURATION", 0))
 
+            # 过滤多人合唱（声纹提取仅支持单人）
+            if self._is_collaboration(song_name) or self._is_collaboration(artist):
+                print(f"  [酷我音乐] 跳过合唱: {artist} - {song_name}")
+                continue
+
             # 检查时长有效性
             if not self._is_valid_duration(duration_sec):
                 continue
@@ -167,6 +172,16 @@ class KuwoMusicCrawler(BaseCrawler):
         except Exception as e:
             print(f"[酷我音乐] 获取下载URL异常: {e}")
             return ""
+
+    @staticmethod
+    def _is_collaboration(song_name: str) -> bool:
+        """检测是否为多人合唱歌曲"""
+        indicators = [
+            "\\u0026", "&", "合唱", "feat", "ft.", "ft ",
+            "vs", "合作", "Duet", "对唱", "&amp;",
+        ]
+        name_lower = song_name.lower()
+        return any(ind in name_lower for ind in indicators)
 
     @staticmethod
     def _find_ffmpeg() -> str:

@@ -22,5 +22,29 @@
     "file_path": "data\\raw\\汪峰\\kuwo_music\\002_汪峰 - 春天里.wav",
     "download_time": "2026-06-21T11:03:20.382250",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "汪峰 - 光明",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_538654",
+    "duration": 324,
+    "file_path": "data\\raw\\汪峰\\kuwo_music\\000_汪峰 - 光明.wav",
+    "download_time": "2026-06-21T11:14:46.239679",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "汪峰 - 怒放的生命-《北京青年》电视剧插曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_45827646",
+    "duration": 275,
+    "file_path": "data\\raw\\汪峰\\kuwo_music\\001_汪峰 - 怒放的生命-《北京青年》电视剧插曲.wav",
+    "download_time": "2026-06-21T11:14:48.459736",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "汪峰 - 春天里",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_538652",
+    "duration": 279,
+    "file_path": "data\\raw\\汪峰\\kuwo_music\\002_汪峰 - 春天里.wav",
+    "download_time": "2026-06-21T11:14:50.678486",
+    "platform": "kuwo_music"
   }
 ]
