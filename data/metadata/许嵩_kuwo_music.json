@@ -1,0 +1,26 @@
+[
+  {
+    "title": "许嵩 - 粗糙",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_598768957",
+    "duration": 246,
+    "file_path": "data\\raw\\许嵩\\kuwo_music\\000_许嵩 - 粗糙.wav",
+    "download_time": "2026-06-21T11:20:48.751199",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "许嵩 - 洛阳纸",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_598769139",
+    "duration": 294,
+    "file_path": "data\\raw\\许嵩\\kuwo_music\\001_许嵩 - 洛阳纸.wav",
+    "download_time": "2026-06-21T11:20:51.516769",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "许嵩 - 前程似锦",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_598768942",
+    "duration": 262,
+    "file_path": "data\\raw\\许嵩\\kuwo_music\\002_许嵩 - 前程似锦.wav",
+    "download_time": "2026-06-21T11:20:54.158252",
+    "platform": "kuwo_music"
+  }
+]

@@ -27,20 +27,15 @@ class KuwoMusicCrawler(BaseCrawler):
     def search(self, keyword: str, max_results: int = 10) -> list:
         """
         搜索酷我音乐歌曲
-        返回歌曲信息列表: [{"title": ..., "url": ..., "duration": ...}, ...]
+        搜索量使用 config.search_limit（20），过滤合唱后再截取 max_results
         """
-        search_limit = min(max_results, self.config.get("search_limit", 10))
+        fetch_size = self.config.get("search_limit", 20)
         results = []
-
         try:
-            # 方式一：精确搜索（推荐）
-            results = self._search_via_rpc(keyword, search_limit)
-            if results:
-                return results
+            results = self._search_via_rpc(keyword, fetch_size)
         except Exception as e:
             print(f"[酷我音乐] 搜索失败: {e}")
-
-        return results
+        return results[:max_results]
 
     def _search_via_rpc(self, keyword: str, limit: int) -> list:
         """

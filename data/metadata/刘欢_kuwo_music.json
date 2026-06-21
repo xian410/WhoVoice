@@ -118,5 +118,29 @@
     "file_path": "data\\raw\\刘欢\\kuwo_music\\002_刘欢 - 我欲成仙-《西游记后传》电视剧主题曲.wav",
     "download_time": "2026-06-21T11:12:16.080034",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "刘欢 - 从头再来-《知青家庭》电视剧主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_20674434",
+    "duration": 214,
+    "file_path": "data\\raw\\刘欢\\kuwo_music\\000_刘欢 - 从头再来-《知青家庭》电视剧主题曲.wav",
+    "download_time": "2026-06-21T11:20:30.971332",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "刘欢 - 好汉歌",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_251091964",
+    "duration": 183,
+    "file_path": "data\\raw\\刘欢\\kuwo_music\\001_刘欢 - 好汉歌.wav",
+    "download_time": "2026-06-21T11:20:33.194201",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "刘欢 - 我欲成仙-《西游记后传》电视剧主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_296348",
+    "duration": 203,
+    "file_path": "data\\raw\\刘欢\\kuwo_music\\002_刘欢 - 我欲成仙-《西游记后传》电视剧主题曲.wav",
+    "download_time": "2026-06-21T11:20:35.817055",
+    "platform": "kuwo_music"
   }
 ]

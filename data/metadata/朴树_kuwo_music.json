@@ -22,5 +22,29 @@
     "file_path": "data\\raw\\朴树\\kuwo_music\\002_朴树 - 送别-《厨子戏子痞子》电影片尾曲.wav",
     "download_time": "2026-06-21T11:15:41.759815",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "朴树 - 平凡之路-《后会无期》电影主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_5960811",
+    "duration": 301,
+    "file_path": "data\\raw\\朴树\\kuwo_music\\000_朴树 - 平凡之路-《后会无期》电影主题曲.wav",
+    "download_time": "2026-06-21T11:22:44.004060",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "朴树 - 白桦林-《无心法师2》网络剧片头曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_150618",
+    "duration": 227,
+    "file_path": "data\\raw\\朴树\\kuwo_music\\001_朴树 - 白桦林-《无心法师2》网络剧片头曲.wav",
+    "download_time": "2026-06-21T11:22:46.209603",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "朴树 - 送别-《厨子戏子痞子》电影片尾曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_3296942",
+    "duration": 168,
+    "file_path": "data\\raw\\朴树\\kuwo_music\\002_朴树 - 送别-《厨子戏子痞子》电影片尾曲.wav",
+    "download_time": "2026-06-21T11:22:48.462409",
+    "platform": "kuwo_music"
   }
 ]

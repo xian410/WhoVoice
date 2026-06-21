@@ -1,0 +1,26 @@
+[
+  {
+    "title": "薛之谦 - 演员",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_6468891",
+    "duration": 261,
+    "file_path": "data\\raw\\薛之谦\\kuwo_music\\000_薛之谦 - 演员.wav",
+    "download_time": "2026-06-21T11:20:09.577303",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "薛之谦 - 其实-《妈妈像花儿一样》电视剧插曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_3620542",
+    "duration": 242,
+    "file_path": "data\\raw\\薛之谦\\kuwo_music\\001_薛之谦 - 其实-《妈妈像花儿一样》电视剧插曲.wav",
+    "download_time": "2026-06-21T11:20:11.811758",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "薛之谦 - 天外来物",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_145389372",
+    "duration": 257,
+    "file_path": "data\\raw\\薛之谦\\kuwo_music\\002_薛之谦 - 天外来物.wav",
+    "download_time": "2026-06-21T11:20:14.050526",
+    "platform": "kuwo_music"
+  }
+]
