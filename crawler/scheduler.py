@@ -104,10 +104,16 @@ class CrawlerScheduler:
                         logger.info(f"    已有 {existing} 个文件，跳过 {platform.platform_name}")
                         continue
 
-                    # 搜索（用较大搜索量，保证过滤合唱/预览后有足够结果）
+                    # 搜索 + 动态翻页：确保至少凑满1首有效歌曲
                     logger.info(f"  -> 在 {platform.platform_name} 上搜索...")
-                    results = platform.search(celebrity, max_results=30)
-                    logger.info(f"     找到 {len(results)} 个资源")
+                    total_needed = max_videos_per_celebrity - existing
+                    results = []
+                    for page in range(5):  # 最多5页(30×5=150条)
+                        page_results = platform.search(celebrity, max_results=30, page=page)
+                        results.extend(page_results)
+                        if len(results) >= total_needed:
+                            break
+                    logger.info(f"     共 {len(results)} 个资源")
 
                     # 逐个下载直到凑满 max_videos_per_celebrity 首有效歌曲
                     downloaded = 0

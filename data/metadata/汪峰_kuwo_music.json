@@ -70,5 +70,21 @@
     "file_path": "data\\raw\\汪峰\\kuwo_music\\002_汪峰 - 春天里.wav",
     "download_time": "2026-06-21T11:22:11.720319",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "汪峰 - 北京北京",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_257293526",
+    "duration": 357,
+    "file_path": "data\\raw\\汪峰\\kuwo_music\\000_汪峰 - 北京北京.wav",
+    "download_time": "2026-06-21T11:59:00.926758",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "汪峰 - 一起摇摆-《梦幻新诛仙》手游梦想主题曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_3559912",
+    "duration": 214,
+    "file_path": "data\\raw\\汪峰\\kuwo_music\\001_汪峰 - 一起摇摆-《梦幻新诛仙》手游梦想主题曲.wav",
+    "download_time": "2026-06-21T11:59:10.209571",
+    "platform": "kuwo_music"
   }
 ]

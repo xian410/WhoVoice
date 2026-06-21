@@ -70,5 +70,13 @@
     "file_path": "data\\raw\\刀郎\\kuwo_music\\002_刀郎 - 罗刹海市.wav",
     "download_time": "2026-06-21T11:22:18.709967",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "刀郎 - 我的祖国",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_376964",
+    "duration": 340,
+    "file_path": "data\\raw\\刀郎\\kuwo_music\\000_刀郎 - 我的祖国.wav",
+    "download_time": "2026-06-21T12:00:05.870660",
+    "platform": "kuwo_music"
   }
 ]

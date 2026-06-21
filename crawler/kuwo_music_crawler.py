@@ -25,20 +25,20 @@ class KuwoMusicCrawler(BaseCrawler):
             "Referer": "https://www.kuwo.cn/",
         })
 
-    def search(self, keyword: str, max_results: int = 10) -> list:
+    def search(self, keyword: str, max_results: int = 10, page: int = 0) -> list:
         """
         搜索酷我音乐歌曲
-        搜索量使用 config.search_limit（20），过滤合唱后再截取 max_results
+        搜索量使用 config.search_limit，过滤合唱后再截取 max_results
         """
-        fetch_size = self.config.get("search_limit", 20)
+        fetch_size = self.config.get("search_limit", 30)
         results = []
         try:
-            results = self._search_via_rpc(keyword, fetch_size)
+            results = self._search_via_rpc(keyword, fetch_size, page=page)
         except Exception as e:
             print(f"[酷我音乐] 搜索失败: {e}")
         return results[:max_results]
 
-    def _search_via_rpc(self, keyword: str, limit: int) -> list:
+    def _search_via_rpc(self, keyword: str, limit: int, page: int = 0) -> list:
         """
         通过 KVVC 搜索接口按歌手搜索歌曲
         """
@@ -47,7 +47,7 @@ class KuwoMusicCrawler(BaseCrawler):
         params = {
             "client": "kt",
             "all": keyword,
-            "pn": 0,
+            "pn": page,
             "rn": limit,
             "encoding": "utf8",
             "rformat": "json",
