@@ -19,7 +19,6 @@ if os.name == "nt":
     os.system("chcp 65001 > nul 2>&1")
 
 from preprocessing.config import RAW_DATA_DIR, PROCESSED_DATA_DIR
-from preprocessing.vad.silero_vad import SileroVAD
 from preprocessing.vad.webrtc_vad import WebRTCVAD
 from preprocessing.separation.spleeter_separator import SpleeterSeparator
 from preprocessing.separation.demucs_separator import DemucsSeparator
@@ -45,7 +44,12 @@ class PreprocessingPipeline:
         # 初始化 VAD
         vad_method = self.config.get("vad_method", VAD_METHOD)
         if vad_method == "silero":
-            self.vad = SileroVAD()
+            try:
+                from preprocessing.vad.silero_vad import SileroVAD
+                self.vad = SileroVAD()
+            except Exception:
+                print("[Pipeline] SileroVAD 不可用，回退 WebRTCVAD")
+                self.vad = WebRTCVAD()
         else:
             self.vad = WebRTCVAD()
 

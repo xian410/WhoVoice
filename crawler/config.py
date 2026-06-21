@@ -418,7 +418,7 @@ CELEBRITY_LIST = [
     "阿黛尔",
     "蕾哈娜",
     "布兰妮·斯皮尔斯",
-    "克里斯蒂娜·阿奎莱拉",
+    "Christina Aguilera",
     "凯蒂·佩里",
     "粉红佳人",
     "艾丽西亚·凯斯",
@@ -433,8 +433,8 @@ CELEBRITY_LIST = [
     "埃尔顿·约翰",
     "史提夫·汪达",
     "布鲁诺·马尔斯",
-    "贾斯汀·汀布莱克",
-    "亚瑟小子",
+    "Justin Timberlake",
+    "Usher",
     "贾斯汀·比伯",
     "艾德·希兰",
     "萨姆·史密斯",
@@ -447,7 +447,7 @@ CELEBRITY_LIST = [
     "大卫·鲍伊",
     "保罗·麦卡特尼",
     "鲍勃·迪伦",
-    "布鲁斯·斯普林斯廷",
+    "Bruce Springsteen",
     "比利·乔尔",
     "莱昂纳尔·里奇",
     "迈克尔·布布雷",
@@ -461,7 +461,7 @@ CELEBRITY_LIST = [
     "约翰·列侬",
     "埃里克·克莱普顿",
     "卡洛斯·桑塔纳",
-    "莱尼·克拉维茨",
+    "Lenny Kravitz",
     "艾瑞莎·弗兰克林",
     "马文·盖伊",
     "詹姆斯·布朗",
@@ -472,18 +472,18 @@ CELEBRITY_LIST = [
     "多莉·帕顿",
     "仙妮亚·唐恩",
     "路易斯·冯西",
-    "安立奎·伊格莱希亚斯",
+    "Enrique Iglesias",
     "瑞奇·马丁",
-    "艾拉妮丝·莫莉塞特",
-    "妮莉·费塔朵",
+    "Alanis Morissette",
+    "Nelly Furtado",
     "艾薇儿·拉维尼",
     "艾米·怀恩豪斯",
-    "丽安娜·刘易斯",
+    "Leona Lewis",
     "凯莉·米洛",
-    "宇多田光",
-    "仓木麻衣",
-    "滨崎步",
-    "中岛美嘉",
+    "宇多田ヒカル",
+    "倉木麻衣",
+    "浜崎あゆみ",
+    "中島美嘉",
     "MISIA",
     "福山雅治",
     "米津玄師",
@@ -498,9 +498,9 @@ CELEBRITY_LIST = [
     "李孝利",
     "白智英",
     "安德烈·波切利",
-    "卢恰诺·帕瓦罗蒂",
-    "莎拉·布莱曼",
-    "雅尼",
+    "Luciano Pavarotti",
+    "Sarah Brightman",
+    "Yanni",
     "埃米纳姆",
     "鲍勃·马利",
     "雪儿",
@@ -511,8 +511,10 @@ CELEBRITY_LIST = [
 # 国内: 400 位
 # 国际: 102 位 (20.3%)
 
-# 去重（自动去除重复项、保留首次出现顺序）
-# CELEBRITY_LIST 去重已在生成脚本中完成
+
+# 总计: 490 位歌手 (去重后)
+# 国内: 388 位
+# 国际: 102 位 (20.8%)
 
 # 数据存储根目录
 RAW_DATA_DIR = "data/raw"
@@ -520,10 +522,10 @@ METADATA_DIR = "data/metadata"
 
 # 下载配置
 DOWNLOAD_DIR = "data/raw"
-MAX_DURATION_MINUTES = 6  # 单个视频最大时长（分钟）- 歌曲一般不超过6分钟
+MAX_DURATION_MINUTES = 6  # 单个视频最大时长（分钟）
 MIN_DURATION_SECONDS = 30  # 单个视频最小时长（秒）
-MAX_FILESIZE_MB = 50      # 单个文件最大大小 (MB) - 防止大文件内存占用
-MAX_VIDEOS_PER_CELEBRITY = 2  # 每个明星最多下载视频数
+MAX_FILESIZE_MB = 50      # 单个文件最大大小 (MB)
+MAX_VIDEOS_PER_CELEBRITY = 3  # 每位歌手下载 3 首歌
 
 # B站爬虫配置
 BILIBILI = {
@@ -550,6 +552,14 @@ AUDIO_PLATFORM = {
 
 # 酷我音乐爬虫配置（第一优先级）
 KUWO_MUSIC = {
+    "search_limit": 10,
+    "timeout": 15,
+    "min_duration": 30,
+    "max_duration": 600,
+}
+
+# 酷狗音乐爬虫配置（第二优先级）
+KUGOU_MUSIC = {
     "search_limit": 10,
     "timeout": 15,
     "min_duration": 30,

@@ -1,188 +1,158 @@
 #!/usr/bin/env python3
 """
-分批处理流水线：爬取 → 预处理 → 清理raw → 下一批 → 最终构建FAISS索引
-
-流程:
-  1. 读取 511 位明星列表
-  2. 过滤出尚未处理的明星（跳过已有 data/processed/xxx 的）
-  3. 按 BATCH_SIZE 分批
-  4. 每批: 爬取(B站+QQ音乐) → 预处理 → 激进清理 raw
-  5. 全部完成后: 提取声纹特征 → 构建 FAISS 索引
+WhoVoice 全量流水线 v2
+流程: 遍历 502 位歌手 逐位完成:
+  1. 爬取 (酷我 > 酷狗 > B站, 3首)
+  2. 预处理 (人声分离 + VAD + 切片)
+  3. GPU 声纹提取 + 增量 FAISS
+  4. 清理 raw + processed
 
 用法:
-  python scripts/batch_pipeline.py                  # 全量处理（每批50人）
-  python scripts/batch_pipeline.py --batch-size 30  # 自定义每批大小
-  python scripts/batch_pipeline.py --dry-run        # 预览模式
+  python scripts/batch_pipeline.py --rebuild   全量重建
+  python scripts/batch_pipeline.py --dry-run   预览
 """
 
-import sys
-import time
-import shutil
-import argparse
+import sys, os, time, gc, json, shutil, argparse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+if os.name == "nt":
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+
+from tqdm import tqdm
+import numpy as np
 from crawler.scheduler import CrawlerScheduler
-from preprocessing.pipeline import PreprocessingPipeline
+from voice_recognition.model_loader import VoiceprintRecognizer
+from vector_database.build_index import VectorIndexBuilder
+from vector_database.config import FAISS, EMBEDDING_DIM
 from crawler.config import CELEBRITY_LIST, MAX_VIDEOS_PER_CELEBRITY
 
-PROCESSED_DIR = Path("data/processed")
 RAW_DIR = Path("data/raw")
-BATCH_LOG = Path("batch_progress.json")
+PROCESSED_DIR = Path("data/processed")
+INDEX_PATH = Path(FAISS["index_path"])
+METADATA_PATH = INDEX_PATH.parent / "celebrity_metadata.json"
 
 
-def get_unprocessed():
-    """获取尚未处理的明星（跳过已有 processed 目录的）"""
-    processed = {d.name for d in PROCESSED_DIR.iterdir() if d.is_dir()}
-    new_celebrities = [c for c in CELEBRITY_LIST if c not in processed]
-    return new_celebrities
+def clean_all():
+    for d in [RAW_DIR, PROCESSED_DIR]:
+        if d.exists():
+            shutil.rmtree(str(d))
+        d.mkdir(parents=True)
+    for f in [INDEX_PATH, METADATA_PATH]:
+        if f.exists():
+            f.unlink()
 
 
-def save_progress(batch_index: int, celeb_name: str = None):
-    """保存进度以便断点续跑"""
-    data = {"last_batch": batch_index}
-    if celeb_name:
-        data["last_celebrity"] = celeb_name
-    with open(BATCH_LOG, "w") as f:
-        import json
-        json.dump(data, f)
+def process_singer(celebrity, recognizer, builder, pbar):
+    # 1. 爬取
+    scheduler = CrawlerScheduler(celebrities=[celebrity])
+    scheduler.run(max_videos_per_celebrity=MAX_VIDEOS_PER_CELEBRITY)
+    celeb_raw = RAW_DIR / celebrity
+    if not celeb_raw.exists() or len(list(celeb_raw.rglob("*"))) == 0:
+        pbar.set_postfix_str("无资源")
+        return
+    # 2. 预处理
+    try:
+        from preprocessing.pipeline import PreprocessingPipeline
+        PreprocessingPipeline().run(celebrities=[celebrity])
+    except Exception as e:
+        print(f"\n  [{celebrity}] 预处理失败: {e}")
+        return
+    # 3. 声纹提取
+    proc_dir = PROCESSED_DIR / celebrity
+    if not proc_dir.exists():
+        return
+    wav_files = [f for f in sorted(proc_dir.rglob("*.wav")) if "tmp" not in f.parts]
+    if not wav_files:
+        return
+    embeddings = []
+    for wav in wav_files:
+        try:
+            embeddings.append(recognizer.extract_embedding(str(wav)))
+        except Exception:
+            continue
+    if embeddings:
+        avg_emb = np.mean(embeddings, axis=0).astype(np.float32)
+        avg_emb = avg_emb / np.linalg.norm(avg_emb)
+        builder.add_to_faiss(embeddings=avg_emb[np.newaxis, :], celeb_names=[celebrity])
+    # 4. 清理
+    if celeb_raw.exists():
+        shutil.rmtree(str(celeb_raw))
+    if proc_dir.exists():
+        shutil.rmtree(str(proc_dir))
+    gc.collect()
+    try:
+        import torch; torch.cuda.empty_cache()
+    except Exception:
+        pass
 
 
-def clean_raw_celebrity(celeb: str):
-    """删除单个明星的 raw 目录"""
-    celeb_dir = RAW_DIR / celeb
-    if celeb_dir.exists():
-        size = sum(f.stat().st_size for f in celeb_dir.rglob("*") if f.is_file())
-        shutil.rmtree(str(celeb_dir))
-        return size
-    return 0
-
-
-def human_size(n: int) -> str:
-    for unit in ["B", "KB", "MB", "GB"]:
-        if n < 1024:
-            return f"{n:.1f}{unit}"
-        n /= 1024
-    return f"{n:.1f}TB"
+def estimate_time(total):
+    sec = total * 130
+    return f"{sec//3600}h{(sec%3600)//60:02d}m"
 
 
 def main():
-    parser = argparse.ArgumentParser(description="WhoVoice 分批处理流水线")
-    parser.add_argument("--batch-size", type=int, default=50, help="每批人数（默认50）")
-    parser.add_argument("--dry-run", action="store_true", help="预览模式：只显示计划不执行")
+    parser = argparse.ArgumentParser(description="WhoVoice 全量流水线 v2")
+    parser.add_argument("--rebuild", action="store_true", help="全量重建清空旧数据")
+    parser.add_argument("--dry-run", action="store_true", help="预览模式")
+    parser.add_argument("--start-from", type=int, default=0, help="断点续跑: 从第几个开始")
     args = parser.parse_args()
 
-    batch_size = args.batch_size
+    print("=" * 56)
+    print("  WhoVoice 全量流水线 v2")
+    print("  酷我 > 酷狗 > B站 | 3首/人 | GPU加速")
+    print("=" * 56)
 
-    print("=" * 60)
-    print("  WhoVoice - 分批处理流水线")
-    print("  爬取 → 预处理 → 清理raw → (循环) → 声纹提取")
-    print("=" * 60)
-
-    # ── 第0步：确定需要处理的新明星 ──
-    print("\n[0/5] 检查处理状态...")
-    unprocessed = get_unprocessed()
-    total_new = len(unprocessed)
-    total_all = len(CELEBRITY_LIST)
-
-    if total_new == 0:
-        print(f"  ✅ 全部 {total_all} 位明星已处理完成！直接进入声纹提取")
-    else:
-        print(f"  总名单: {total_all} 位")
-        print(f"  已处理: {total_all - total_new} 位")
-        print(f"  待处理: {total_new} 位")
-
-    # ── 第1步：清理旧 raw 中已处理的明星 ──
-    processed_names = {d.name for d in PROCESSED_DIR.iterdir() if d.is_dir()}
-    stale_raw = [d for d in RAW_DIR.iterdir() if d.is_dir() and d.name in processed_names]
-
-    if stale_raw:
-        print(f"\n[1/5] 清理旧 raw 缓存（已处理但未删除的原始音频）...")
-        total_freed = 0
-        for d in stale_raw:
-            sz = 0
-            if not args.dry_run:
-                sz = clean_raw_celebrity(d.name)
-            else:
-                sz = sum(f.stat().st_size for f in d.rglob("*") if f.is_file())
-            total_freed += sz
-            print(f"  {'🔍 [预览]' if args.dry_run else '🗑️'}  {d.name}: {human_size(sz)}")
-        print(f"  总计: {human_size(total_freed)} {'（预览，未实际删除）' if args.dry_run else '已释放'}")
-
-    if total_new == 0:
-        # 已全部处理，直接跳到声纹提取
-        pass
-    else:
-        # ── 第2步：分批处理 ──
-        batches = [unprocessed[i:i + batch_size] for i in range(0, total_new, batch_size)]
-        total_batches = len(batches)
-
-        print(f"\n[2/5] 分批处理 ({total_batches} 批, 每批 {batch_size} 人)")
-
-        for batch_idx, batch in enumerate(batches):
-            print(f"\n{'=' * 60}")
-            print(f"  📦 第 {batch_idx + 1}/{total_batches} 批 ({len(batch)} 位)")
-            print(f"{'=' * 60}")
-
-            if args.dry_run:
-                print(f"  预览: {', '.join(batch[:5])}... 等 {len(batch)} 位")
-                save_progress(batch_idx)
-                continue
-
-            # 2a. 爬取
-            print(f"\n  ▶ 阶段 A: 爬取 {len(batch)} 位明星...")
-            scheduler = CrawlerScheduler(celebrities=batch)
-            scheduler.run(max_videos_per_celebrity=MAX_VIDEOS_PER_CELEBRITY)
-
-            # 统计本批实际下载到的明星数
-            downloaded = [c for c in batch if (RAW_DIR / c).exists() and len(list((RAW_DIR / c).rglob("*.wav"))) > 0]
-            print(f"  ⏺ 本批成功下载: {len(downloaded)}/{len(batch)} 位")
-
-            # 2b. 预处理
-            print(f"\n  ▶ 阶段 B: 预处理音频...")
-            pipeline = PreprocessingPipeline()
-            pipeline.run(celebrities=batch)
-
-            # 2c. 清理 raw
-            print(f"\n  ▶ 阶段 C: 清理 raw 缓存...")
-            freed = 0
-            for celeb in batch:
-                freed += clean_raw_celebrity(celeb)
-            print(f"  🗑️  已释放: {human_size(freed)}")
-
-            # 保存进度
-            save_progress(batch_idx)
-            print(f"\n  ✅ 第 {batch_idx + 1} 批完成! 已释放 {human_size(freed)}")
-
-    # ── 第5步：声纹特征提取 + FAISS 索引 ──
-    print(f"\n{'=' * 60}")
-    print(f"  🎯 全部批次处理完成！")
-    print(f"  {'=' * 60}")
+    total = len(CELEBRITY_LIST)
+    print(f"\n  歌手总数: {total}")
+    print(f"  预估耗时: {estimate_time(total)} (130s/人)")
+    try:
+        import torch
+        print(f"  GPU:      {torch.cuda.get_device_name(0)}")
+    except Exception:
+        print("  GPU:      N/A")
 
     if args.dry_run:
-        print(f"\n  预览模式结束。运行不加 --dry-run 以执行。")
+        print("\n  预览模式:", CELEBRITY_LIST[0], "...", CELEBRITY_LIST[-1])
         return
 
-    print(f"\n[5/5] 提取声纹特征并构建 FAISS 索引...")
-    print(f"  增量模式：仅处理新明星，添加到已有 FAISS 索引\n")
+    if args.rebuild:
+        print("\n[1/4] 清空旧数据...")
+        clean_all()
+        print("  旧数据已清空")
 
-    # 增量模式：仅提取新明星声纹并附加到现有索引
-    import sys as _sys
-    _orig_argv = _sys.argv
-    _sys.argv = ["extract_embeddings", "--append"]
-    from scripts.extract_embeddings import main as extract_main
-    extract_main()
-    _sys.argv = _orig_argv
+    print("\n[2/4] 加载声纹模型 (GPU)...")
+    recognizer = VoiceprintRecognizer(use_gpu=True)
+    builder = VectorIndexBuilder(dimension=EMBEDDING_DIM)
 
-    # 清理进度文件
-    if BATCH_LOG.exists():
-        BATCH_LOG.unlink()
+    celebrities = CELEBRITY_LIST[args.start_from:]
+    print(f"\n[3/4] 处理 {len(celebrities)} 位 (从第{args.start_from+1}位)")
+    start_time = time.time()
 
-    print(f"\n{'=' * 60}")
-    print(f"  🎉 全流程完成! 511 位明星声纹库已就绪")
-    print(f"  启动服务: python backend/manage.py runserver")
-    print(f"{'=' * 60}")
+    pbar = tqdm(celebrities, desc="流水线", unit="人", ncols=80)
+    for idx, celeb in enumerate(pbar):
+        actual = args.start_from + idx + 1
+        pbar.set_description(f"[{actual}/{total}] {celeb[:10]}")
+        try:
+            process_singer(celeb, recognizer, builder, pbar)
+        except Exception as e:
+            pbar.set_postfix_str(f"错误:{str(e)[:20]}")
+            gc.collect()
+            try:
+                import torch; torch.cuda.empty_cache()
+            except Exception:
+                pass
+        if actual % 20 == 0:
+            elapsed = time.time() - start_time
+            pbar.write(f"  [{actual}/{total}] {elapsed/60:.0f}min | {actual/(elapsed/3600):.0f}人/h")
+    pbar.close()
+
+    elapsed = time.time() - start_time
+    print(f"\n[4/4] 完成! {elapsed/60:.0f}min ({elapsed/3600:.1f}h)")
+    print(f"  启动: python backend/manage.py runserver")
 
 
 if __name__ == "__main__":
