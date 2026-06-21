@@ -1,12 +1,16 @@
 {
   "celebrities": [
+    "那英",
+    "孙楠",
     "刘欢"
   ],
   "embedding_dim": 192,
-  "num_celebrities": 1,
+  "num_celebrities": 3,
   "model_type": "cam++",
   "index_path": "vector_database/faiss_index/celebrity.index",
   "name_to_id": {
+    "那英": 4468045051408187459,
+    "孙楠": 7056926393497516670,
     "刘欢": 2322426061332606503
   }
 }

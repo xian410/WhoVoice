@@ -46,5 +46,29 @@
     "file_path": "data\\raw\\韩红\\kuwo_music\\002_孙楠__u0026韩红 - 美丽的神话.wav",
     "download_time": "2026-06-21T10:55:57.690547",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "韩红 - 珊瑚颂",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_931208",
+    "duration": 223,
+    "file_path": "data\\raw\\韩红\\kuwo_music\\000_韩红 - 珊瑚颂.wav",
+    "download_time": "2026-06-21T11:01:22.471550",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "韩红\\\\u0026薛之谦 - 小尖尖",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_148392719",
+    "duration": 235,
+    "file_path": "data\\raw\\韩红\\kuwo_music\\001_韩红__u0026薛之谦 - 小尖尖.wav",
+    "download_time": "2026-06-21T11:01:24.667224",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "孙楠\\\\u0026韩红 - 美丽的神话",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_661234",
+    "duration": 292,
+    "file_path": "data\\raw\\韩红\\kuwo_music\\002_孙楠__u0026韩红 - 美丽的神话.wav",
+    "download_time": "2026-06-21T11:01:26.869013",
+    "platform": "kuwo_music"
   }
 ]

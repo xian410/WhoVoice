@@ -100,6 +100,13 @@ class CrawlerScheduler:
 
             for platform in self.platforms:
                 try:
+                    # 检查是否已有足够文件（酷我下载成功后跳过后续平台）
+                    save_dir = platform.get_save_dir(celebrity)
+                    existing = len(list(save_dir.rglob("*.wav"))) if save_dir.exists() else 0
+                    if existing >= max_videos_per_celebrity:
+                        logger.info(f"    已有 {existing} 个文件，跳过 {platform.platform_name}")
+                        continue
+
                     logger.info(f"  -> 在 {platform.platform_name} 上搜索...")
                     results = platform.search(celebrity, max_results=max_videos_per_celebrity)
                     logger.info(f"     找到 {len(results)} 个资源")
