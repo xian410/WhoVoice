@@ -13,6 +13,31 @@ from typing import Optional, Tuple
 class AudioStandardizer:
     """音频标准化器"""
 
+    @staticmethod
+    def _find_ffmpeg() -> tuple:
+        """查找 ffmpeg 和 ffprobe 路径（优先带DLL的完整路径）"""
+        base = Path(r"C:\Users\17367\AppData\Local\Microsoft\WinGet\Packages"
+                    r"\Gyan.FFmpeg.Essentials_Microsoft.Winget.Source_8wekyb3d8bbwe"
+                    r"\ffmpeg-8.1.1-essentials_build\bin")
+        if base.exists():
+            return str(base / "ffmpeg.exe"), str(base / "ffprobe.exe")
+        import shutil
+        ffmpeg = shutil.which("ffmpeg") or "ffmpeg"
+        ffprobe = shutil.which("ffprobe") or "ffprobe"
+        return ffmpeg, ffprobe
+
+    @staticmethod
+    def _get_ffmpeg_env() -> dict:
+        """获取 ffmpeg DLL 环境变量"""
+        import os
+        env = os.environ.copy()
+        dll_dir = Path(r"C:\Users\17367\AppData\Local\Microsoft\WinGet\Packages"
+                       r"\Gyan.FFmpeg.Essentials_Microsoft.Winget.Source_8wekyb3d8bbwe"
+                       r"\ffmpeg-8.1.1-essentials_build\bin")
+        if dll_dir.exists():
+            env["PATH"] = str(dll_dir) + os.pathsep + env.get("PATH", "")
+        return env
+
     def __init__(
         self,
         target_sr: int = 16000,
@@ -42,20 +67,22 @@ class AudioStandardizer:
         if output_path is None:
             output_path = str(input_path.parent / f"{input_path.stem}_standardized.wav")
 
+        ffmpeg_path, _ = self._find_ffmpeg()
         cmd = [
-            "ffmpeg",
+            ffmpeg_path,
             "-i", str(input_path),
-            "-ac", str(self.target_channels),         # 声道数
-            "-ar", str(self.target_sr),               # 采样率
-            "-sample_fmt", "s16",                     # 16-bit signed PCM
-            "-acodec", "pcm_s16le",                   # PCM 编码
-            "-vn",                                    # 去除视频流
-            "-y",                                     # 覆盖输出
+            "-ac", str(self.target_channels),
+            "-ar", str(self.target_sr),
+            "-sample_fmt", "s16",
+            "-acodec", "pcm_s16le",
+            "-vn",
+            "-y",
             output_path,
         ]
 
         try:
-            subprocess.run(cmd, check=True, timeout=120)
+            subprocess.run(cmd, check=True, timeout=120,
+                          env=self._get_ffmpeg_env())
             return output_path
         except subprocess.CalledProcessError as e:
             raise RuntimeError(f"音频标准化失败")
@@ -66,15 +93,17 @@ class AudioStandardizer:
         使用 ffprobe（比 audioread 更轻量，不加载音频数据到内存）
         """
         import json
+        _, ffprobe_path = self._find_ffmpeg()
         cmd = [
-            "ffprobe",
+            ffprobe_path,
             "-v", "quiet",
             "-print_format", "json",
             "-show_streams",
             audio_path,
         ]
         try:
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=30,
+                                   env=self._get_ffmpeg_env())
             data = json.loads(result.stdout)
             stream = data.get("streams", [{}])[0]
             duration_str = stream.get("duration", "0")
