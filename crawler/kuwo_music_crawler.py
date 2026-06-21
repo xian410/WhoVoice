@@ -22,6 +22,7 @@ class KuwoMusicCrawler(BaseCrawler):
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
                 "Chrome/120.0.0.0 Safari/537.36"
             ),
+            "Referer": "https://www.kuwo.cn/",
         })
 
     def search(self, keyword: str, max_results: int = 10) -> list:
@@ -148,25 +149,29 @@ class KuwoMusicCrawler(BaseCrawler):
             return False
 
     def _get_real_download_url(self, music_id: str) -> str:
-        """通过 anti 接口获取真实下载 URL"""
+        """通过 anti 接口获取真实下载 URL（尝试多种格式）"""
         rid = music_id.replace("MUSIC_", "").replace("MP3_", "")
-        url = "http://antiserver.kuwo.cn/anti.s"
-        params = {
-            "type": "convert_url",
-            "rid": rid,
-            "format": "mp3",
-            "response": "url",
-        }
-        try:
-            resp = self.session.get(url, params=params, timeout=15)
-            dl_url = resp.text.strip()
-            if "http" in dl_url and "antiserver" not in dl_url:
-                return dl_url
-            print(f"[酷我音乐] 获取下载URL失败: {dl_url[:80]}")
-            return ""
-        except Exception as e:
-            print(f"[酷我音乐] 获取下载URL异常: {e}")
-            return ""
+
+        # 多种尝试参数
+        attempts = [
+            {"type": "convert_url", "rid": rid, "format": "mp3", "response": "url"},
+            {"type": "convert_url", "rid": rid, "format": "aac", "response": "url"},
+            {"type": "convert_url", "rid": rid, "format": "mp3", "response": "url", "br": "192"},
+            {"type": "convert_url", "rid": rid, "format": "wma", "response": "url"},
+        ]
+
+        for params in attempts:
+            try:
+                resp = self.session.get("http://antiserver.kuwo.cn/anti.s",
+                                        params=params, timeout=15)
+                dl_url = resp.text.strip()
+                if "http" in dl_url and "antiserver" not in dl_url:
+                    return dl_url
+            except Exception:
+                continue
+
+        print(f"[酷我音乐] 所有格式均无法获取下载链接: {music_id}")
+        return ""
 
     @staticmethod
     def _is_collaboration(song_name: str) -> bool:

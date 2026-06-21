@@ -14,5 +14,21 @@
     "file_path": "data\\raw\\胡彦斌\\kuwo_music\\002_胡彦斌__u0026Jony&nbsp;J - 借过一下.wav",
     "download_time": "2026-06-21T11:20:28.398309",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "胡彦斌 - 心太软",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_601764398",
+    "duration": 297,
+    "file_path": "data\\raw\\胡彦斌\\kuwo_music\\000_胡彦斌 - 心太软.wav",
+    "download_time": "2026-06-21T11:27:13.172090",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "胡彦斌 - 你要的全拿走",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_40351271",
+    "duration": 299,
+    "file_path": "data\\raw\\胡彦斌\\kuwo_music\\001_胡彦斌 - 你要的全拿走.wav",
+    "download_time": "2026-06-21T11:27:15.366877",
+    "platform": "kuwo_music"
   }
 ]

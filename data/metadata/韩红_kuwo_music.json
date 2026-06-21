@@ -126,5 +126,29 @@
     "file_path": "data\\raw\\韩红\\kuwo_music\\000_韩红 - 珊瑚颂.wav",
     "download_time": "2026-06-21T11:21:51.700841",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "韩红 - 珊瑚颂",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_931208",
+    "duration": 223,
+    "file_path": "data\\raw\\韩红\\kuwo_music\\000_韩红 - 珊瑚颂.wav",
+    "download_time": "2026-06-21T11:27:43.655771",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "韩红 - 家乡",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_5087568",
+    "duration": 234,
+    "file_path": "data\\raw\\韩红\\kuwo_music\\001_韩红 - 家乡.wav",
+    "download_time": "2026-06-21T11:27:45.870139",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "韩红 - 映山红-《闪闪的红星》电影插曲",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_931212",
+    "duration": 213,
+    "file_path": "data\\raw\\韩红\\kuwo_music\\002_韩红 - 映山红-《闪闪的红星》电影插曲.wav",
+    "download_time": "2026-06-21T11:27:48.118813",
+    "platform": "kuwo_music"
   }
 ]
