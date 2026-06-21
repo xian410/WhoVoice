@@ -70,5 +70,29 @@
     "file_path": "data\\raw\\那英\\kuwo_music\\002_孙楠__u0026那英 - 只要有你.wav",
     "download_time": "2026-06-21T11:00:18.443405",
     "platform": "kuwo_music"
+  },
+  {
+    "title": "那英\\\\u0026孙楠 - 只要有你",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_539095746",
+    "duration": 299,
+    "file_path": "data\\raw\\那英\\kuwo_music\\000_那英__u0026孙楠 - 只要有你.wav",
+    "download_time": "2026-06-21T11:07:20.154134",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "那英 - 默-《何以笙箫默》电影插曲|《这！就是街舞》第四期背景音乐",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_6418102",
+    "duration": 325,
+    "file_path": "data\\raw\\那英\\kuwo_music\\001_那英 - 默-《何以笙箫默》电影插曲_《这！就是街舞》第四期背景音乐.wav",
+    "download_time": "2026-06-21T11:07:22.871891",
+    "platform": "kuwo_music"
+  },
+  {
+    "title": "孙楠\\\\u0026那英 - 只要有你",
+    "url": "https://www.kuwo.cn/play_detail/MUSIC_51514803",
+    "duration": 250,
+    "file_path": "data\\raw\\那英\\kuwo_music\\002_孙楠__u0026那英 - 只要有你.wav",
+    "download_time": "2026-06-21T11:07:25.500818",
+    "platform": "kuwo_music"
   }
 ]
