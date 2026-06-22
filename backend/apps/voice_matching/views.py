@@ -9,10 +9,17 @@ import numpy as np
 import shutil
 from pathlib import Path
 from typing import Optional
+from collections import deque
+import uuid
+import time
+import threading
+from django.utils import timezone
+from django.db import transaction
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import status
+from .models import MatchTask
 
 # 确保能导入项目模块
 BASE_DIR = Path(__file__).resolve().parent.parent.parent  # /WhoVoice/backend/
@@ -181,6 +188,221 @@ else:
 print("[VoiceMatch] 索引预加载完成")
 
 
+# ── 队列目录 ──
+QUEUE_DIR = PROJECT_ROOT / "data" / "task_queue"
+
+# ── 处理时间滑动窗口（用于预估等待时间）──
+_PROCESSING_TIMES = deque(maxlen=20)
+
+
+def _get_avg_processing_time() -> float:
+    """获取最近任务的平均处理时间（秒），默认4秒"""
+    if not _PROCESSING_TIMES:
+        return 4.0
+    return sum(_PROCESSING_TIMES) / len(_PROCESSING_TIMES)
+
+
+def _claim_next_task() -> Optional[MatchTask]:
+    """原子性地领取下一个待处理任务（DB行锁保证并发安全）"""
+    try:
+        with transaction.atomic():
+            task = (MatchTask.objects
+                    .select_for_update()
+                    .filter(status='pending')
+                    .first())
+            if task:
+                task.status = 'processing'
+                task.started_at = timezone.now()
+                task.save(update_fields=['status', 'started_at'])
+            return task
+    except Exception:
+        return None
+
+
+def _execute_match_task(task: MatchTask):
+    """执行单个声纹匹配任务"""
+    audio_path = task.audio_path
+    if not audio_path or not Path(audio_path).exists():
+        task.status = 'error'
+        task.error_message = '音频文件不存在'
+        task.completed_at = timezone.now()
+        task.save(update_fields=['status', 'error_message', 'completed_at'])
+        return
+
+    try:
+        import numpy as np
+
+        start_t = time.time()
+
+        # 根据索引类型选择预加载的索引
+        index_type = task.index_type or 'clean'
+        if index_type == 'clean' and _CLEAN_INDEX is not None:
+            index = _CLEAN_INDEX
+            metadata = _CLEAN_METADATA
+        elif _PRELOAD_INDEX is not None:
+            index = _PRELOAD_INDEX
+            metadata = _PRELOAD_METADATA
+        else:
+            raise RuntimeError('声纹索引未加载')
+
+        # 提取声纹特征
+        embedding = _PRELOAD_RECOGNIZER.extract_embedding(str(audio_path))
+
+        # 归一化 + 搜索
+        query = embedding.reshape(1, -1).astype(np.float32)
+        norm = np.linalg.norm(query)
+        if norm > 0:
+            query = query / norm
+
+        top_k = 5
+        distances, indices = index.search(query, top_k * 3)
+
+        # 构建结果
+        celebrities = metadata["celebrities"]
+        results = []
+        for dist, idx in zip(distances[0], indices[0]):
+            if idx == -1 or idx >= len(celebrities):
+                break
+            if len(results) >= top_k:
+                break
+            name = celebrities[int(idx)]
+            score = float(dist)
+
+            has_audio = False
+            for audio_root in [PROCESSED_DIR, RAW_DIR]:
+                celeb_dir = audio_root / name
+                if celeb_dir.is_dir():
+                    for ext in (".wav", ".mp3", ".m4a"):
+                        if list(celeb_dir.rglob(f"*{ext}")):
+                            has_audio = True
+                            break
+                    if has_audio:
+                        break
+
+            if not has_audio:
+                continue
+
+            results.append({
+                "name": name,
+                "score": round(score, 4),
+                "rank": len(results) + 1,
+                "likely_match": score >= 0.3,
+                "has_audio": has_audio,
+            })
+
+        if results:
+            top_score = results[0]["score"]
+            if top_score >= 0.5:
+                results[0]["note"] = "\U0001f7e1 声音非常相似！很可能是同一个人"
+            elif top_score >= 0.3:
+                results[0]["note"] = "\u26a0\ufe0f 有一定相似度，但需要更多确认"
+            elif top_score >= 0.1:
+                results[0]["note"] = "\U0001f536 略微相似，但基本可以认为是不同人"
+            else:
+                results[0]["note"] = "\u274c 声纹特征差异很大，不是同一个人"
+                results[0]["likely_match"] = False
+
+        # 生成海报数据
+        poster_data = None
+        try:
+            wav_for_poster = Path(audio_path).with_suffix(".poster.wav")
+            converted = _ffmpeg_convert_to_wav(str(audio_path), str(wav_for_poster))
+            poster_audio = str(wav_for_poster) if converted else str(audio_path)
+
+            audio_analysis = analyze_audio(poster_audio)
+            star_mix = compute_star_mix(results)
+            share_text = build_share_text(star_mix, audio_analysis["fun_title"])
+            poster_data = {
+                "radar": audio_analysis["radar"],
+                "radar_labels": ["\u78c1\u6027", "\u751c\u7f8e", "\u529b\u91cf", "\u6e05\u6f88", "\u72ec\u7279"],
+                "voice_tags": audio_analysis["voice_tags"],
+                "fun_title": audio_analysis["fun_title"],
+                "star_mix": star_mix,
+                "share_text": share_text,
+            }
+        except Exception:
+            pass
+        finally:
+            if 'wav_for_poster' in dir() and wav_for_poster.exists():
+                try:
+                    wav_for_poster.unlink()
+                except Exception:
+                    pass
+
+        result_data = {
+            "results": results,
+            "total_celebrities": len(metadata["celebrities"]),
+            "index_type": index_type,
+        }
+        if poster_data:
+            result_data["poster_data"] = poster_data
+
+        # 记录处理时间
+        elapsed = time.time() - start_t
+        _PROCESSING_TIMES.append(elapsed)
+        print(f"[QueueWorker] 任务 {task.id} 完成，耗时 {elapsed:.1f}s")
+
+        task.result_json = json.dumps(result_data, ensure_ascii=False)
+        task.status = 'done'
+        task.completed_at = timezone.now()
+        task.save(update_fields=['status', 'result_json', 'completed_at'])
+
+    except Exception as e:
+        print(f"[QueueWorker] 任务 {task.id} 失败: {e}")
+        task.status = 'error'
+        task.error_message = str(e)
+        task.completed_at = timezone.now()
+        task.save(update_fields=['status', 'error_message', 'completed_at'])
+    finally:
+        # 清理音频文件
+        try:
+            if Path(audio_path).exists():
+                Path(audio_path).unlink()
+        except Exception:
+            pass
+
+
+# ── 后台队列工作线程 ──
+_WORKER_RUNNING = True
+_WORKER_THREAD = None
+
+
+def _queue_worker():
+    """后台轮询 pending 任务并逐个处理"""
+    import django
+    django.db.close_old_connections()
+
+    print("[QueueWorker] 后台队列线程已启动")
+    while _WORKER_RUNNING:
+        try:
+            task = _claim_next_task()
+            if task:
+                _execute_match_task(task)
+            else:
+                time.sleep(0.3)
+        except Exception as e:
+            print(f"[QueueWorker] 轮询异常: {e}")
+            time.sleep(1)
+    print("[QueueWorker] 后台队列线程已停止")
+
+
+def _start_queue_worker():
+    """启动后台队列工作线程（仅在服务进程而非管理命令中启动）"""
+    global _WORKER_THREAD
+    if _WORKER_THREAD is not None and _WORKER_THREAD.is_alive():
+        return
+    argv0 = os.path.basename(sys.argv[0]) if sys.argv else ''
+    skip_commands = {'manage.py', 'django-admin', 'gunicorn'}
+    # 仅在 manage.py runserver 或 gunicorn 下启动
+    if argv0 not in skip_commands and not any('runserver' in a or 'gunicorn' in a for a in sys.argv):
+        return
+    _WORKER_THREAD = threading.Thread(target=_queue_worker, daemon=True, name='queue-worker')
+    _WORKER_THREAD.start()
+
+
+_start_queue_worker()
+
+
 class VoiceMatchView(APIView):
     """声纹匹配接口"""
     parser_classes = (MultiPartParser, FormParser)
@@ -219,16 +441,19 @@ class VoiceMatchView(APIView):
         )
 
     def post(self, request):
-        """处理音频上传并返回匹配结果"""
+        """上传音频 → 创建排队任务 → 返回排队信息"""
         # 获取索引选择参数
         index_type = request.data.get("index", "clean")
         if index_type not in ("raw", "clean"):
             index_type = "raw"
 
-        try:
-            recognizer, index, metadata = self._ensure_loaded(index_type)
-        except FileNotFoundError as e:
-            return Response({"error": str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+        # 验证索引可用
+        if index_type == "clean" and _CLEAN_INDEX is None:
+            if _PRELOAD_INDEX is None:
+                return Response({"error": "声纹索引未加载"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+            index_type = "raw"
+        elif _PRELOAD_INDEX is None:
+            return Response({"error": "声纹索引未加载"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
 
         # 获取上传的音频文件
         audio_file = request.FILES.get("audio")
@@ -240,129 +465,42 @@ class VoiceMatchView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        # 保存临时文件
-        import tempfile
-        tmp_dir = Path(tempfile.gettempdir()) / "whovoice_uploads"
-        tmp_dir.mkdir(parents=True, exist_ok=True)
-        tmp_path = tmp_dir / audio_file.name
-        with open(tmp_path, "wb") as f:
+        # 保存音频文件到队列目录
+        QUEUE_DIR.mkdir(parents=True, exist_ok=True)
+        task_id = uuid.uuid4()
+        safe_name = f"{task_id}_{audio_file.name}"
+        audio_path = QUEUE_DIR / safe_name
+        with open(str(audio_path), "wb") as f:
             for chunk in audio_file.chunks():
                 f.write(chunk)
 
-        try:
-            # 提取声纹特征
-            print(f"[VoiceMatch] 提取特征: {audio_file.name}")
-            embedding = recognizer.extract_embedding(str(tmp_path))
+        # 创建排队任务
+        task = MatchTask.objects.create(
+            id=task_id,
+            audio_path=str(audio_path),
+            audio_name=audio_file.name,
+            index_type=index_type,
+        )
 
-            # 归一化 + 搜索
-            query = embedding.reshape(1, -1).astype(np.float32)
-            norm = np.linalg.norm(query)
-            if norm > 0:
-                query = query / norm
+        # 计算排队位置（当前 pending + processing 中，比自己更早的）
+        ahead_count = MatchTask.objects.filter(
+            status__in=['pending', 'processing'],
+            created_at__lt=task.created_at,
+        ).count()
+        position = ahead_count + 1
 
-            top_k = min(int(request.data.get("top_k", 5)), len(metadata["celebrities"]))
-            distances, indices = index.search(query, top_k * 3)  # 搜索更多结果以过滤无音频的明星
+        # 预估等待时间
+        avg_time = _get_avg_processing_time()
+        estimated_wait = round(position * avg_time, 1)
 
-            # 构建结果：只包含有音频可试听的明星，直到凑满 top_k
-            celebrities = metadata["celebrities"]
-            results = []
-            for dist, idx in zip(distances[0], indices[0]):
-                if idx == -1 or idx >= len(celebrities):
-                    break
-                if len(results) >= top_k:
-                    break
-                name = celebrities[int(idx)]
-                score = float(dist)
+        print(f"[VoiceMatch] 任务 {task.id} 入队，位置 {position}/{position + MatchTask.objects.filter(status='pending', created_at__gt=task.created_at).count()}, 预估 {estimated_wait}s")
 
-                # 检查是否有可试听的音频
-                has_audio = False
-                for audio_root in [PROCESSED_DIR, RAW_DIR]:
-                    celeb_dir = audio_root / name
-                    if celeb_dir.is_dir():
-                        for ext in (".wav", ".mp3", ".m4a"):
-                            if list(celeb_dir.rglob(f"*{ext}")):
-                                has_audio = True
-                                break
-                        if has_audio:
-                            break
-
-                # 跳过无音频的歌手
-                if not has_audio:
-                    continue
-
-                results.append({
-                    "name": name,
-                    "score": round(score, 4),
-                    "rank": len(results) + 1,
-                    "likely_match": score >= 0.3,
-                    "has_audio": has_audio,
-                })
-
-            # 给第一条结果添加说明
-            if results:
-                top_score = results[0]["score"]
-                if top_score >= 0.5:
-                    results[0]["note"] = "✅ 声音非常相似！很可能是同一个人"
-                elif top_score >= 0.3:
-                    results[0]["note"] = "⚠️ 有一定相似度，但需要更多确认"
-                elif top_score >= 0.1:
-                    results[0]["note"] = "🔶 略微相似，但基本可以认为是不同人"
-                else:
-                    results[0]["note"] = "❌ 声纹特征差异很大，不是同一个人"
-                    results[0]["likely_match"] = False
-
-            # ── 生成声纹海报数据 ──
-            poster_data = None
-            try:
-                # 先用 ffmpeg 转码为 WAV，确保 librosa 兼容
-                wav_for_poster = tmp_path.with_suffix(".poster.wav")
-                _ = _ffmpeg_convert_to_wav(str(tmp_path), str(wav_for_poster))
-                poster_audio = str(wav_for_poster) if _ else str(tmp_path)
-
-                audio_analysis = analyze_audio(poster_audio)
-                star_mix = compute_star_mix(results)
-                share_text = build_share_text(star_mix, audio_analysis["fun_title"])
-                poster_data = {
-                    "radar": audio_analysis["radar"],
-                    "radar_labels": ["磁性", "甜美", "力量", "清澈", "独特"],
-                    "voice_tags": audio_analysis["voice_tags"],
-                    "fun_title": audio_analysis["fun_title"],
-                    "star_mix": star_mix,
-                    "share_text": share_text,
-                }
-            except Exception as e:
-                print(f"[VoiceMatch] 海报数据分析失败 (不影响匹配结果): {e}")
-            finally:
-                # 清理临时转码文件
-                if 'wav_for_poster' in dir() and wav_for_poster.exists():
-                    try:
-                        wav_for_poster.unlink()
-                    except Exception:
-                        pass
-
-            response_data = {
-                "results": results,
-                "total_celebrities": len(metadata["celebrities"]),
-                "index_type": self.__class__._current_index_type,
-            }
-            if poster_data:
-                response_data["poster_data"] = poster_data
-
-            return Response(response_data)
-
-        except Exception as e:
-            print(f"[VoiceMatch] 匹配失败: {e}")
-            return Response(
-                {"error": f"声纹匹配失败: {str(e)}"},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            )
-        finally:
-            # 清理临时文件
-            try:
-                if tmp_path.exists():
-                    tmp_path.unlink()
-            except Exception:
-                pass
+        return Response({
+            "task_id": str(task.id),
+            "status": "pending",
+            "position": position,
+            "estimated_wait": estimated_wait,
+        })
 
 
 class FaissIndexDownloadView(APIView):
@@ -966,3 +1104,40 @@ class AudioSampleView(APIView):
                 {"error": f"读取音频文件失败: {str(e)}"},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR,
             )
+
+
+class TaskStatusView(APIView):
+    """查询匹配任务状态（轮询接口）
+    GET /api/voice-matching/status/<task_id>/"""
+
+    def get(self, request, task_id):
+        try:
+            task = MatchTask.objects.get(id=task_id)
+        except MatchTask.DoesNotExist:
+            return Response({"error": "任务不存在"}, status=status.HTTP_404_NOT_FOUND)
+
+        position = None
+        estimated_wait = None
+        if task.status in ('pending', 'processing'):
+            ahead_count = MatchTask.objects.filter(
+                status__in=['pending', 'processing'],
+                created_at__lt=task.created_at,
+            ).count()
+            position = ahead_count + 1
+            avg_time = _get_avg_processing_time()
+            estimated_wait = round(position * avg_time, 1)
+
+        data = {
+            "task_id": str(task.id),
+            "status": task.status,
+            "position": position,
+            "estimated_wait": estimated_wait,
+        }
+
+        if task.status == 'done' and task.result_json:
+            result = json.loads(task.result_json)
+            data.update(result)
+        elif task.status == 'error':
+            data["error"] = task.error_message or "处理失败"
+
+        return Response(data)

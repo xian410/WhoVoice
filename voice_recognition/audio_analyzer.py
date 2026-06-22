@@ -152,39 +152,75 @@ def analyze_audio(audio_path: str) -> Dict:
 
 
 def _generate_voice_tags(radar: Dict[str, int]) -> List[str]:
-    """基于雷达维度生成 2-4 个声纹画像标签"""
+    """基于雷达维度生成 2-4 个声纹画像标签（多档位 + 多组合 + 趣味性）"""
     tags = []
+    m, s, p, c, u = radar["magnetic"], radar["sweet"], radar["power"], radar["clear"], radar["unique"]
 
-    m, s, p, c, u = (
-        radar["magnetic"], radar["sweet"], radar["power"],
-        radar["clear"], radar["unique"],
-    )
-
-    # 单维度标签
-    if m > 70:
-        tags.append("低音炮")
-    if s > 70:
-        tags.append("甜嗓")
-    if p > 70:
-        tags.append("铁肺")
-    if c > 70:
+    # ── 单维度高值标签 ──
+    if m > 80:
+        tags.append("行走的低音炮")
+    elif m > 65:
+        tags.append("质感低音")
+    if s > 80:
+        tags.append("甜度超标")
+    elif s > 65:
+        tags.append("治愈系甜嗓")
+    if p > 80:
+        tags.append("铁肺唱将")
+    elif p > 65:
+        tags.append("能量满满")
+    if c > 80:
         tags.append("水晶嗓")
-    if u > 70:
+    elif c > 65:
+        tags.append("通透清亮")
+    if u > 80:
         tags.append("辨识度满分")
+    elif u > 65:
+        tags.append("自带记忆点")
 
-    # 组合标签
-    if p > 65 and m > 50:
+    # ── 双高组合标签 ──
+    # 磁性 + X
+    if m > 65 and p > 65:
         tags.append("烟嗓")
-    if s > 60 and c > 60:
-        tags.append("清甜好声音")
-    if m > 50 and p < 40:
-        tags.append("温柔低音")
-    if p > 60 and u > 55:
+    if m > 60 and u > 65:
+        tags.append("让人过耳不忘")
+    if m > 60 and c > 65:
+        tags.append("磁性质感声线")
+    # 甜美 + X
+    if s > 65 and c > 65:
+        tags.append("清甜治愈系")
+    if s > 60 and p > 60:
+        tags.append("甜酷双面派")
+    if s > 60 and m > 50:
+        tags.append("又甜又飒")
+    # 力量 + X
+    if p > 65 and u > 60:
         tags.append("爆发力选手")
-    if c > 55 and s < 40:
-        tags.append("质感男声" if m > 50 else "质感女声")
+    if p > 65 and c > 60:
+        tags.append("穿透力MAX")
+    # 清澈 + X
+    if c > 60 and u > 60:
+        tags.append("自带混响")
+    if c > 60 and m > 50 and m < 70:
+        tags.append("清冷质感声")
+    # 独特 + X
+    if u > 65 and s > 55:
+        tags.append("独一无二的甜")
+    if u > 65 and p > 55:
+        tags.append("个性爆发嗓")
 
-    # 去重并限制数量 (2-4个)
+    # ── 均值型/反差型标签 ──
+    avg_all = (m + s + p + c + u) / 5
+    if avg_all > 70:
+        tags.append("六边形战士")
+    if m > 60 and s > 60 and p < 50:
+        tags.append("温柔狙击手")
+    if p > 70 and s < 40:
+        tags.append("硬核嗓")
+    if s > 70 and p > 50:
+        tags.append("甜心轰炸机")
+
+    # ── 去重并限制数量 (2-4个) ──
     seen = set()
     unique_tags = []
     for t in tags:
@@ -194,9 +230,9 @@ def _generate_voice_tags(radar: Dict[str, int]) -> List[str]:
         if len(unique_tags) >= 4:
             break
 
-    # 如果标签太少，兜底补充
+    # ── 如果标签太少，兜底补充 ──
     if len(unique_tags) < 2:
-        fallbacks = ["KTV麦霸潜质", "好声音苗子", "声线有故事"]
+        fallbacks = ["KTV隐藏歌神", "好声音潜力股", "声线有故事", "被生活耽误的歌手", "开口跪选手"]
         for fb in fallbacks:
             if fb not in seen:
                 unique_tags.append(fb)
@@ -208,18 +244,29 @@ def _generate_voice_tags(radar: Dict[str, int]) -> List[str]:
 
 
 def _generate_fun_title(radar: Dict[str, int], voice_tags: List[str]) -> str:
-    """基于雷达维度和标签组合生成趣味称号"""
-    m, s, p, c, u = (
-        radar["magnetic"], radar["sweet"], radar["power"],
-        radar["clear"], radar["unique"],
-    )
+    """基于雷达维度和标签组合生成趣味称号（更丰富的映射）"""
+    m, s, p, c, u = radar["magnetic"], radar["sweet"], radar["power"], radar["clear"], radar["unique"]
+    avg_all = (m + s + p + c + u) / 5
 
     # 找到 Top-2 维度
     dims = [("magnetic", m), ("sweet", s), ("power", p), ("clear", c), ("unique", u)]
     dims_sorted = sorted(dims, key=lambda x: x[1], reverse=True)
-    top1, top2 = dims_sorted[0][0], dims_sorted[1][0]
+    top1_name, top1_val = dims_sorted[0]
+    top2_name, top2_val = dims_sorted[1]
 
-    # 组合称号模板
+    # ── 特例：超高单项专属称号 ──
+    special_titles = [
+        (80, "magnetic", "声带是低频振荡器"),
+        (80, "sweet", "行走的棒棒糖"),
+        (80, "power", "人体小钢炮"),
+        (80, "clear", "被天使吻过的嗓音"),
+        (80, "unique", "整个宇宙你最特别"),
+    ]
+    for threshold, dim_name, title in special_titles:
+        if radar[dim_name] >= threshold:
+            return title
+
+    # ── 组合称号模板 ──
     title_map = {
         ("magnetic", "power"): "深夜电台DJ嗓",
         ("magnetic", "sweet"): "温柔杀手",
@@ -233,7 +280,7 @@ def _generate_fun_title(radar: Dict[str, int], voice_tags: List[str]) -> str:
         ("sweet", "power"): "甜心炸弹",
         ("sweet", "clear"): "邻家好声音",
         ("sweet", "unique"): "甜而不腻的独特嗓",
-        ("clear", "magnetic"): "被天使吻过的嗓音",
+        ("clear", "magnetic"): "自带混响的低音",
         ("clear", "sweet"): "清泉般的声音",
         ("clear", "power"): "高亢嘹亮型",
         ("clear", "unique"): "天籁之音",
@@ -243,12 +290,22 @@ def _generate_fun_title(radar: Dict[str, int], voice_tags: List[str]) -> str:
         ("unique", "clear"): "自带混响的好声音",
     }
 
-    combo = (top1, top2)
-    title = title_map.get(combo, "声线有故事的人")
+    title = title_map.get((top1_name, top2_name), "声线有故事的人")
 
-    # 如果有"烟嗓"标签，增强称号
+    # ── 修饰增强 ──
     if "烟嗓" in voice_tags and "烟" not in title:
         title = f"被天使吻过的烟嗓"
+    if avg_all > 70 and "六边" not in title and "满分" not in title and "小钢炮" not in title:
+        title = f"全能声线战士"
+    if top1_val > 70 and top2_val > 60:
+        # 双高加修饰
+        intensifiers = {
+            "magnetic": "低音",
+            "sweet": "甜嗓",
+        }
+        prefix = intensifiers.get(top1_name, "")
+        if prefix and prefix not in title:
+            title = f"{prefix}{title}"
 
     return title
 

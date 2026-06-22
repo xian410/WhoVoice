@@ -23,10 +23,45 @@
     <main class="main">
       <AudioRecorder @audio-ready="handleAudioReady" />
 
-      <!-- 加载状态 -->
+      <!-- 加载状态 / 排队状态 -->
       <div v-if="voiceStore.isMatching" class="loading">
-        <div class="spinner"></div>
-        <p>正在分析声纹特征...</p>
+        <!-- 有排队信息时显示排队进度 -->
+        <template v-if="voiceStore.isQueued && voiceStore.queueInfo">
+          <div class="queue-box">
+            <div class="queue-icon">
+              <span v-if="voiceStore.queueInfo.status === 'processing'" class="processing-anim">🧠</span>
+              <span v-else-if="voiceStore.queueInfo.position <= 1" class="processing-anim">🎵</span>
+              <span v-else class="queue-number">{{ voiceStore.queueInfo.position }}</span>
+            </div>
+            <p class="queue-title">
+              <template v-if="voiceStore.queueInfo.status === 'processing'">
+                正在匹配声纹...
+              </template>
+              <template v-else>
+                排队中，您前面还有 <strong>{{ voiceStore.queueInfo.position - 1 }}</strong> 位
+              </template>
+            </p>
+            <p class="queue-sub">
+              <template v-if="voiceStore.queueInfo.estimatedWait">
+                预计等待约 <strong>{{ Math.ceil(voiceStore.queueInfo.estimatedWait) }}</strong> 秒
+              </template>
+              <template v-else>
+                即将开始匹配...
+              </template>
+            </p>
+            <div class="queue-bar">
+              <div
+                class="queue-bar-fill"
+                :style="{ width: voiceStore.queueInfo.status === 'processing' ? '80%' : Math.max(10, 100 / (voiceStore.queueInfo.position + 1)) + '%' }"
+              ></div>
+            </div>
+          </div>
+        </template>
+        <!-- 无排队信息时显示默认加载 -->
+        <template v-else>
+          <div class="spinner"></div>
+          <p>正在上传音频...</p>
+        </template>
       </div>
 
       <!-- 匹配结果 -->
@@ -239,6 +274,75 @@ function handlePreviewError(msg) {
   text-align: center;
   padding: 2rem;
   color: #666;
+}
+
+.queue-box {
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.queue-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.queue-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.processing-anim {
+  font-size: 2.5rem;
+  animation: pulse 1.5s infinite;
+}
+
+.queue-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 0.3rem;
+}
+
+.queue-title strong {
+  color: #e94560;
+}
+
+.queue-sub {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.queue-sub strong {
+  color: #1a1a2e;
+}
+
+.queue-bar {
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.queue-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a1a2e, #e94560);
+  border-radius: 3px;
+  transition: width 1s ease;
 }
 
 .spinner {

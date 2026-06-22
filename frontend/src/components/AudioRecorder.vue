@@ -133,7 +133,9 @@ async function startRecording() {
     analyserNode.value = analyser;
     mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
     mediaRecorder.onstop = () => {
-      const blob = new Blob(chunks, { type: "audio/webm" });
+      // 使用 MediaRecorder 实际输出的 MIME 类型（iOS 为 audio/mp4，桌面为 audio/webm）
+      const mimeType = mediaRecorder.mimeType || "audio/webm";
+      const blob = new Blob(chunks, { type: mimeType });
       recordedBlob.value = blob;
       audioUrl.value = URL.createObjectURL(blob);
       stream.getTracks().forEach((track) => track.stop());

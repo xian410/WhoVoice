@@ -111,7 +111,15 @@ function drawRadarChart(ctx, cx, cy, radius, values, labels) {
   const angleStep = (Math.PI * 2) / n;
   const startAngle = -Math.PI / 2;
 
-  // 绘制网格 (3层)
+  // ── 外圈光晕 ──
+  const glow = ctx.createRadialGradient(cx, cy, radius * 0.6, cx, cy, radius * 1.2);
+  glow.addColorStop(0, "rgba(233, 69, 96, 0)");
+  glow.addColorStop(0.5, "rgba(233, 69, 96, 0.04)");
+  glow.addColorStop(1, "rgba(108, 92, 231, 0)");
+  ctx.fillStyle = glow;
+  ctx.fillRect(cx - radius * 1.3, cy - radius * 1.3, radius * 2.6, radius * 2.6);
+
+  // ── 绘制网格 (4层) ──
   for (let level = 1; level <= 4; level++) {
     const r = (radius * level) / 4;
     ctx.beginPath();
@@ -123,23 +131,32 @@ function drawRadarChart(ctx, cx, cy, radius, values, labels) {
       else ctx.lineTo(x, y);
     }
     ctx.closePath();
-    ctx.strokeStyle = `rgba(255,255,255,${level === 4 ? 0.3 : 0.12})`;
-    ctx.lineWidth = 1;
+    ctx.strokeStyle = `rgba(255,255,255,${level === 4 ? 0.25 : 0.1})`;
+    ctx.lineWidth = level === 4 ? 1.2 : 0.8;
     ctx.stroke();
   }
 
-  // 绘制轴线
+  // ── 绘制轴线 ──
   for (let i = 0; i < n; i++) {
     const angle = startAngle + i * angleStep;
     ctx.beginPath();
     ctx.moveTo(cx, cy);
     ctx.lineTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
-    ctx.strokeStyle = "rgba(255,255,255,0.15)";
+    ctx.strokeStyle = "rgba(255,255,255,0.12)";
     ctx.lineWidth = 1;
     ctx.stroke();
   }
 
-  // 绘制数据区域
+  // ── 中心装饰圆 ──
+  const centerGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 18);
+  centerGrad.addColorStop(0, "rgba(255,255,255,0.3)");
+  centerGrad.addColorStop(1, "rgba(255,255,255,0)");
+  ctx.beginPath();
+  ctx.arc(cx, cy, 18, 0, Math.PI * 2);
+  ctx.fillStyle = centerGrad;
+  ctx.fill();
+
+  // ── 绘制数据区域（带渐变填充 + 描边发光） ──
   ctx.beginPath();
   for (let i = 0; i <= n; i++) {
     const idx = i % n;
@@ -152,22 +169,36 @@ function drawRadarChart(ctx, cx, cy, radius, values, labels) {
   }
   ctx.closePath();
 
-  // 填充渐变
+  // 发光描边
+  ctx.shadowColor = "rgba(233, 69, 96, 0.4)";
+  ctx.shadowBlur = 15;
+  ctx.strokeStyle = "rgba(233, 69, 96, 0.95)";
+  ctx.lineWidth = 2.5;
+  ctx.stroke();
+  ctx.shadowBlur = 0;
+
+  // 渐变填充
   const fillGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
-  fillGrad.addColorStop(0, "rgba(233, 69, 96, 0.4)");
+  fillGrad.addColorStop(0, "rgba(233, 69, 96, 0.45)");
+  fillGrad.addColorStop(0.6, "rgba(233, 69, 96, 0.25)");
   fillGrad.addColorStop(1, "rgba(108, 92, 231, 0.3)");
   ctx.fillStyle = fillGrad;
   ctx.fill();
-  ctx.strokeStyle = "rgba(233, 69, 96, 0.9)";
-  ctx.lineWidth = 2.5;
-  ctx.stroke();
 
-  // 绘制数据点
+  // ── 数据点（带发光外圈） ──
   for (let i = 0; i < n; i++) {
     const angle = startAngle + i * angleStep;
     const r = (values[i] / 100) * radius;
     const x = cx + r * Math.cos(angle);
     const y = cy + r * Math.sin(angle);
+
+    // 外发光圈
+    ctx.beginPath();
+    ctx.arc(x, y, 8, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(233, 69, 96, 0.2)";
+    ctx.fill();
+
+    // 实心点
     ctx.beginPath();
     ctx.arc(x, y, 5, 0, Math.PI * 2);
     ctx.fillStyle = "#e94560";
@@ -177,22 +208,26 @@ function drawRadarChart(ctx, cx, cy, radius, values, labels) {
     ctx.stroke();
   }
 
-  // 标签和数值
+  // ── 标签和数值（更清晰的排版） ──
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   for (let i = 0; i < n; i++) {
     const angle = startAngle + i * angleStep;
-    const labelR = radius + 35;
+    const labelR = radius + 38;
     const x = cx + labelR * Math.cos(angle);
     const y = cy + labelR * Math.sin(angle);
 
+    // 维度名称
     ctx.font = "bold 18px -apple-system, sans-serif";
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = "rgba(255,255,255,0.9)";
     ctx.fillText(labels[i], x, y - 10);
 
-    ctx.font = "14px -apple-system, sans-serif";
-    ctx.fillStyle = "rgba(233, 69, 96, 0.9)";
-    ctx.fillText(values[i], x, y + 12);
+    // 数值（带底色圆标）
+    const valStr = String(values[i]);
+    ctx.font = "bold 15px -apple-system, sans-serif";
+    ctx.fillStyle = "rgba(233, 69, 96, 0.95)";
+    // 在半透明条上显示数值
+    ctx.fillText(valStr, x, y + 14);
   }
 }
 

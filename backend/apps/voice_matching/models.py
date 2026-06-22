@@ -1,0 +1,30 @@
+import uuid
+from django.db import models
+
+
+class MatchTask(models.Model):
+    """声纹匹配排队任务"""
+    STATUS_CHOICES = [
+        ('pending', '排队中'),
+        ('processing', '处理中'),
+        ('done', '已完成'),
+        ('error', '失败'),
+    ]
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending', db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    started_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    audio_path = models.CharField(max_length=512, blank=True, default='')
+    audio_name = models.CharField(max_length=255, default='recording.webm')
+    index_type = models.CharField(max_length=20, default='clean')
+    result_json = models.TextField(null=True, blank=True)
+    error_message = models.TextField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['created_at']
+        verbose_name = '匹配任务'
+        verbose_name_plural = '匹配任务'
+
+    def __str__(self):
+        return f"MatchTask({self.id}) status={self.status}"
