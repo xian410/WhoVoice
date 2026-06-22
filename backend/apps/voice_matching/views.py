@@ -6,6 +6,7 @@ import os
 import sys
 import json
 import numpy as np
+import shutil
 from pathlib import Path
 from typing import Optional
 from rest_framework.views import APIView
@@ -35,16 +36,36 @@ RAW_DIR = PROJECT_ROOT / "data" / "raw"
 
 
 # ── ffmpeg 转码辅助函数 ──
-import shutil
-_FFMPEG_CANDIDATES = [
-    shutil.which("ffmpeg"),       # 系统 PATH
-    "/usr/bin/ffmpeg",            # Linux 常见路径
-    "/usr/local/bin/ffmpeg",      # 手动编译安装
-    "ffmpeg",
-    "ffmpeg.exe",
-]
-# 过滤 None
-_FFMPEG_CANDIDATES = [c for c in _FFMPEG_CANDIDATES if c]
+def _build_ffmpeg_candidates() -> list:
+    """构建 ffmpeg 候选路径列表，覆盖 Linux / Windows 常见位置"""
+    candidates = []
+    # 从 PATH 中查找所有 ffmpeg（可能有多个，如 conda 和系统安装）
+    for name in ("ffmpeg", "ffmpeg.exe"):
+        for d in os.environ.get("PATH", "").split(os.pathsep):
+            p = os.path.join(d, name)
+            if os.path.isfile(p):
+                candidates.append(p)
+    # Linux 常见路径
+    candidates += ["/usr/bin/ffmpeg", "/usr/local/bin/ffmpeg"]
+    # Windows 常见安装路径
+    if os.name == "nt":
+        appdata = os.environ.get("LOCALAPPDATA", "")
+        if appdata:
+            candidates.append(os.path.join(appdata, "Microsoft", "WinGet", "Links", "ffmpeg.exe"))
+        candidates += [
+            r"C:\ffmpeg\bin\ffmpeg.exe",
+            r"C:\Program Files\ffmpeg\bin\ffmpeg.exe",
+            r"C:\Program Files (x86)\ffmpeg\bin\ffmpeg.exe",
+            r"D:\anaconda3\Library\bin\ffmpeg.exe",
+        ]
+    # 兜底：用 shutil.which 查找系统 PATH 中的 ffmpeg
+    for name in ("ffmpeg", "ffmpeg.exe"):
+        found = shutil.which(name)
+        if found and found not in candidates:
+            candidates.append(found)
+    return candidates
+
+_FFMPEG_CANDIDATES = _build_ffmpeg_candidates()
 _FFMPEG_PATH = None
 
 
@@ -65,6 +86,16 @@ def _find_ffmpeg() -> str:
     _FFMPEG_PATH = ""
     return ""
 
+
+# ── 强制 pydub 使用有效的 ffmpeg 完整路径，避免 PATH 中损坏的 conda ffmpeg ──
+_FFMPEG_FOUND = _find_ffmpeg()
+if _FFMPEG_FOUND:
+    try:
+        from pydub import AudioSegment
+        AudioSegment.converter = _FFMPEG_FOUND
+        print(f"[VoiceMatch] pydub converter 设置为: {_FFMPEG_FOUND}")
+    except ImportError:
+        pass  # pydub 未安装，忽略
 
 def _ffmpeg_convert_to_wav(input_path: str, output_path: str) -> bool:
     """用 ffmpeg 将任意音频转为 WAV (16kHz, 单声道, 16bit)"""
@@ -884,9 +915,9 @@ class AudioSampleView(APIView):
                 return f.read(), cls._guess_content_type(input_path)
 
     @staticmethod
-    def _guess_content_type(path: Path) -> str:
-        """根据文件扩展名返回 MIME 类型"""
-        ext = path.suffix.lower()
+    def _guess_content_type(path) -> str:
+        """根据文件扩展名返回 MIME 类型，接受 str 或 Path"""
+        ext = Path(path).suffix.lower()
         return {
             ".wav": "audio/wav",
             ".mp3": "audio/mpeg",
