@@ -1,63 +1,427 @@
 {
   "singers": [
     {
-      "name": "MC HotDog",
-      "avatar_color": "#e17055",
-      "initial": "M",
-      "video_count": 6,
-      "slice_count": 36,
+      "name": "A-Lin",
+      "avatar_color": "#b2bec3",
+      "initial": "A",
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "韩流来袭",
-        "我爱台M",
-        "轻熟女27"
+        "一个人",
+        "等你-《华丽的挑战》电视剧插曲"
       ],
-      "spk_id": "SPK0002"
+      "spk_id": "SPK0323"
     },
     {
-      "name": "S.H.E",
-      "avatar_color": "#16213e",
-      "initial": "S",
-      "video_count": 4,
-      "slice_count": 22,
+      "name": "Aimer",
+      "avatar_color": "#d63031",
+      "initial": "A",
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "五月天",
-        "你曾是少年"
+        "Ref:rain-《恋如雨止》TV动画片尾曲",
+        "星屑ビーナス-《奢侈的爱情会降临吗》电视剧主题曲"
       ],
-      "spk_id": "SPK0003"
+      "spk_id": "SPK0406"
     },
     {
-      "name": "万能青年旅店",
-      "avatar_color": "#16213e",
-      "initial": "万",
-      "video_count": 5,
-      "slice_count": 14,
+      "name": "BoA",
+      "avatar_color": "#b2bec3",
+      "initial": "B",
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "山雀",
-        "揪心的玩笑与漫长的白日梦"
+        "永遠",
+        "奇蹟"
       ],
-      "spk_id": "SPK0005"
+      "spk_id": "SPK0409"
     },
     {
-      "name": "五月天",
-      "avatar_color": "#2d3436",
-      "initial": "五",
-      "video_count": 3,
-      "slice_count": 25,
-      "representative_songs": [
-        "五月天"
-      ],
-      "spk_id": "SPK0006"
-    },
-    {
-      "name": "信乐团",
+      "name": "en",
       "avatar_color": "#e94560",
-      "initial": "信",
-      "video_count": 3,
-      "slice_count": 11,
+      "initial": "e",
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "死了都要爱"
+        "Blackout"
       ],
-      "spk_id": "SPK0007"
+      "spk_id": "SPK0444"
+    },
+    {
+      "name": "GAI周延",
+      "avatar_color": "#6c5ce7",
+      "initial": "G",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "GAI周延&amp;戴佩妮《用情》百万豪装录音棚大声听",
+        "在百万录音棚听 GAI周延/大痒痒《哪吒》 【《哪吒之魔童降世》电影主题曲】快乐不需要等到明天",
+        "星梦-XingMeng",
+        "逆魂-《仙逆》动画片头曲"
+      ],
+      "spk_id": "SPK0111"
+    },
+    {
+      "name": "IU",
+      "avatar_color": "#e17055",
+      "initial": "I",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "深夜自白",
+        "雨夜念旧情"
+      ],
+      "spk_id": "SPK0408"
+    },
+    {
+      "name": "Jam",
+      "avatar_color": "#00cec9",
+      "initial": "J",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "七月上",
+        "不露声色"
+      ],
+      "spk_id": "SPK0126"
+    },
+    {
+      "name": "JS",
+      "avatar_color": "#636e72",
+      "initial": "J",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "杀破狼",
+        "相逢在梦中"
+      ],
+      "spk_id": "SPK0370"
+    },
+    {
+      "name": "Leo王",
+      "avatar_color": "#0984e3",
+      "initial": "L",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "大象火车",
+        "快乐大人餐"
+      ],
+      "spk_id": "SPK0340"
+    },
+    {
+      "name": "LiSA",
+      "avatar_color": "#74b9ff",
+      "initial": "L",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "紅蓮華"
+      ],
+      "spk_id": "SPK0405"
+    },
+    {
+      "name": "MISIA",
+      "avatar_color": "#636e72",
+      "initial": "M",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "オルフェンズの涙-《机动战士高达：铁血的奥尔芬斯》TV动画片尾曲",
+        "君のそばにいるよ-《钢之炼金术师》电影主题曲"
+      ],
+      "spk_id": "SPK0402"
+    },
+    {
+      "name": "PSY",
+      "avatar_color": "#e17055",
+      "initial": "P",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "江南Style",
+        "챔피언"
+      ],
+      "spk_id": "SPK0410"
+    },
+    {
+      "name": "Tank",
+      "avatar_color": "#fdcb6e",
+      "initial": "T",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "夏雪",
+        "千年泪-《天外飞仙》电视剧插曲"
+      ],
+      "spk_id": "SPK0289"
+    },
+    {
+      "name": "Usher",
+      "avatar_color": "#a29bfe",
+      "initial": "U",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "Crash",
+        "More-2010年NBA全明星赛主题曲"
+      ],
+      "spk_id": "SPK0391"
+    },
+    {
+      "name": "VAVA",
+      "avatar_color": "#fdcb6e",
+      "initial": "V",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "VAVA火力全开 flow却像回到了17年？《站好》 #vava #站好 #中国说唱巅峰对决",
+        "我的新衣 (My New Swag Feat. Ty. &amp; 王倩倩) 超清 華納 Official HD 官方MV",
+        "无风带【瓦无力Vavli丨自制歌词版MV#118】",
+        "羊羊运动会"
+      ],
+      "spk_id": "SPK0114"
+    },
+    {
+      "name": "Yanni",
+      "avatar_color": "#636e72",
+      "initial": "Y",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "河西走廊之梦",
+        "和兰花在一起"
+      ],
+      "spk_id": "SPK0443"
+    },
+    {
+      "name": "YOASOBI",
+      "avatar_color": "#2d3436",
+      "initial": "Y",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "BABY",
+        "ADRENA"
+      ],
+      "spk_id": "SPK0407"
+    },
+    {
+      "name": "万晓利",
+      "avatar_color": "#2ecc71",
+      "initial": "万",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "女儿情-《后会无期》电影插曲",
+        "流氓"
+      ],
+      "spk_id": "SPK0129"
+    },
+    {
+      "name": "万芳",
+      "avatar_color": "#0f3460",
+      "initial": "万",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "爱上你给的痛",
+        "新不了情"
+      ],
+      "spk_id": "SPK0307"
+    },
+    {
+      "name": "中島美嘉",
+      "avatar_color": "#d63031",
+      "initial": "中",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "光-《淡岛百景》TV动画片尾曲",
+        "僕が死のうと思ったのは"
+      ],
+      "spk_id": "SPK0401"
+    },
+    {
+      "name": "买辣椒也用券",
+      "avatar_color": "#00b894",
+      "initial": "买",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "起风了",
+        "第三人称"
+      ],
+      "spk_id": "SPK0199"
+    },
+    {
+      "name": "于文文",
+      "avatar_color": "#2d3436",
+      "initial": "于",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "荆棘-电影《绝密任务》主题曲",
+        "奉陪"
+      ],
+      "spk_id": "SPK0146"
+    },
+    {
+      "name": "云飞",
+      "avatar_color": "#d63031",
+      "initial": "云",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "父亲的草原母亲的河",
+        "天边-央young之夏草原之夜歌会live版"
+      ],
+      "spk_id": "SPK0186"
+    },
+    {
+      "name": "井柏然",
+      "avatar_color": "#2d3436",
+      "initial": "井",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "最初的梦想-《微微一笑很倾城》电影插曲",
+        "不能忘"
+      ],
+      "spk_id": "SPK0190"
+    },
+    {
+      "name": "任贤齐",
+      "avatar_color": "#74b9ff",
+      "initial": "任",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "天涯",
+        "流着泪的你的脸"
+      ],
+      "spk_id": "SPK0267"
+    },
+    {
+      "name": "伍佰",
+      "avatar_color": "#00cec9",
+      "initial": "伍",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "晚风",
+        "挪威森林"
+      ],
+      "spk_id": "SPK0265"
+    },
+    {
+      "name": "伍思凯",
+      "avatar_color": "#636e72",
+      "initial": "伍",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "特別的愛給特別的你",
+        "特别的爱给特别的你"
+      ],
+      "spk_id": "SPK0295"
+    },
+    {
+      "name": "伍珂玥",
+      "avatar_color": "#e17055",
+      "initial": "伍",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "天骄",
+        "谢谢你"
+      ],
+      "spk_id": "SPK0183"
+    },
+    {
+      "name": "何以奇",
+      "avatar_color": "#1a1a2e",
+      "initial": "何",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "反正",
+        "让你飞"
+      ],
+      "spk_id": "SPK0371"
+    },
+    {
+      "name": "何洁",
+      "avatar_color": "#a29bfe",
+      "initial": "何",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【歌曲推荐】《多米诺》-何洁",
+        "《我可以假装很好》-苏醒 何洁【Hi-Res无损音质】完了，我默默收藏的这首宝藏看来是压不住了.......",
+        "你一定要幸福"
+      ],
+      "spk_id": "SPK0094"
+    },
+    {
+      "name": "何维健",
+      "avatar_color": "#6c5ce7",
+      "initial": "何",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "晴天",
+        "不值得"
+      ],
+      "spk_id": "SPK0380"
+    },
+    {
+      "name": "侧田",
+      "avatar_color": "#2ecc71",
+      "initial": "侧",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "情歌",
+        "Forget"
+      ],
+      "spk_id": "SPK0221"
+    },
+    {
+      "name": "侯湘婷",
+      "avatar_color": "#e94560",
+      "initial": "侯",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "暧昧",
+        "我是一只鱼"
+      ],
+      "spk_id": "SPK0373"
+    },
+    {
+      "name": "信",
+      "avatar_color": "#2ecc71",
+      "initial": "信",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "过情关",
+        "信的夏天"
+      ],
+      "spk_id": "SPK0282"
+    },
+    {
+      "name": "倉木麻衣",
+      "avatar_color": "#0f3460",
+      "initial": "倉",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "儚さ",
+        "always-《名侦探柯南》TV动画第233-247集片尾曲|《名侦探柯南：通往天国的倒计时》剧场版主题曲"
+      ],
+      "spk_id": "SPK0399"
     },
     {
       "name": "光良",
@@ -72,6 +436,77 @@
       "spk_id": "SPK0008"
     },
     {
+      "name": "关喆",
+      "avatar_color": "#fdcb6e",
+      "initial": "关",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "想你的夜(DJ版)",
+        "领悟"
+      ],
+      "spk_id": "SPK0151"
+    },
+    {
+      "name": "关正杰",
+      "avatar_color": "#fd79a8",
+      "initial": "关",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "渔舟唱晚",
+        "万水千山纵横-《天龙八部》无线电视剧主题曲"
+      ],
+      "spk_id": "SPK0205"
+    },
+    {
+      "name": "关淑怡",
+      "avatar_color": "#2d3436",
+      "initial": "关",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "这是我心里对白",
+        "无尽的爱"
+      ],
+      "spk_id": "SPK0236"
+    },
+    {
+      "name": "关诗敏",
+      "avatar_color": "#1a1a2e",
+      "initial": "关",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "晴天-原唱：周杰伦",
+        "恋人未满"
+      ],
+      "spk_id": "SPK0345"
+    },
+    {
+      "name": "冷漠",
+      "avatar_color": "#00b894",
+      "initial": "冷",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "半生蹉跎半生涩"
+      ],
+      "spk_id": "SPK0162"
+    },
+    {
+      "name": "凤飞飞",
+      "avatar_color": "#fdcb6e",
+      "initial": "凤",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "追梦人",
+        "掌声响起来"
+      ],
+      "spk_id": "SPK0299"
+    },
+    {
       "name": "刀郎",
       "avatar_color": "#55efc4",
       "initial": "刀",
@@ -83,6 +518,42 @@
         "灰色轨迹"
       ],
       "spk_id": "SPK0102"
+    },
+    {
+      "name": "刘亦菲",
+      "avatar_color": "#636e72",
+      "initial": "刘",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "心悸",
+        "自己-电影《花木兰》中文主题曲"
+      ],
+      "spk_id": "SPK0192"
+    },
+    {
+      "name": "刘和刚",
+      "avatar_color": "#e94560",
+      "initial": "刘",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "好男儿就是要当兵",
+        "当你的秀发拂过我的钢枪"
+      ],
+      "spk_id": "SPK0178"
+    },
+    {
+      "name": "刘大壮",
+      "avatar_color": "#636e72",
+      "initial": "刘",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "你是我这一辈子最大的遗憾",
+        "我很好（DJ版）"
+      ],
+      "spk_id": "SPK0198"
     },
     {
       "name": "刘宇宁",
@@ -113,17 +584,33 @@
       "spk_id": "SPK0010"
     },
     {
-      "name": "刘柏辛",
-      "avatar_color": "#636e72",
+      "name": "刘惜君",
+      "avatar_color": "#0984e3",
       "initial": "刘",
-      "video_count": 5,
-      "slice_count": 16,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "宾士-Benz",
-        "Strange Things",
-        "Bossin’"
+        "推荐一首清新的歌曲——《大气》刘惜君",
+        "总会-刘惜君「总会有天你捡到我的心，明白我似走肉的孤行」",
+        "我要找到你",
+        "我很快乐"
       ],
-      "spk_id": "SPK0011"
+      "spk_id": "SPK0095"
+    },
+    {
+      "name": "刘柏辛",
+      "avatar_color": "#00b894",
+      "initial": "刘",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "凶惨! 听Lexie刘柏辛唱Gai的《宾士-Benz》，纵享丝滑",
+        "不可错过的刘柏辛首专歌曲《Strange Things》歌词版",
+        "热狗化身小迷弟 刘柏辛旋律说唱《Bossin’》",
+        "「爱无限」— 刘柏辛Lexie（官方MV）",
+        "「命运」— 刘柏辛Lexie (官方MV)"
+      ],
+      "spk_id": "SPK0445"
     },
     {
       "name": "刘欢",
@@ -140,6 +627,28 @@
       "spk_id": "SPK0012"
     },
     {
+      "name": "刘聪",
+      "avatar_color": "#d63031",
+      "initial": "刘",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "大吉大利发大财"
+      ],
+      "spk_id": "SPK0118"
+    },
+    {
+      "name": "刘若英",
+      "avatar_color": "#74b9ff",
+      "initial": "刘",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "后来"
+      ],
+      "spk_id": "SPK0320"
+    },
+    {
       "name": "华晨宇",
       "avatar_color": "#0f3460",
       "initial": "华",
@@ -151,6 +660,18 @@
         "烟火里的尘埃"
       ],
       "spk_id": "SPK0014"
+    },
+    {
+      "name": "卓文萱",
+      "avatar_color": "#2ecc71",
+      "initial": "卓",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "洛丽塔",
+        "读心术"
+      ],
+      "spk_id": "SPK0326"
     },
     {
       "name": "单依纯",
@@ -167,6 +688,18 @@
       "spk_id": "SPK0015"
     },
     {
+      "name": "卢冠廷",
+      "avatar_color": "#0984e3",
+      "initial": "卢",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "凭着爱",
+        "赌神-《澳门风云3》电影插曲"
+      ],
+      "spk_id": "SPK0212"
+    },
+    {
       "name": "卫兰",
       "avatar_color": "#2d3436",
       "initial": "卫",
@@ -177,6 +710,18 @@
         "心乱如麻"
       ],
       "spk_id": "SPK0017"
+    },
+    {
+      "name": "双笙",
+      "avatar_color": "#dfe6e9",
+      "initial": "双",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "【双笙】新歌：《草莓》 | Hi-Res纯享版",
+        "故梦"
+      ],
+      "spk_id": "SPK0167"
     },
     {
       "name": "古巨基",
@@ -192,29 +737,180 @@
       "spk_id": "SPK0018"
     },
     {
-      "name": "吴亦凡",
+      "name": "叶丽仪",
       "avatar_color": "#00b894",
-      "initial": "吴",
-      "video_count": 4,
-      "slice_count": 27,
+      "initial": "叶",
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "Freedom",
-        "杏花弦外雨",
-        "我想"
+        "上海滩"
       ],
-      "spk_id": "SPK0019"
+      "spk_id": "SPK0249"
     },
     {
-      "name": "吴青峰",
-      "avatar_color": "#636e72",
-      "initial": "吴",
-      "video_count": 3,
-      "slice_count": 13,
+      "name": "叶倩文",
+      "avatar_color": "#dfe6e9",
+      "initial": "叶",
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "如果声音不记得",
-        "你講的話"
+        "潇洒走一回",
+        "片片枫叶情"
       ],
-      "spk_id": "SPK0020"
+      "spk_id": "SPK0232"
+    },
+    {
+      "name": "叶振棠",
+      "avatar_color": "#0984e3",
+      "initial": "叶",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "太极张三丰-《太极张三丰》电视剧主题曲",
+        "大号是中华(粤)"
+      ],
+      "spk_id": "SPK0206"
+    },
+    {
+      "name": "叶蓓",
+      "avatar_color": "#dfe6e9",
+      "initial": "叶",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我们好像在哪见过 -杨宗纬、叶蓓 -【Hi-Res无损音质】",
+        "【Hi-Res无损音质】叶蓓《想把我唱给你听》无损音质完整版",
+        "白桦林",
+        "白桦树"
+      ],
+      "spk_id": "SPK0088"
+    },
+    {
+      "name": "吉克隽逸",
+      "avatar_color": "#e17055",
+      "initial": "吉",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "山人乐队_吉克隽逸-上山下 (Live)",
+        "一首吉克隽逸的经典歌曲《不要怕》",
+        "清平调 韩雪 吉克隽逸《闪亮的歌》",
+        "冲-《钟馗》电影主题曲"
+      ],
+      "spk_id": "SPK0098"
+    },
+    {
+      "name": "后弦",
+      "avatar_color": "#e17055",
+      "initial": "后",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "后弦-娃娃脸",
+        "后弦-茶太浓（新歌）",
+        "下完这场雨",
+        "娃娃脸",
+        "西厢"
+      ],
+      "spk_id": "SPK0081"
+    },
+    {
+      "name": "向洋",
+      "avatar_color": "#16213e",
+      "initial": "向",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "有没有",
+        "口水旋律Vol.8"
+      ],
+      "spk_id": "SPK0381"
+    },
+    {
+      "name": "吕方",
+      "avatar_color": "#1a1a2e",
+      "initial": "吕",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "亲爱的你呀",
+        "流浪花"
+      ],
+      "spk_id": "SPK0230"
+    },
+    {
+      "name": "吴克群",
+      "avatar_color": "#74b9ff",
+      "initial": "吴",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "请记得我",
+        "战至终章-《吞噬星空剧场版：决战原始星》动画主题曲"
+      ],
+      "spk_id": "SPK0281"
+    },
+    {
+      "name": "吴卓源",
+      "avatar_color": "#e94560",
+      "initial": "吴",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "当你转身离开",
+        "精神分裂"
+      ],
+      "spk_id": "SPK0341"
+    },
+    {
+      "name": "吴建豪",
+      "avatar_color": "#fd79a8",
+      "initial": "吴",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "小婚礼",
+        "说爱就爱"
+      ],
+      "spk_id": "SPK0365"
+    },
+    {
+      "name": "吴莫愁",
+      "avatar_color": "#00b894",
+      "initial": "吴",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【4K】吴莫愁《爱自己》官方版动态歌词MV（电视剧《爱情没有神话》片头曲）",
+        "就现在 (百事可乐中文广告曲) MV 「一起来！渴望，就现在！」",
+        "爱自己-《爱情没有神话》电视剧片头曲",
+        "去探险吧-《赵琳的探险日记》动画主题曲"
+      ],
+      "spk_id": "SPK0099"
+    },
+    {
+      "name": "吴雨霏",
+      "avatar_color": "#e84393",
+      "initial": "吴",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "生生世世爱",
+        "紫禁情-《甄嬛传》电视剧粤语版主题曲"
+      ],
+      "spk_id": "SPK0245"
+    },
+    {
+      "name": "周传雄",
+      "avatar_color": "#d63031",
+      "initial": "周",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "黄昏",
+        "再遇见"
+      ],
+      "spk_id": "SPK0266"
     },
     {
       "name": "周兴哲",
@@ -231,16 +927,55 @@
       "spk_id": "SPK0021"
     },
     {
-      "name": "周杰伦",
-      "avatar_color": "#00cec9",
+      "name": "周华健",
+      "avatar_color": "#fdcb6e",
       "initial": "周",
-      "video_count": 6,
-      "slice_count": 21,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "千山万水",
-        "爱琴海"
+        "难念的经",
+        "其实不想走"
       ],
-      "spk_id": "SPK0000"
+      "spk_id": "SPK0257"
+    },
+    {
+      "name": "周慧敏",
+      "avatar_color": "#6c5ce7",
+      "initial": "周",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "失眠",
+        "最爱"
+      ],
+      "spk_id": "SPK0238"
+    },
+    {
+      "name": "周杰伦",
+      "avatar_color": "#fd79a8",
+      "initial": "周",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "周杰伦：解构周杰伦（2007年）",
+        "【Hi-Res无损音质】周杰伦《千山万水》这歌原来这么好听 ！经典歌曲最好听的版本 4K60P",
+        "【七月的极光 | 官方MV 】周杰伦 即使当太阳下山了，夜幕低垂时，在七月的极光之中，拥抱爱情等于拥有整个宇宙",
+        "【𝐇𝐢-𝐑𝐞𝐬无损音质】｜《爱琴海》- 周杰伦 -‘𝙈𝙑视听’",
+        "周杰伦《说了再见》专辑跨时代，百万升级音质无与伦比"
+      ],
+      "spk_id": "SPK0446"
+    },
+    {
+      "name": "周柏豪",
+      "avatar_color": "#74b9ff",
+      "initial": "周",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我的宣言",
+        "小白"
+      ],
+      "spk_id": "SPK0220"
     },
     {
       "name": "周深",
@@ -257,6 +992,18 @@
       "spk_id": "SPK0022"
     },
     {
+      "name": "周渝民",
+      "avatar_color": "#0984e3",
+      "initial": "周",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "谁给我的勇气",
+        "在你左右"
+      ],
+      "spk_id": "SPK0367"
+    },
+    {
       "name": "周笔畅",
       "avatar_color": "#81ecec",
       "initial": "周",
@@ -264,6 +1011,17 @@
       "slice_count": 16,
       "representative_songs": [],
       "spk_id": "SPK0023"
+    },
+    {
+      "name": "周迅",
+      "avatar_color": "#b2bec3",
+      "initial": "周",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "飘摇"
+      ],
+      "spk_id": "SPK0187"
     },
     {
       "name": "品冠",
@@ -277,6 +1035,107 @@
         "妥妥"
       ],
       "spk_id": "SPK0024"
+    },
+    {
+      "name": "夏韶声",
+      "avatar_color": "#1a1a2e",
+      "initial": "夏",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "等到花儿都谢了",
+        "祝福"
+      ],
+      "spk_id": "SPK0255"
+    },
+    {
+      "name": "多亮",
+      "avatar_color": "#16213e",
+      "initial": "多",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "何惧-《剑侠情缘之刀剑决》主题曲",
+        "你的背包-原唱：陈奕迅"
+      ],
+      "spk_id": "SPK0179"
+    },
+    {
+      "name": "大卫·鲍伊",
+      "avatar_color": "#e94560",
+      "initial": "大",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "托尼·戴的福音",
+        "记忆免费假期"
+      ],
+      "spk_id": "SPK0393"
+    },
+    {
+      "name": "大张伟",
+      "avatar_color": "#e94560",
+      "initial": "大",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "在百万豪装录音棚大声听 大张伟《万物盛开法则》【Hi-res】",
+        "只愿你从容的燃烧！大张伟《永远唱不完的歌》【B站毕业歌会单品】",
+        "阳光彩虹小白马",
+        "倍儿爽",
+        "我怎么这么好看-《青春芒果节》主题曲"
+      ],
+      "spk_id": "SPK0082"
+    },
+    {
+      "name": "太阳",
+      "avatar_color": "#2d3436",
+      "initial": "太",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "山野",
+        "葬花吟"
+      ],
+      "spk_id": "SPK0411"
+    },
+    {
+      "name": "奚秀兰",
+      "avatar_color": "#a29bfe",
+      "initial": "奚",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "阿里山的姑娘",
+        "天女散花（1984年央视春节联欢晚会）"
+      ],
+      "spk_id": "SPK0447"
+    },
+    {
+      "name": "姚贝娜",
+      "avatar_color": "#a29bfe",
+      "initial": "姚",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "姚贝娜《红颜劫（《甄嬛传》ost）》百万豪装录音棚大声听",
+        "姚贝娜《风光》百万豪装录音棚大声听",
+        "随它吧-《冰雪奇缘》电影主题曲",
+        "红颜劫-《甄嬛传》电视剧片头曲"
+      ],
+      "spk_id": "SPK0100"
+    },
+    {
+      "name": "姜育恒",
+      "avatar_color": "#1a1a2e",
+      "initial": "姜",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "多年以后",
+        "驿动的心"
+      ],
+      "spk_id": "SPK0276"
     },
     {
       "name": "孙悦",
@@ -300,6 +1159,120 @@
       "spk_id": "SPK0025"
     },
     {
+      "name": "孙燕姿",
+      "avatar_color": "#e17055",
+      "initial": "孙",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我要一所大房子，有很大的落地窗户，阳光洒在地板上，也温暖了我的被子……是“别墅”吗？这简直打工人做梦都想要的心声啊！“冷门歌手”孙燕姿《完美的一天》音高测量",
+        "【Hi-Res无损音质】孙燕姿《逆光》这首歌曲这么好听！百万黑胶的版本4K60P",
+        "日落",
+        "样子-《要久久爱》电视剧主题曲"
+      ],
+      "spk_id": "SPK0334"
+    },
+    {
+      "name": "孙盛希",
+      "avatar_color": "#74b9ff",
+      "initial": "孙",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "Tteokbokki",
+        "少一点天分"
+      ],
+      "spk_id": "SPK0342"
+    },
+    {
+      "name": "宇多田ヒカル",
+      "avatar_color": "#6c5ce7",
+      "initial": "宇",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "[日剧-最爱] 主题曲-宇多田ヒカル『君に夢中』",
+        "パッパパラダイス-《樱桃小丸子》TV动画片尾曲14"
+      ],
+      "spk_id": "SPK0398"
+    },
+    {
+      "name": "安德烈·波切利",
+      "avatar_color": "#2ecc71",
+      "initial": "安",
+      "video_count": 4,
+      "slice_count": 0,
+      "representative_songs": [
+        "【4𝐊/𝟔𝟎𝐅𝐏𝐒】安德烈·波切利精彩翻唱《情不自禁》-Can&#x27;t Help Falling In Love",
+        "柴堆上火焰熊熊"
+      ],
+      "spk_id": "SPK0414"
+    },
+    {
+      "name": "宋冬野",
+      "avatar_color": "#a29bfe",
+      "initial": "宋",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "安和桥",
+        "斑马，斑马"
+      ],
+      "spk_id": "SPK0120"
+    },
+    {
+      "name": "宋祖英",
+      "avatar_color": "#6c5ce7",
+      "initial": "宋",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "十送红军",
+        "映山红"
+      ],
+      "spk_id": "SPK0448"
+    },
+    {
+      "name": "容祖儿",
+      "avatar_color": "#0f3460",
+      "initial": "容",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "容祖儿《没关系》百万豪装录音棚大声听",
+        "在百万豪装录音棚大声听 容祖儿《长大》【Hi-res】",
+        "傻女",
+        "富士山下"
+      ],
+      "spk_id": "SPK0241"
+    },
+    {
+      "name": "小曲儿",
+      "avatar_color": "#0f3460",
+      "initial": "小",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "关山月",
+        "上邪"
+      ],
+      "spk_id": "SPK0170"
+    },
+    {
+      "name": "尚雯婕",
+      "avatar_color": "#00cec9",
+      "initial": "尚",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "「Befall」——《崩坏3》印象曲（演唱者：尚雯婕）",
+        "在录音棚里听超高音质的歌曲——尚雯婕《候鸟》",
+        "待我长发及腰-《美人制造》电视剧主题曲",
+        "夜之童话-《精灵梦叶罗丽》动画片尾曲"
+      ],
+      "spk_id": "SPK0093"
+    },
+    {
       "name": "屠洪刚",
       "avatar_color": "#81ecec",
       "initial": "屠",
@@ -311,6 +1284,17 @@
         "大风歌"
       ],
       "spk_id": "SPK0125"
+    },
+    {
+      "name": "岑宁儿",
+      "avatar_color": "#16213e",
+      "initial": "岑",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "追光者"
+      ],
+      "spk_id": "SPK0157"
     },
     {
       "name": "崔健",
@@ -327,6 +1311,115 @@
       "spk_id": "SPK0106"
     },
     {
+      "name": "川岛茉树代",
+      "avatar_color": "#1a1a2e",
+      "initial": "川",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "初恋",
+        "先爱了再说"
+      ],
+      "spk_id": "SPK0374"
+    },
+    {
+      "name": "巫启贤",
+      "avatar_color": "#e84393",
+      "initial": "巫",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "太傻(国语版)",
+        "只因你伤心"
+      ],
+      "spk_id": "SPK0273"
+    },
+    {
+      "name": "希雅",
+      "avatar_color": "#b2bec3",
+      "initial": "希",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "望故乡(我站在儿时的小巷回头望)",
+        "情罪"
+      ],
+      "spk_id": "SPK0390"
+    },
+    {
+      "name": "常思思",
+      "avatar_color": "#636e72",
+      "initial": "常",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "阿瓦人民唱新歌",
+        "红太阳照边疆"
+      ],
+      "spk_id": "SPK0176"
+    },
+    {
+      "name": "平安",
+      "avatar_color": "#0f3460",
+      "initial": "平",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我爱你中国",
+        "我爱你，中国"
+      ],
+      "spk_id": "SPK0133"
+    },
+    {
+      "name": "庄心妍",
+      "avatar_color": "#fdcb6e",
+      "initial": "庄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我不是最重要的人"
+      ],
+      "spk_id": "SPK0148"
+    },
+    {
+      "name": "庞龙",
+      "avatar_color": "#0984e3",
+      "initial": "庞",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "《幸福的两口子》庞龙，百分之八十的人都是这样的！而我却没有这样的日子",
+        "庞龙《兄弟抱一下》，那些青葱岁月的兄弟哥们，你们还好吗？",
+        "杯水情歌",
+        "幸福的两口子"
+      ],
+      "spk_id": "SPK0108"
+    },
+    {
+      "name": "庾澄庆",
+      "avatar_color": "#00b894",
+      "initial": "庾",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "春泥",
+        "让我一次爱个够"
+      ],
+      "spk_id": "SPK0264"
+    },
+    {
+      "name": "张也",
+      "avatar_color": "#2ecc71",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "走进新时代",
+        "红梅赞"
+      ],
+      "spk_id": "SPK0449"
+    },
+    {
       "name": "张信哲",
       "avatar_color": "#fdcb6e",
       "initial": "张",
@@ -336,6 +1429,106 @@
         "假行僧"
       ],
       "spk_id": "SPK0028"
+    },
+    {
+      "name": "张卫健",
+      "avatar_color": "#0984e3",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "西游记-《西游记》无线电视剧主题曲",
+        "天外有天-《西游记》TVB电视剧插曲"
+      ],
+      "spk_id": "SPK0150"
+    },
+    {
+      "name": "张含韵",
+      "avatar_color": "#e94560",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "相思遥",
+        "冰雪奇缘"
+      ],
+      "spk_id": "SPK0158"
+    },
+    {
+      "name": "张国荣",
+      "avatar_color": "#e17055",
+      "initial": "张",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "在百万豪装录音棚大声听张国荣《我》【Hi-res】",
+        "张国荣《当年情》百万豪装录音棚大声听【Hi-res】",
+        "月亮代表我的心"
+      ],
+      "spk_id": "SPK0209"
+    },
+    {
+      "name": "张学友",
+      "avatar_color": "#e17055",
+      "initial": "张",
+      "video_count": 4,
+      "slice_count": 0,
+      "representative_songs": [
+        "Hi-Res【磁带试听】她来听我的演唱会-张学友 她静静听着我们的演唱会",
+        "张学友《回头太难》黑胶极品音质试听",
+        "张学友《还是觉得你最好》MV",
+        "一千个伤心的理由"
+      ],
+      "spk_id": "SPK0213"
+    },
+    {
+      "name": "张宇",
+      "avatar_color": "#dfe6e9",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "雨一直下",
+        "月亮惹的祸"
+      ],
+      "spk_id": "SPK0269"
+    },
+    {
+      "name": "张德兰",
+      "avatar_color": "#636e72",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "春光美"
+      ],
+      "spk_id": "SPK0450"
+    },
+    {
+      "name": "张悬",
+      "avatar_color": "#1a1a2e",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "载我回家",
+        "张三的歌"
+      ],
+      "spk_id": "SPK0128"
+    },
+    {
+      "name": "张惠妹",
+      "avatar_color": "#e84393",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "张惠妹《如果你也听说》百万豪装录音棚大声听【Hi-res】",
+        "张惠妹-开门见山 (KTV版)(高清MV)",
+        "【4K官方修复】张惠妹《我无所谓》官方MV",
+        "张惠妹-勇敢"
+      ],
+      "spk_id": "SPK0451"
     },
     {
       "name": "张敬轩",
@@ -349,6 +1542,17 @@
       "spk_id": "SPK0032"
     },
     {
+      "name": "张明敏",
+      "avatar_color": "#16213e",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我的中国心"
+      ],
+      "spk_id": "SPK0139"
+    },
+    {
       "name": "张智成",
       "avatar_color": "#fdcb6e",
       "initial": "张",
@@ -356,6 +1560,93 @@
       "slice_count": 24,
       "representative_songs": [],
       "spk_id": "SPK0033"
+    },
+    {
+      "name": "张智霖",
+      "avatar_color": "#a29bfe",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "天梯",
+        "想你"
+      ],
+      "spk_id": "SPK0225"
+    },
+    {
+      "name": "张杰",
+      "avatar_color": "#0984e3",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "在百万豪装录音棚大声听 张杰《这就是爱》【Hi-res】",
+        "张杰《如歌（《烈火如歌》ost）》百万豪装录音棚大声听",
+        "张三丰",
+        "天下",
+        "逆战"
+      ],
+      "spk_id": "SPK0078"
+    },
+    {
+      "name": "张栋梁",
+      "avatar_color": "#fd79a8",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "孤单北半球",
+        "失踪"
+      ],
+      "spk_id": "SPK0382"
+    },
+    {
+      "name": "张洪量",
+      "avatar_color": "#e84393",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "天若有情",
+        "你知道我在等你吗"
+      ],
+      "spk_id": "SPK0292"
+    },
+    {
+      "name": "张清芳",
+      "avatar_color": "#0f3460",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "不能不看你",
+        "大雨的夜里"
+      ],
+      "spk_id": "SPK0305"
+    },
+    {
+      "name": "张燕",
+      "avatar_color": "#16213e",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "亲爱的人",
+        "摘石榴"
+      ],
+      "spk_id": "SPK0452"
+    },
+    {
+      "name": "张玮",
+      "avatar_color": "#fd79a8",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "悟空传",
+        "蝶"
+      ],
+      "spk_id": "SPK0181"
     },
     {
       "name": "张碧晨",
@@ -372,6 +1663,18 @@
       "spk_id": "SPK0035"
     },
     {
+      "name": "张磊",
+      "avatar_color": "#d63031",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "寻-《猎毒人》电视剧片尾曲",
+        "南山南"
+      ],
+      "spk_id": "SPK0134"
+    },
+    {
       "name": "张艺兴",
       "avatar_color": "#a29bfe",
       "initial": "张",
@@ -383,6 +1686,32 @@
         "拖拉机"
       ],
       "spk_id": "SPK0036"
+    },
+    {
+      "name": "张蔷",
+      "avatar_color": "#fdcb6e",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "张蔷 有一首歌",
+        "【4K珍藏】张蔷《手扶拖拉机斯基》！这才是电音女王！",
+        "路灯下的小姑娘",
+        "潇洒的走"
+      ],
+      "spk_id": "SPK0089"
+    },
+    {
+      "name": "张雨生",
+      "avatar_color": "#74b9ff",
+      "initial": "张",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我的未来不是梦",
+        "笼中鸟"
+      ],
+      "spk_id": "SPK0260"
     },
     {
       "name": "张靓颖",
@@ -406,6 +1735,68 @@
       "spk_id": "SPK0039"
     },
     {
+      "name": "弦子",
+      "avatar_color": "#e94560",
+      "initial": "弦",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "喜欢",
+        "风"
+      ],
+      "spk_id": "SPK0325"
+    },
+    {
+      "name": "彭佳慧",
+      "avatar_color": "#16213e",
+      "initial": "彭",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "心之火",
+        "相见恨晚"
+      ],
+      "spk_id": "SPK0336"
+    },
+    {
+      "name": "彭羚",
+      "avatar_color": "#1a1a2e",
+      "initial": "彭",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "隔世情-《聊斋》电视剧主题曲",
+        "让我跟你走"
+      ],
+      "spk_id": "SPK0237"
+    },
+    {
+      "name": "徐佳莹",
+      "avatar_color": "#00b894",
+      "initial": "徐",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "徐佳莹《到此为止》百万豪装录音棚大声听【Hi-res】",
+        "一样的月光",
+        "不舍（《斗罗大陆》动画片尾曲）",
+        "最初的记忆"
+      ],
+      "spk_id": "SPK0329"
+    },
+    {
+      "name": "徐怀钰",
+      "avatar_color": "#d63031",
+      "initial": "徐",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "纷飞",
+        "叮咚"
+      ],
+      "spk_id": "SPK0318"
+    },
+    {
       "name": "戴佩妮",
       "avatar_color": "#1a1a2e",
       "initial": "戴",
@@ -417,16 +1808,89 @@
       "spk_id": "SPK0041"
     },
     {
-      "name": "新裤子",
+      "name": "戴爱玲",
       "avatar_color": "#a29bfe",
-      "initial": "新",
+      "initial": "戴",
       "video_count": 2,
-      "slice_count": 27,
+      "slice_count": 0,
       "representative_songs": [
-        "Afterparty",
-        "假如生活欺骗了你"
+        "天使之翼",
+        "不想再爱不明白的爱"
       ],
-      "spk_id": "SPK0042"
+      "spk_id": "SPK0145"
+    },
+    {
+      "name": "排骨教主",
+      "avatar_color": "#0984e3",
+      "initial": "排",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "伶人",
+        "长生诀"
+      ],
+      "spk_id": "SPK0171"
+    },
+    {
+      "name": "文章",
+      "avatar_color": "#e84393",
+      "initial": "文",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "恋人",
+        "儿歌三百首-《西游·降魔篇》电影插曲"
+      ],
+      "spk_id": "SPK0274"
+    },
+    {
+      "name": "方力申",
+      "avatar_color": "#dfe6e9",
+      "initial": "方",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "超级爱你"
+      ],
+      "spk_id": "SPK0222"
+    },
+    {
+      "name": "方大同",
+      "avatar_color": "#a29bfe",
+      "initial": "方",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "方大同《Love Song》百万豪装录音棚大声听【Hi-res】",
+        "方大同《麦恩莉》百万豪装录音棚大声听【Hi-res】",
+        "清楚点",
+        "千纸鹤"
+      ],
+      "spk_id": "SPK0285"
+    },
+    {
+      "name": "方泂镔",
+      "avatar_color": "#74b9ff",
+      "initial": "方",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "崇拜",
+        "闯"
+      ],
+      "spk_id": "SPK0453"
+    },
+    {
+      "name": "施文彬",
+      "avatar_color": "#dfe6e9",
+      "initial": "施",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "你我相遇",
+        "无情人有情天"
+      ],
+      "spk_id": "SPK0353"
     },
     {
       "name": "易烊千玺",
@@ -441,6 +1905,68 @@
       "spk_id": "SPK0044"
     },
     {
+      "name": "普林斯",
+      "avatar_color": "#e94560",
+      "initial": "普",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "心底的热情呼唤",
+        "从前的温度"
+      ],
+      "spk_id": "SPK0392"
+    },
+    {
+      "name": "曹方",
+      "avatar_color": "#dfe6e9",
+      "initial": "曹",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "05.橘子汁",
+        "滴答"
+      ],
+      "spk_id": "SPK0130"
+    },
+    {
+      "name": "曹格",
+      "avatar_color": "#6c5ce7",
+      "initial": "曹",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "梁山伯与茱丽叶",
+        "背叛"
+      ],
+      "spk_id": "SPK0290"
+    },
+    {
+      "name": "曾轶可",
+      "avatar_color": "#00cec9",
+      "initial": "曾",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "曾轶可《有可能的夜晚》“让蜡烛代替所有灯，让音乐代替话语声，此时无声胜有声”-【Hi-Res无损】",
+        "世界上最近的两个人-曾轶可/毛阿敏",
+        "三的颜色",
+        "不如我们重新来过"
+      ],
+      "spk_id": "SPK0096"
+    },
+    {
+      "name": "朱主爱",
+      "avatar_color": "#2d3436",
+      "initial": "朱",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "怎么会想你呢",
+        "好想你"
+      ],
+      "spk_id": "SPK0344"
+    },
+    {
       "name": "朴树",
       "avatar_color": "#16213e",
       "initial": "朴",
@@ -450,6 +1976,30 @@
         "白桦林"
       ],
       "spk_id": "SPK0045"
+    },
+    {
+      "name": "李代沫",
+      "avatar_color": "#d63031",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我的歌声里",
+        "如果没有你"
+      ],
+      "spk_id": "SPK0135"
+    },
+    {
+      "name": "李佩玲",
+      "avatar_color": "#0984e3",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "认真的雪",
+        "心有独钟"
+      ],
+      "spk_id": "SPK0387"
     },
     {
       "name": "李佳薇",
@@ -489,6 +2039,30 @@
       "spk_id": "SPK0048"
     },
     {
+      "name": "李圣杰",
+      "avatar_color": "#dfe6e9",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "痴心绝对",
+        "断点"
+      ],
+      "spk_id": "SPK0288"
+    },
+    {
+      "name": "李孝利",
+      "avatar_color": "#0984e3",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "不要爱上她",
+        "两个人"
+      ],
+      "spk_id": "SPK0412"
+    },
+    {
       "name": "李宇春",
       "avatar_color": "#1a1a2e",
       "initial": "李",
@@ -498,6 +2072,30 @@
         "Shut Up and Dance"
       ],
       "spk_id": "SPK0049"
+    },
+    {
+      "name": "李宗盛",
+      "avatar_color": "#b2bec3",
+      "initial": "李",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "莫文蔚《电台情歌》百万豪装录音棚大声听【Hi-res】",
+        "鬼迷心窍"
+      ],
+      "spk_id": "SPK0258"
+    },
+    {
+      "name": "李幸倪",
+      "avatar_color": "#e94560",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "天变地变情不变",
+        "献世"
+      ],
+      "spk_id": "SPK0385"
     },
     {
       "name": "李泉",
@@ -510,6 +2108,44 @@
         "哭了"
       ],
       "spk_id": "SPK0107"
+    },
+    {
+      "name": "李玉刚",
+      "avatar_color": "#2d3436",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【善念起】-李玉刚(Hi-Res）（动画《百妖谱》主题曲）“心病难医 总有心惦记”",
+        "《刚好遇见你》-李玉刚 百万录音棚4K完整版",
+        "新贵妃醉酒",
+        "刚好遇见你"
+      ],
+      "spk_id": "SPK0109"
+    },
+    {
+      "name": "李玖哲",
+      "avatar_color": "#16213e",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "这样就很好",
+        "想太多"
+      ],
+      "spk_id": "SPK0291"
+    },
+    {
+      "name": "李玟",
+      "avatar_color": "#fd79a8",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "永不失联的爱",
+        "想你的365天"
+      ],
+      "spk_id": "SPK0310"
     },
     {
       "name": "李玲玉",
@@ -525,6 +2161,111 @@
       "spk_id": "SPK0108"
     },
     {
+      "name": "李翊君",
+      "avatar_color": "#2d3436",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "雨蝶",
+        "婉君"
+      ],
+      "spk_id": "SPK0313"
+    },
+    {
+      "name": "李荣浩",
+      "avatar_color": "#e17055",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【4K Hi-Res】李荣浩《模特》✨现在还听模特的是这个👍👍👍",
+        "李荣浩-纵横四海【𝗛𝗶-𝗥𝗲𝘀无损】",
+        "恋人",
+        "不将就-《何以笙箫默》电影片尾曲",
+        "戒烟"
+      ],
+      "spk_id": "SPK0085"
+    },
+    {
+      "name": "李谷一",
+      "avatar_color": "#b2bec3",
+      "initial": "李",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我和我的祖国",
+        "浏阳河"
+      ],
+      "spk_id": "SPK0454"
+    },
+    {
+      "name": "杜丽莎",
+      "avatar_color": "#0f3460",
+      "initial": "杜",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "开心鬼-《开心鬼》电影主题曲",
+        "爱是永恒"
+      ],
+      "spk_id": "SPK0254"
+    },
+    {
+      "name": "杜德伟",
+      "avatar_color": "#74b9ff",
+      "initial": "杜",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "脱掉.m4a",
+        "情人"
+      ],
+      "spk_id": "SPK0227"
+    },
+    {
+      "name": "杨丞琳",
+      "avatar_color": "#6c5ce7",
+      "initial": "杨",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "《带我走》 -杨丞琳",
+        "暗涌[高清Rip]",
+        "搁浅",
+        "一千零一个愿望"
+      ],
+      "spk_id": "SPK0331"
+    },
+    {
+      "name": "杨千嬅",
+      "avatar_color": "#00b894",
+      "initial": "杨",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "杨千嬅的《少女的祈祷》｜“祈求天地放过一双恋人”",
+        "杨千嬅《杨千嬅》Let&#x27;s Begin2015世界巡回演唱会",
+        "心动",
+        "假如我们还爱着"
+      ],
+      "spk_id": "SPK0242"
+    },
+    {
+      "name": "杨和苏",
+      "avatar_color": "#e94560",
+      "initial": "杨",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "《王位》MV——杨和苏KeyNG",
+        "【徐梦圆x杨和苏】合作单曲《声名大燥》潮流来袭",
+        "王位",
+        "小丑女"
+      ],
+      "spk_id": "SPK0116"
+    },
+    {
       "name": "杨坤",
       "avatar_color": "#2d3436",
       "initial": "杨",
@@ -536,6 +2277,29 @@
         "兄弟"
       ],
       "spk_id": "SPK0053"
+    },
+    {
+      "name": "杨宗纬",
+      "avatar_color": "#a29bfe",
+      "initial": "杨",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "空白格-《一生一世》电影片尾曲",
+        "我会好好的"
+      ],
+      "spk_id": "SPK0283"
+    },
+    {
+      "name": "杨幂",
+      "avatar_color": "#6c5ce7",
+      "initial": "杨",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "爱的供养"
+      ],
+      "spk_id": "SPK0191"
     },
     {
       "name": "杨钰莹",
@@ -561,6 +2325,182 @@
       "spk_id": "SPK0110"
     },
     {
+      "name": "林俊杰",
+      "avatar_color": "#74b9ff",
+      "initial": "林",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【录音室听】林俊杰《谢幕》【Hi-Res】无损音质",
+        "【4K60FPS极致修复】林俊杰《江南》纯享版『还以为殉情只是古老的传言』",
+        "起风了(Live)",
+        "关键词"
+      ],
+      "spk_id": "SPK0280"
+    },
+    {
+      "name": "林子祥",
+      "avatar_color": "#fd79a8",
+      "initial": "林",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "真的汉子",
+        "男儿当自强"
+      ],
+      "spk_id": "SPK0204"
+    },
+    {
+      "name": "林宇中",
+      "avatar_color": "#74b9ff",
+      "initial": "林",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "【逆风而翔|《排球少年》日向翔阳角色曲】“生来没有翅膀，凭借跳跃飞翔”",
+        "叫阮的名"
+      ],
+      "spk_id": "SPK0378"
+    },
+    {
+      "name": "林宥嘉",
+      "avatar_color": "#fdcb6e",
+      "initial": "林",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "拥有",
+        "【4K臻藏】林宥嘉—《浪费》|没关系你也不用给我机会",
+        "说谎-《杜拉拉升职记》电视剧插曲|《针尖上的天使》电影主题曲",
+        "兜圈"
+      ],
+      "spk_id": "SPK0284"
+    },
+    {
+      "name": "林峯",
+      "avatar_color": "#e84393",
+      "initial": "林",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【林峯：爱在记忆中找你】“林峯真是那种听声音就很好听的人啊”",
+        "[4K60帧]林峯-幼稚完《雷霆扫毒》片尾曲mv(4K60帧画质增强+无损音频)",
+        "记得忘记-《再生缘》TVB电视剧片尾曲",
+        "江山背后-《大汉贤后卫子夫》电视剧片头曲"
+      ],
+      "spk_id": "SPK0219"
+    },
+    {
+      "name": "林忆莲",
+      "avatar_color": "#fdcb6e",
+      "initial": "林",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "归零",
+        "纤维"
+      ],
+      "spk_id": "SPK0233"
+    },
+    {
+      "name": "林志炫",
+      "avatar_color": "#2d3436",
+      "initial": "林",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "毕业必备！【4K】林志炫《凤凰花开的路口》 |‘时光的河入海流 终于我们分头走 没有那个港口是永远的停留’| 音乐可视化 | 动态歌词",
+        "【林志炫】【爱】ONEtake剪辑纯享版",
+        "烟花易冷-原唱：周杰伦",
+        "你的样子"
+      ],
+      "spk_id": "SPK0272"
+    },
+    {
+      "name": "林慧萍",
+      "avatar_color": "#636e72",
+      "initial": "林",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "情难枕-《夜市人生》电视剧插曲"
+      ],
+      "spk_id": "SPK0316"
+    },
+    {
+      "name": "林晓培",
+      "avatar_color": "#1a1a2e",
+      "initial": "林",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "心动-《心动》电影插曲",
+        "不知好歹"
+      ],
+      "spk_id": "SPK0144"
+    },
+    {
+      "name": "梁博",
+      "avatar_color": "#1a1a2e",
+      "initial": "梁",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "出现又离开(2019我是唱作人第2期现场)",
+        "私奔"
+      ],
+      "spk_id": "SPK0131"
+    },
+    {
+      "name": "梁咏琪",
+      "avatar_color": "#2ecc71",
+      "initial": "梁",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "胆小鬼",
+        "灰姑娘"
+      ],
+      "spk_id": "SPK0240"
+    },
+    {
+      "name": "梁文音",
+      "avatar_color": "#2d3436",
+      "initial": "梁",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "掉拍的节奏",
+        "分手后不要做朋友-《回到爱之前》电视剧片尾曲"
+      ],
+      "spk_id": "SPK0363"
+    },
+    {
+      "name": "梁汉文",
+      "avatar_color": "#e94560",
+      "initial": "梁",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "七友",
+        "留痕"
+      ],
+      "spk_id": "SPK0223"
+    },
+    {
+      "name": "梁静茹",
+      "avatar_color": "#dfe6e9",
+      "initial": "梁",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "梁静茹《勇气》百万豪装录音棚大声听【Hi-res】",
+        "【Hi-Res 4K】《暖暖》- 梁静茹 ||“我想说其实你很好 你自己却不知道 真心的对我好 不要求回报”",
+        "问"
+      ],
+      "spk_id": "SPK0333"
+    },
+    {
       "name": "梅艳芳",
       "avatar_color": "#636e72",
       "initial": "梅",
@@ -573,6 +2513,32 @@
         "路始终告一段"
       ],
       "spk_id": "SPK0059"
+    },
+    {
+      "name": "梦然",
+      "avatar_color": "#fdcb6e",
+      "initial": "梦",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "梦然歌手 好看视频《梦已残》mv",
+        "20240224 梦然《手链》·「少年归来，仍然是你」沈阳演唱会",
+        "少年(建党百年主题MV歌曲）-建党百年主题MV歌曲",
+        "没有你陪伴我真的好孤单"
+      ],
+      "spk_id": "SPK0105"
+    },
+    {
+      "name": "棉子",
+      "avatar_color": "#d63031",
+      "initial": "棉",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "零度沙丘",
+        "空"
+      ],
+      "spk_id": "SPK0196"
     },
     {
       "name": "毛不易",
@@ -612,337 +2578,2683 @@
       "spk_id": "SPK0112"
     },
     {
+      "name": "江美琪",
+      "avatar_color": "#00b894",
+      "initial": "江",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "亲爱的你怎么不在我身边告白",
+        "那年的情书"
+      ],
+      "spk_id": "SPK0209"
+    },
+    {
+      "name": "江蕙",
+      "avatar_color": "#2d3436",
+      "initial": "江",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "无奈的相思",
+        "惜别的海岸"
+      ],
+      "spk_id": "SPK0210"
+    },
+    {
+      "name": "汤宝如",
+      "avatar_color": "#00cec9",
+      "initial": "汤",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "活着就是等待",
+        "绝对是个梦"
+      ],
+      "spk_id": "SPK0211"
+    },
+    {
+      "name": "汤潮",
+      "avatar_color": "#2ecc71",
+      "initial": "汤",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "狼爱上羊",
+        "苦咖啡"
+      ],
+      "spk_id": "SPK0212"
+    },
+    {
+      "name": "汤灿",
+      "avatar_color": "#e84393",
+      "initial": "汤",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "乡恋",
+        "家乡美"
+      ],
+      "spk_id": "SPK0213"
+    },
+    {
+      "name": "汪佩蓉",
+      "avatar_color": "#0984e3",
+      "initial": "汪",
+      "video_count": 4,
+      "slice_count": 0,
+      "representative_songs": [
+        "翻唱首发~新的来了❗~『演员』~ 法兰姬-汪佩蓉💜R&amp;B版",
+        "有心唱情歌"
+      ],
+      "spk_id": "SPK0214"
+    },
+    {
       "name": "汪峰",
-      "avatar_color": "#fd79a8",
+      "avatar_color": "#e84393",
       "initial": "汪",
       "video_count": 3,
-      "slice_count": 22,
+      "slice_count": 0,
       "representative_songs": [
-        "加德满都的风铃",
-        "我爱你中国"
+        "【Hi-Res无损音质】汪峰《加德满都的风铃》百万黑胶音乐 ！ 经典歌曲最好听的版本 4K60P",
+        "【Hi-Res无损音质】汪峰《我爱你中国》这歌原来这么好听 ！经典歌曲最好听的版本 4K60P",
+        "汪峰-地心",
+        "光明",
+        "怒放的生命-《北京青年》电视剧插曲"
       ],
-      "spk_id": "SPK0061"
+      "spk_id": "SPK0215"
+    },
+    {
+      "name": "汪明荃",
+      "avatar_color": "#0984e3",
+      "initial": "汪",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "萬水千山總是情",
+        "万水千山总是情"
+      ],
+      "spk_id": "SPK0216"
     },
     {
       "name": "汪苏泷",
-      "avatar_color": "#16213e",
+      "avatar_color": "#e94560",
       "initial": "汪",
-      "video_count": 3,
-      "slice_count": 22,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "三国杀",
-        "情歌",
-        "问你一个人类梦寐以求的深奥问题（旷野版）"
+        "【4K·纯享】汪苏泷 《三国杀》动态音乐",
+        "《情歌》-汪苏泷【Hi-Res无损音质】汪苏泷对这首歌的处理，别有一番韵味啊......",
+        "《问你一个人类梦寐以求的深奥问题（旷野版）》MV上线",
+        "后会无期-《诡案》网络剧插曲",
+        "有点甜-《萌三国》网游主题曲|《微微一笑很倾城》电视剧插曲"
       ],
-      "spk_id": "SPK0062"
+      "spk_id": "SPK0217"
     },
     {
       "name": "沙宝亮",
-      "avatar_color": "#fab1a0",
+      "avatar_color": "#74b9ff",
       "initial": "沙",
-      "video_count": 4,
-      "slice_count": 16,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "鸿雁"
+        "无名指",
+        "沙宝亮   青春日记， 好听极了",
+        "东方甄选两周年，董宇辉、俞敏洪、沙宝亮 合唱歌曲《鸿雁》",
+        "暗香-《金粉世家》电视剧片头曲",
+        "暗香-电视剧《金粉世界》主题曲"
       ],
-      "spk_id": "SPK0113"
+      "spk_id": "SPK0218"
+    },
+    {
+      "name": "河图",
+      "avatar_color": "#2ecc71",
+      "initial": "河",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "第三十八年夏至",
+        "倾尽天下"
+      ],
+      "spk_id": "SPK0219"
+    },
+    {
+      "name": "法老",
+      "avatar_color": "#e94560",
+      "initial": "法",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我想part2【韵脚检查】",
+        "【𝐇𝐢-𝐑𝐞𝐬无损音质】｜《星空叙爱曲》- 法老/阿达娃 -‘你说星星美丽耀眼 可是它比不上你的笑脸’",
+        "百变酒精",
+        "上学威龙"
+      ],
+      "spk_id": "SPK0220"
+    },
+    {
+      "name": "洪荣宏",
+      "avatar_color": "#00b894",
+      "initial": "洪",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "人生",
+        "爱人跟人走"
+      ],
+      "spk_id": "SPK0221"
+    },
+    {
+      "name": "浜崎あゆみ",
+      "avatar_color": "#636e72",
+      "initial": "浜",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "Dearest-《犬夜叉》TV动画42-60集片尾曲",
+        "Rule"
+      ],
+      "spk_id": "SPK0222"
+    },
+    {
+      "name": "海来阿木",
+      "avatar_color": "#1a1a2e",
+      "initial": "海",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【Hi-Res无损】海来阿木-你的万水千山「如今不能再爱你 让暖阳护你周全」动态歌词",
+        "《月亮看看我》歌手  海来阿木",
+        "烈马",
+        "赤血忠魂"
+      ],
+      "spk_id": "SPK0223"
+    },
+    {
+      "name": "温岚",
+      "avatar_color": "#2ecc71",
+      "initial": "温",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "同手同脚"
+      ],
+      "spk_id": "SPK0224"
     },
     {
       "name": "满文军",
-      "avatar_color": "#fab1a0",
+      "avatar_color": "#74b9ff",
       "initial": "满",
-      "video_count": 4,
-      "slice_count": 18,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "今生今世"
+        "满文军",
+        "满文军-我的世界为你留住春天（这是为中国足球定制的一首歌，听这首歌就想到中国足球，从98年开始看球，这么多年了，只能一声哀叹）",
+        "《今生今世》 黄海冰版英雄主题曲 满文军 赵正 小时候最爱版本",
+        "望乡",
+        "懂你-《九香》电影主题曲"
       ],
-      "spk_id": "SPK0114"
+      "spk_id": "SPK0225"
     },
     {
-      "name": "潘玮柏",
-      "avatar_color": "#a29bfe",
-      "initial": "潘",
-      "video_count": 3,
-      "slice_count": 18,
+      "name": "满舒克",
+      "avatar_color": "#00b894",
+      "initial": "满",
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "高音质 / 动态歌词Lyrics"
+        "做我的猫"
       ],
-      "spk_id": "SPK0063"
+      "spk_id": "SPK0226"
+    },
+    {
+      "name": "潘美辰",
+      "avatar_color": "#6c5ce7",
+      "initial": "潘",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我曾用心爱着你",
+        "我曾用心爱你"
+      ],
+      "spk_id": "SPK0227"
+    },
+    {
+      "name": "潘越云",
+      "avatar_color": "#0984e3",
+      "initial": "潘",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "七重门",
+        "我是不是你最疼爱的人"
+      ],
+      "spk_id": "SPK0228"
+    },
+    {
+      "name": "炎亚纶",
+      "avatar_color": "#2d3436",
+      "initial": "炎",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "寂寞暴走"
+      ],
+      "spk_id": "SPK0229"
+    },
+    {
+      "name": "熊仔",
+      "avatar_color": "#dfe6e9",
+      "initial": "熊",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "可我在16岁遇到了你",
+        "520"
+      ],
+      "spk_id": "SPK0230"
+    },
+    {
+      "name": "王丽达",
+      "avatar_color": "#2ecc71",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "亲吻祖国",
+        "祖国之恋"
+      ],
+      "spk_id": "SPK0231"
+    },
+    {
+      "name": "王以太",
+      "avatar_color": "#e94560",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "目不转睛",
+        "反骨-《逆天邪神年番》动漫主题曲"
+      ],
+      "spk_id": "SPK0232"
     },
     {
       "name": "王俊凯",
-      "avatar_color": "#6c5ce7",
+      "avatar_color": "#636e72",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "王俊凯新歌《遥遥故乡》温暖的声线叩击千万游子的心底，唱响春运归途主题。",
+        "在百万录音棚听 周传雄作曲 唐恬作词 王俊凯演唱《无人乐园》",
+        "王俊凯《Champion My Way》",
+        "告白气球",
+        "晴天"
+      ],
+      "spk_id": "SPK0233"
+    },
+    {
+      "name": "王力宏",
+      "avatar_color": "#00cec9",
       "initial": "王",
       "video_count": 3,
-      "slice_count": 13,
+      "slice_count": 0,
       "representative_songs": [
-        "遥遥故乡",
-        "无人乐园",
-        "Champion My Way"
+        "王力宏《爱错》百万豪装录音棚大声听【Hi-res】",
+        "【Hi-Res无损音质】王力宏《错爱》这歌原来这么好听 ！经典歌曲最好听的版本 4K60P",
+        "王力宏《心跳》百万豪装录音棚大声听",
+        "王力宏贴脸《爱无所不在》好羡慕的距离 6.20.2026墨尔本"
       ],
-      "spk_id": "SPK0064"
+      "spk_id": "SPK0234"
+    },
+    {
+      "name": "王宏恩",
+      "avatar_color": "#16213e",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "月光",
+        "不要担心我"
+      ],
+      "spk_id": "SPK0235"
+    },
+    {
+      "name": "王小帅",
+      "avatar_color": "#e17055",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "不是因为寂寞才想你",
+        "其实我真的真的爱你"
+      ],
+      "spk_id": "SPK0236"
+    },
+    {
+      "name": "王心凌",
+      "avatar_color": "#00b894",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "王心凌《爱你》“如果你突然打了个喷嚏 那一定就是我在想你 如果半夜被手机吵醒 啊 那是因为我关心”",
+        "爱你 MV 2160P Hi-Res",
+        "【Hi-Res无损】王心凌《花的嫁纱》“花 开在太阳下 等着情人呀  努力盛开却 等不到它”| 音乐可视化 | 动态歌词",
+        "羽毛",
+        "【王心凌4K+无损】王心凌的《羽毛》前奏一出来，真的瞬间鼻酸 太催泪了｜王心凌上海演唱会"
+      ],
+      "spk_id": "SPK0237"
+    },
+    {
+      "name": "王杰",
+      "avatar_color": "#16213e",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "忘了你，忘了我"
+      ],
+      "spk_id": "SPK0238"
     },
     {
       "name": "王源",
-      "avatar_color": "#e17055",
+      "avatar_color": "#dfe6e9",
       "initial": "王",
-      "video_count": 3,
-      "slice_count": 20,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "雪崩"
+        "【官方MV】王源-你的名字是世界瞒着我最大的事情",
+        "在百万录音棚听 王源作词作曲原创新歌《雪崩》【在心里藏着一场雪崩 虚构一场重逢 愈合就忘了痛】",
+        "蚱蜢跃入星空-《我看见两朵一样的云》电影主题曲",
+        "友谊地久天长-《地久天长》电影推广曲"
       ],
-      "spk_id": "SPK0067"
+      "spk_id": "SPK0239"
+    },
+    {
+      "name": "王琪",
+      "avatar_color": "#2d3436",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "歌曲：可可托海的牧羊人",
+        "多想再见你一面"
+      ],
+      "spk_id": "SPK0240"
+    },
+    {
+      "name": "王筝",
+      "avatar_color": "#b2bec3",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我们都是好孩子",
+        "爸爸"
+      ],
+      "spk_id": "SPK0241"
+    },
+    {
+      "name": "王菀之",
+      "avatar_color": "#00cec9",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "许愿池的希腊少女",
+        "乱世巨星"
+      ],
+      "spk_id": "SPK0242"
+    },
+    {
+      "name": "王菲",
+      "avatar_color": "#dfe6e9",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "王菲《传奇》“只是因为在人群中 多看了你一眼”【Hi-Res无损】",
+        "在百万豪装录音棚大声听 王菲《人间》【Hi-res】",
+        "心经-《唐山大地震》电影片尾曲",
+        "雪中莲"
+      ],
+      "spk_id": "SPK0243"
+    },
+    {
+      "name": "王蓝茵",
+      "avatar_color": "#2d3436",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "恶作剧"
+      ],
+      "spk_id": "SPK0244"
+    },
+    {
+      "name": "王识贤",
+      "avatar_color": "#fd79a8",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "忘不了-《意难忘》电视剧片头曲",
+        "云中月圆-电视剧《意难忘》片尾曲"
+      ],
+      "spk_id": "SPK0245"
+    },
+    {
+      "name": "王赫野",
+      "avatar_color": "#0984e3",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "王赫野-我要赢(无损音质自制混剪4KHDR60MV)[中文字幕]SQ(FLAC16/44)",
+        "【𝐇𝐢-𝐑𝐞𝐬无损音质】｜《致你》- 王赫野 -‘只敢写下开篇的  致你’",
+        "Starlight:Intro",
+        "GMC"
+      ],
+      "spk_id": "SPK0246"
     },
     {
       "name": "王铮亮",
-      "avatar_color": "#636e72",
+      "avatar_color": "#00b894",
       "initial": "王",
-      "video_count": 4,
-      "slice_count": 9,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "月亮照山川",
-        "满满",
-        "三叉戟",
-        "不凡（动画《凡人修仙传"
+        "在百万录音棚听 王赫野/王铮亮《月亮照山川》Live版【熬过岁月的冷眼 前路终璀璨】",
+        "王铮亮、梁文音《满满》",
+        "电视剧《三叉戟》片尾曲-使命(王铮亮演唱)",
+        "王铮亮《不凡（动画《凡人修仙传》主题曲）》百万豪装录音棚大声听",
+        "言简意赅-《爱情有烟火》电视剧插曲"
       ],
-      "spk_id": "SPK0115"
+      "spk_id": "SPK0247"
+    },
+    {
+      "name": "王麟",
+      "avatar_color": "#dfe6e9",
+      "initial": "王",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "小动物叫声-摩奇拉儿歌",
+        "我妈是世界上最好的妈"
+      ],
+      "spk_id": "SPK0248"
     },
     {
       "name": "田震",
       "avatar_color": "#2d3436",
       "initial": "田",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【视听盛宴第11期】田震--月牙泉（蓝光无损音质版）",
+        "顺其自然",
+        "田震-靠近我",
+        "红尘客栈",
+        "执着-《燃情四季》电视剧主题曲"
+      ],
+      "spk_id": "SPK0249"
+    },
+    {
+      "name": "田馥甄",
+      "avatar_color": "#b2bec3",
+      "initial": "田",
       "video_count": 3,
-      "slice_count": 22,
-      "representative_songs": [],
-      "spk_id": "SPK0116"
+      "slice_count": 0,
+      "representative_songs": [
+        "田馥甄【Hi-Res无损音质】",
+        "日常 MV 2160P Hi-Res",
+        "《美女与野兽》中文主题曲 田馥甄_井柏然 MV",
+        "你就不要想起我"
+      ],
+      "spk_id": "SPK0250"
+    },
+    {
+      "name": "瘦子E.SO",
+      "avatar_color": "#e84393",
+      "initial": "瘦",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "迷途羔羊",
+        "你懂我意思吗"
+      ],
+      "spk_id": "SPK0251"
+    },
+    {
+      "name": "白智英",
+      "avatar_color": "#0984e3",
+      "initial": "白",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "不要忘记我",
+        "负担"
+      ],
+      "spk_id": "SPK0252"
+    },
+    {
+      "name": "石头",
+      "avatar_color": "#00cec9",
+      "initial": "石",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "乡念",
+        "雨花石（独唱版）"
+      ],
+      "spk_id": "SPK0253"
+    },
+    {
+      "name": "祁隆",
+      "avatar_color": "#16213e",
+      "initial": "祁",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "秋恋",
+        "如果有下辈子"
+      ],
+      "spk_id": "SPK0254"
+    },
+    {
+      "name": "祖海",
+      "avatar_color": "#6c5ce7",
+      "initial": "祖",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "为了谁",
+        "好运来"
+      ],
+      "spk_id": "SPK0255"
+    },
+    {
+      "name": "福山雅治",
+      "avatar_color": "#00b894",
+      "initial": "福",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "暁-《你照亮我星球》电视剧主题曲",
+        "恋人"
+      ],
+      "spk_id": "SPK0256"
+    },
+    {
+      "name": "程响",
+      "avatar_color": "#6c5ce7",
+      "initial": "程",
+      "video_count": 4,
+      "slice_count": 0,
+      "representative_songs": [
+        "【3D环绕 戴上耳机】|《可能》-程响",
+        "程响",
+        "在百万豪装录音棚大声听 程响《人间烟火》【Hi-res】",
+        "等你归来（主歌）"
+      ],
+      "spk_id": "SPK0257"
     },
     {
       "name": "窦唯",
-      "avatar_color": "#e94560",
+      "avatar_color": "#16213e",
       "initial": "窦",
-      "video_count": 3,
-      "slice_count": 16,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "明天更漫长",
-        "噢！乖",
-        "窗外"
+        "【无损纯享】窦唯《明天更漫长》",
+        "【无损纯享】窦唯《噢！乖》",
+        "4K画质修复！窦唯《窗外》，窦唯演唱，得不到的永远是最好的！",
+        "Don&apos;t&nbsp;Break&nbsp;My&nbsp;Heart",
+        "无地自容"
       ],
-      "spk_id": "SPK0117"
+      "spk_id": "SPK0258"
+    },
+    {
+      "name": "童安格",
+      "avatar_color": "#00b894",
+      "initial": "童",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "一世情缘",
+        "你知道我在等你吗"
+      ],
+      "spk_id": "SPK0259"
+    },
+    {
+      "name": "米津玄師",
+      "avatar_color": "#e94560",
+      "initial": "米",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "在百万豪装录音棚大声听 米津玄师 《LOSER》【Hi-res】",
+        "Lemon"
+      ],
+      "spk_id": "SPK0260"
+    },
+    {
+      "name": "纪晓君",
+      "avatar_color": "#0f3460",
+      "initial": "纪",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "爱延续-《台北故宫》纪录片片头曲",
+        "阿嬷的话"
+      ],
+      "spk_id": "SPK0261"
+    },
+    {
+      "name": "罗大佑",
+      "avatar_color": "#1a1a2e",
+      "initial": "罗",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "黄后大道东(伴奏版)",
+        "光阴的故事"
+      ],
+      "spk_id": "SPK0262"
+    },
+    {
+      "name": "罗文",
+      "avatar_color": "#00cec9",
+      "initial": "罗",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "黄昏",
+        "世间始终你好-《射雕英雄传》电视剧主题曲"
+      ],
+      "spk_id": "SPK0263"
+    },
+    {
+      "name": "罗时丰",
+      "avatar_color": "#a29bfe",
+      "initial": "罗",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "从头爱起",
+        "辜负你的情"
+      ],
+      "spk_id": "SPK0264"
+    },
+    {
+      "name": "翁立友",
+      "avatar_color": "#e94560",
+      "initial": "翁",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "男人情女人心",
+        "送行"
+      ],
+      "spk_id": "SPK0265"
     },
     {
       "name": "胡夏",
       "avatar_color": "#0f3460",
       "initial": "胡",
-      "video_count": 4,
-      "slice_count": 19,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "我会等",
-        "知否知否"
+        "夏至未至",
+        "刀塔传奇mv[高清版]",
+        "胡夏 《我会等》live回到美好生活",
+        "胡夏深情独唱《知否知否》 低音撩人，高音抓耳！",
+        "那些年-《那些年，我们一起追的女孩》电影主题曲"
       ],
-      "spk_id": "SPK0118"
+      "spk_id": "SPK0266"
+    },
+    {
+      "name": "胡彦斌",
+      "avatar_color": "#a29bfe",
+      "initial": "胡",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "胡彦斌《One Night In Shanghai》百万豪装录音棚大声听【Hi-res】",
+        "在百万豪装录音棚大声听  胡彦斌《月光》【Hi-res】",
+        "你要的全拿走",
+        "借过一下",
+        "心太软"
+      ],
+      "spk_id": "SPK0267"
     },
     {
       "name": "腾格尔",
-      "avatar_color": "#fdcb6e",
+      "avatar_color": "#a29bfe",
       "initial": "腾",
-      "video_count": 3,
-      "slice_count": 14,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "天堂",
-        "绒花",
-        "万古仙穹"
+        "腾格尔的《天堂》，蓝蓝的天空清清的湖水，绿绿的草原这是我的家",
+        "草原歌王腾格尔歌曲欣赏《绒花》",
+        "动画《万古仙穹》同名主题曲MV：腾格尔跨界二次元再掀“鬼畜”狂潮",
+        "天堂-《天上草原》电影主题曲|《正义红师》动画第26-30集片尾曲",
+        "天堂"
       ],
-      "spk_id": "SPK0119"
+      "spk_id": "SPK0268"
     },
     {
       "name": "艾怡良",
       "avatar_color": "#2d3436",
       "initial": "艾",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "上流玩法(Channel[V])",
+        "艾怡良金曲歌王never be the same",
+        "艾怡良",
+        "讨厌",
+        "印第安老斑鸠"
+      ],
+      "spk_id": "SPK0269"
+    },
+    {
+      "name": "艾福杰尼",
+      "avatar_color": "#2d3436",
+      "initial": "艾",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "陷入循环！艾福杰尼《After Journey》，惊艳了《中国有嘻哈》那个夏天！",
+        "无损歌词版《酒精》一首被艾福杰尼吸粉的歌曲",
+        "葡萄架下的篝火",
+        "谜"
+      ],
+      "spk_id": "SPK0270"
+    },
+    {
+      "name": "花粥",
+      "avatar_color": "#1a1a2e",
+      "initial": "花",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "归去来兮",
+        "遥不可及的你"
+      ],
+      "spk_id": "SPK0271"
+    },
+    {
+      "name": "苏慧伦",
+      "avatar_color": "#fdcb6e",
+      "initial": "苏",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "鸭子",
+        "尖东奇遇你是谁"
+      ],
+      "spk_id": "SPK0272"
+    },
+    {
+      "name": "苏永康",
+      "avatar_color": "#2d3436",
+      "initial": "苏",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "爱一个人好难",
+        "男人不该让女人流泪"
+      ],
+      "spk_id": "SPK0273"
+    },
+    {
+      "name": "苏芮",
+      "avatar_color": "#6c5ce7",
+      "initial": "苏",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "酒干倘卖无",
+        "牵手"
+      ],
+      "spk_id": "SPK0274"
+    },
+    {
+      "name": "苏运莹",
+      "avatar_color": "#0984e3",
+      "initial": "苏",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "想你和我们的以后"
+      ],
+      "spk_id": "SPK0275"
+    },
+    {
+      "name": "范玮琪",
+      "avatar_color": "#00b894",
+      "initial": "范",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "如果的事",
+        "我想送你一首诗"
+      ],
+      "spk_id": "SPK0276"
+    },
+    {
+      "name": "莫文蔚",
+      "avatar_color": "#2d3436",
+      "initial": "莫",
       "video_count": 3,
-      "slice_count": 22,
-      "representative_songs": [],
-      "spk_id": "SPK0072"
+      "slice_count": 0,
+      "representative_songs": [
+        "阴天"
+      ],
+      "spk_id": "SPK0277"
+    },
+    {
+      "name": "萧亚轩",
+      "avatar_color": "#16213e",
+      "initial": "萧",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "表白",
+        "突然想起你"
+      ],
+      "spk_id": "SPK0278"
+    },
+    {
+      "name": "萧忆情",
+      "avatar_color": "#a29bfe",
+      "initial": "萧",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "一拜天地",
+        "BINGBIAN病变"
+      ],
+      "spk_id": "SPK0279"
     },
     {
       "name": "萧敬腾",
-      "avatar_color": "#0984e3",
+      "avatar_color": "#6c5ce7",
       "initial": "萧",
-      "video_count": 3,
-      "slice_count": 18,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "王妃",
-        "怎么说我不爱你"
+        "萧敬腾《王妃》百万豪装录音棚大声听【Hi-res】",
+        "萧敬腾《怎么说我不爱你》百万豪装录音棚大声听",
+        "赐予我力量吧-《宇宙巨人：希曼崛起》电影中文推广曲",
+        "无限进阶-《吞噬星空剧场版：血洛大陆》片尾曲"
       ],
-      "spk_id": "SPK0074"
+      "spk_id": "SPK0280"
+    },
+    {
+      "name": "萧煌奇",
+      "avatar_color": "#636e72",
+      "initial": "萧",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "末班车"
+      ],
+      "spk_id": "SPK0281"
+    },
+    {
+      "name": "萨顶顶",
+      "avatar_color": "#636e72",
+      "initial": "萨",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "萨顶顶完整版《漫游的云朵》欢快的节奏。这首歌循环播放超好听。",
+        "《这一别是永远》萨顶顶深情演绎",
+        "左手指月",
+        "万物生"
+      ],
+      "spk_id": "SPK0282"
+    },
+    {
+      "name": "董贞",
+      "avatar_color": "#e17055",
+      "initial": "董",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "逍遥游",
+        "三生三世枕上书{嫣儿制作}【升调版】"
+      ],
+      "spk_id": "SPK0283"
+    },
+    {
+      "name": "蒂娜·特纳",
+      "avatar_color": "#00b894",
+      "initial": "蒂",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "一切都会好起来的"
+      ],
+      "spk_id": "SPK0284"
+    },
+    {
+      "name": "蒋大为",
+      "avatar_color": "#fd79a8",
+      "initial": "蒋",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "北国之春",
+        "敢问路在何方-《西游记》电视剧片尾曲"
+      ],
+      "spk_id": "SPK0285"
+    },
+    {
+      "name": "蒋志光",
+      "avatar_color": "#a29bfe",
+      "initial": "蒋",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "相逢何必曾相识",
+        "万片希望在明天"
+      ],
+      "spk_id": "SPK0286"
+    },
+    {
+      "name": "蔡依林",
+      "avatar_color": "#00b894",
+      "initial": "蔡",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "蔡依林《妥协》百万豪装录音棚大声听【Hi-res】",
+        "《舞娘》-蔡依林 百万录音棚4K完整版",
+        "日不落",
+        "天空"
+      ],
+      "spk_id": "SPK0287"
+    },
+    {
+      "name": "蔡健雅",
+      "avatar_color": "#2ecc71",
+      "initial": "蔡",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "蔡健雅——越来越不懂",
+        "蔡健雅『達爾文』官方版MV (Official Music Video)",
+        "红色高跟鞋",
+        "Nightglow-崩坏3《最后一课》动画短片印象曲"
+      ],
+      "spk_id": "SPK0288"
+    },
+    {
+      "name": "蔡国庆",
+      "avatar_color": "#e94560",
+      "initial": "蔡",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "365个祝福",
+        "三百六十五个祝福"
+      ],
+      "spk_id": "SPK0289"
+    },
+    {
+      "name": "蔡国权",
+      "avatar_color": "#2d3436",
+      "initial": "蔡",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "寒傲似冰",
+        "从来没怪你别离"
+      ],
+      "spk_id": "SPK0290"
+    },
+    {
+      "name": "蔡小虎",
+      "avatar_color": "#b2bec3",
+      "initial": "蔡",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "车站",
+        "春夏秋冬"
+      ],
+      "spk_id": "SPK0291"
     },
     {
       "name": "蔡徐坤",
-      "avatar_color": "#e17055",
+      "avatar_color": "#dfe6e9",
       "initial": "蔡",
-      "video_count": 3,
-      "slice_count": 7,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "Deadman",
-        "情人",
-        "Colder"
+        "蔡徐坤《Deadman》百万豪装录音棚大声听",
+        "【𝐇𝐢-𝐑𝐞𝐬无损音质】｜《情人》- 蔡徐坤 -‘你轻轻一个吻  我疯狂体会’",
+        "【4K中英字幕｜授权补档】蔡徐坤《Colder》MV",
+        "告白气球",
+        "Deadman"
       ],
-      "spk_id": "SPK0077"
+      "spk_id": "SPK0292"
     },
     {
-      "name": "袁娅维",
-      "avatar_color": "#74b9ff",
-      "initial": "袁",
-      "video_count": 4,
-      "slice_count": 23,
+      "name": "蔡恩雨",
+      "avatar_color": "#a29bfe",
+      "initial": "蔡",
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "一生等你",
-        "吻合",
-        "为你而来",
-        "梦回"
+        "烟火里的尘埃",
+        "静悄悄"
       ],
-      "spk_id": "SPK0079"
+      "spk_id": "SPK0293"
+    },
+    {
+      "name": "蔡淳佳",
+      "avatar_color": "#636e72",
+      "initial": "蔡",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "未知的以后-《梦在手里》连续剧片尾曲",
+        "对不起我爱你"
+      ],
+      "spk_id": "SPK0294"
+    },
+    {
+      "name": "蔡琴",
+      "avatar_color": "#2ecc71",
+      "initial": "蔡",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "恰似你的溫柔",
+        "恰似你的温柔"
+      ],
+      "spk_id": "SPK0295"
+    },
+    {
+      "name": "蔡秋凤",
+      "avatar_color": "#e17055",
+      "initial": "蔡",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "雨水我问你",
+        "金包银"
+      ],
+      "spk_id": "SPK0296"
+    },
+    {
+      "name": "蕾哈娜",
+      "avatar_color": "#2ecc71",
+      "initial": "蕾",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "Diamonds",
+        "开场"
+      ],
+      "spk_id": "SPK0297"
+    },
+    {
+      "name": "薛之谦",
+      "avatar_color": "#e17055",
+      "initial": "薛",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "薛之谦《其实》百万豪装录音棚大声听【Hi-res】",
+        "在百万豪装录音棚大声听 薛之谦《演员》【Hi-res】",
+        "演员",
+        "其实-《妈妈像花儿一样》电视剧插曲",
+        "天外来物"
+      ],
+      "spk_id": "SPK0298"
+    },
+    {
+      "name": "薛凯琪",
+      "avatar_color": "#16213e",
+      "initial": "薛",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "月",
+        "剩下的你听懂我吗"
+      ],
+      "spk_id": "SPK0299"
+    },
+    {
+      "name": "蛋堡",
+      "avatar_color": "#0f3460",
+      "initial": "蛋",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "回到",
+        "爱简单"
+      ],
+      "spk_id": "SPK0300"
+    },
+    {
+      "name": "西瓜JUN",
+      "avatar_color": "#00b894",
+      "initial": "西",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "长生诀",
+        "玫瑰花的葬礼"
+      ],
+      "spk_id": "SPK0301"
+    },
+    {
+      "name": "言承旭",
+      "avatar_color": "#1a1a2e",
+      "initial": "言",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "漠河舞厅",
+        "就想赖着你"
+      ],
+      "spk_id": "SPK0302"
+    },
+    {
+      "name": "詹姆斯·布朗",
+      "avatar_color": "#fdcb6e",
+      "initial": "詹",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "2014年詹姆斯重回克利夫兰 斯盖拉.格蕾深情演唱Coming home 这首歌把感动值直接拉满",
+        "夜晚火车"
+      ],
+      "spk_id": "SPK0303"
+    },
+    {
+      "name": "詹雅雯",
+      "avatar_color": "#a29bfe",
+      "initial": "詹",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "黄昏",
+        "回乡"
+      ],
+      "spk_id": "SPK0304"
+    },
+    {
+      "name": "许冠杰",
+      "avatar_color": "#00b894",
+      "initial": "许",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "浪子心声",
+        "双星情歌-《鬼马双星》电影插曲"
+      ],
+      "spk_id": "SPK0305"
+    },
+    {
+      "name": "许嵩",
+      "avatar_color": "#6c5ce7",
+      "initial": "许",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "许嵩《幻听》百万豪装录音棚大声听【Hi-res】",
+        "乌鸦-许嵩|[Hi-Res无损音质]",
+        "粗糙",
+        "洛阳纸",
+        "前程似锦"
+      ],
+      "spk_id": "SPK0306"
+    },
+    {
+      "name": "许巍",
+      "avatar_color": "#dfe6e9",
+      "initial": "许",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【无损音质】 许巍~曾经的你 【Hi-res】 嘀哩哩哩滴哩哒哒~",
+        "晴朗-许巍 MV",
+        "曾经的你-《夏洛特烦恼》电影插曲",
+        "蓝莲花",
+        "像风一样自由"
+      ],
+      "spk_id": "SPK0307"
+    },
+    {
+      "name": "许志安",
+      "avatar_color": "#e94560",
+      "initial": "许",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "上弦月",
+        "真心真意"
+      ],
+      "spk_id": "SPK0308"
+    },
+    {
+      "name": "许慧欣",
+      "avatar_color": "#a29bfe",
+      "initial": "许",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "失眠",
+        "七月七日晴"
+      ],
+      "spk_id": "SPK0309"
+    },
+    {
+      "name": "许绍洋",
+      "avatar_color": "#74b9ff",
+      "initial": "许",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "薰衣草",
+        "花香"
+      ],
+      "spk_id": "SPK0310"
+    },
+    {
+      "name": "许美静",
+      "avatar_color": "#fd79a8",
+      "initial": "许",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "城里的月光-《豆腐街》主题曲",
+        "都是夜归人"
+      ],
+      "spk_id": "SPK0311"
+    },
+    {
+      "name": "许茹芸",
+      "avatar_color": "#16213e",
+      "initial": "许",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我依然爱你",
+        "独角戏"
+      ],
+      "spk_id": "SPK0312"
+    },
+    {
+      "name": "诺拉·琼斯",
+      "avatar_color": "#2ecc71",
+      "initial": "诺",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "小罗伊·琼斯：触不可及",
+        "【史诗级说唱历史大战】#印第安纳琼斯VS劳拉克劳馥【自制字幕】",
+        "Don&#x27;t Delete The Kisses 2018水星奖现场"
+      ],
+      "spk_id": "SPK0313"
+    },
+    {
+      "name": "谢天笑",
+      "avatar_color": "#e17055",
+      "initial": "谢",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "不会改变",
+        "再次来临"
+      ],
+      "spk_id": "SPK0314"
     },
     {
       "name": "谢安琪",
-      "avatar_color": "#fdcb6e",
+      "avatar_color": "#a29bfe",
       "initial": "谢",
-      "video_count": 3,
-      "slice_count": 20,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "喜帖街"
+        "【4K60FPS】谢安琪《喜帖街》最美现场！这也太美了吧！",
+        "谢安琪",
+        "喜帖街 MV",
+        "喜帖街",
+        "逝去日子"
       ],
-      "spk_id": "SPK0081"
+      "spk_id": "SPK0315"
+    },
+    {
+      "name": "谢金燕",
+      "avatar_color": "#dfe6e9",
+      "initial": "谢",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "含泪跳恰恰",
+        "あいしてる我爱你"
+      ],
+      "spk_id": "SPK0316"
+    },
+    {
+      "name": "谢霆锋",
+      "avatar_color": "#0f3460",
+      "initial": "谢",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "《罪人》-谢霆锋-2000年-专辑:《零距离》【无损】",
+        "【4K无损】谢霆锋2025最佳单曲《逆行》官方MV",
+        "因为爱所以爱",
+        "无声仿有声"
+      ],
+      "spk_id": "SPK0317"
+    },
+    {
+      "name": "谭咏麟",
+      "avatar_color": "#d63031",
+      "initial": "谭",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "【Hi-Res无损音质】谭咏麟-吻别",
+        "谭咏麟经典歌曲《讲不出再见》",
+        "讲不出再见"
+      ],
+      "spk_id": "SPK0318"
+    },
+    {
+      "name": "谭晶",
+      "avatar_color": "#6c5ce7",
+      "initial": "谭",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "九儿-原唱：韩红",
+        "我爱你中国"
+      ],
+      "spk_id": "SPK0319"
+    },
+    {
+      "name": "谭维维",
+      "avatar_color": "#fdcb6e",
+      "initial": "谭",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "谭维维《出马》太好听了",
+        "《寸心》-王力宏 谭维维【Hi-Res无损音质】每一寸心 都将人间正道浇铸，留下一页不朽千古.......",
+        "与你-《斗罗大陆》动画插曲",
+        "拥抱"
+      ],
+      "spk_id": "SPK0320"
+    },
+    {
+      "name": "费玉清",
+      "avatar_color": "#0f3460",
+      "initial": "费",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "一剪梅",
+        "梦驼铃"
+      ],
+      "spk_id": "SPK0321"
+    },
+    {
+      "name": "费翔",
+      "avatar_color": "#a29bfe",
+      "initial": "费",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "溜溜的她",
+        "站台"
+      ],
+      "spk_id": "SPK0322"
+    },
+    {
+      "name": "赵丽颖",
+      "avatar_color": "#2ecc71",
+      "initial": "赵",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "十年-《我们的十年》电影推广曲",
+        "想你"
+      ],
+      "spk_id": "SPK0323"
+    },
+    {
+      "name": "赵传",
+      "avatar_color": "#fdcb6e",
+      "initial": "赵",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我终于失去了你",
+        "爱要怎么说出口"
+      ],
+      "spk_id": "SPK0324"
+    },
+    {
+      "name": "赵咏华",
+      "avatar_color": "#b2bec3",
+      "initial": "赵",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "最浪漫的事"
+      ],
+      "spk_id": "SPK0325"
+    },
+    {
+      "name": "赵学而",
+      "avatar_color": "#2ecc71",
+      "initial": "赵",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "欢乐今宵"
+      ],
+      "spk_id": "SPK0326"
+    },
+    {
+      "name": "赵薇",
+      "avatar_color": "#00cec9",
+      "initial": "赵",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "《自从离别后》- 赵薇 百万录音棚4K完整版",
+        "趙薇《一直下雨的星期天》央视音画时尚现场演唱版"
+      ],
+      "spk_id": "SPK0327"
+    },
+    {
+      "name": "赵雷",
+      "avatar_color": "#00b894",
+      "initial": "赵",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "家乡-《雄狮》电影宣传曲",
+        "我们的时光"
+      ],
+      "spk_id": "SPK0328"
+    },
+    {
+      "name": "路易斯·阿姆斯特朗",
+      "avatar_color": "#00cec9",
+      "initial": "路",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "世界多么精彩",
+        "我们拥有世界上所有的时间"
+      ],
+      "spk_id": "SPK0329"
+    },
+    {
+      "name": "辛晓琪",
+      "avatar_color": "#636e72",
+      "initial": "辛",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "俩俩相忘",
+        "味道"
+      ],
+      "spk_id": "SPK0330"
+    },
+    {
+      "name": "邓丽君",
+      "avatar_color": "#e84393",
+      "initial": "邓",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "小城故事",
+        "在水一方"
+      ],
+      "spk_id": "SPK0331"
+    },
+    {
+      "name": "邓丽欣",
+      "avatar_color": "#d63031",
+      "initial": "邓",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "电灯胆",
+        "黑白照"
+      ],
+      "spk_id": "SPK0332"
+    },
+    {
+      "name": "邓妙华",
+      "avatar_color": "#2d3436",
+      "initial": "邓",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "心灵之约",
+        "捉泥鳅"
+      ],
+      "spk_id": "SPK0333"
     },
     {
       "name": "那英",
-      "avatar_color": "#fd79a8",
+      "avatar_color": "#e84393",
       "initial": "那",
-      "video_count": 4,
-      "slice_count": 18,
+      "video_count": 3,
+      "slice_count": 0,
       "representative_songs": [
-        "默",
-        "雾里看花"
+        "那英《默》百万豪装录音棚大声听【Hi-res】",
+        "那英经典歌曲《雾里看花》，借我一双慧眼，把这世界看得清清楚楚",
+        "那英「雾里看花」正版 MV",
+        "认了吧(KTV版) 标清MV",
+        "只要有你"
       ],
-      "spk_id": "SPK0086"
+      "spk_id": "SPK0334"
+    },
+    {
+      "name": "邰正宵",
+      "avatar_color": "#e94560",
+      "initial": "邰",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "爱的传说-《一千零一夜》粤语版",
+        "心要让你听见"
+      ],
+      "spk_id": "SPK0335"
+    },
+    {
+      "name": "郁可唯",
+      "avatar_color": "#2ecc71",
+      "initial": "郁",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "郁可唯这版《水中花》，真的是“错”的经典！纷纷飞花已坠落！",
+        "在百万豪装录音棚大声听 郁可唯《路过人间》【Hi-res】",
+        "郁可唯",
+        "见幸福-《莫离》影视剧叶璃人物曲",
+        "像小时候一样-《熊出没·变形记》电影主题曲"
+      ],
+      "spk_id": "SPK0336"
+    },
+    {
+      "name": "郑中基",
+      "avatar_color": "#16213e",
+      "initial": "郑",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "无赖",
+        "暧昧"
+      ],
+      "spk_id": "SPK0337"
+    },
+    {
+      "name": "郑伊健",
+      "avatar_color": "#2d3436",
+      "initial": "郑",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "兴波作浪-《古惑仔之龙争虎斗》电影主题曲",
+        "友情岁月"
+      ],
+      "spk_id": "SPK0338"
+    },
+    {
+      "name": "郑少秋",
+      "avatar_color": "#0f3460",
+      "initial": "郑",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "摘下满天星",
+        "笑看风云-《笑看风云》无线电视剧主题曲"
+      ],
+      "spk_id": "SPK0339"
+    },
+    {
+      "name": "郑智化",
+      "avatar_color": "#16213e",
+      "initial": "郑",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "墮落天使",
+        "游戏人间"
+      ],
+      "spk_id": "SPK0340"
+    },
+    {
+      "name": "郑秀文",
+      "avatar_color": "#b2bec3",
+      "initial": "郑",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "郑秀文-情变（Official karaoke MV）",
+        "郑秀文 Sammi Cheng -《拥抱这分钟》Official Audio｜Sammi VS Sammi 专辑 05",
+        "越吻越伤心",
+        "眉飞色舞"
+      ],
+      "spk_id": "SPK0341"
     },
     {
       "name": "郑钧",
-      "avatar_color": "#a29bfe",
+      "avatar_color": "#00cec9",
       "initial": "郑",
-      "video_count": 3,
-      "slice_count": 14,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "回到拉萨"
+        "【4K Hi-Res】私奔-郑钧",
+        "【4K修复】郑钧《回到拉萨》MV 自由的向往！纯粹的感动！",
+        "私奔-郑钧MV",
+        "灰姑娘",
+        "私奔"
       ],
-      "spk_id": "SPK0121"
+      "spk_id": "SPK0342"
+    },
+    {
+      "name": "郑鱼",
+      "avatar_color": "#fdcb6e",
+      "initial": "郑",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "请把心事说给我听",
+        "就忘了吧"
+      ],
+      "spk_id": "SPK0343"
+    },
+    {
+      "name": "郭富城",
+      "avatar_color": "#e17055",
+      "initial": "郭",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【超清晰修复版】郭富城 – 对你爱不完 MV",
+        "郭富城",
+        "我是不是该安静的走开",
+        "我想偷偷对你说我爱你"
+      ],
+      "spk_id": "SPK0344"
+    },
+    {
+      "name": "郭采洁",
+      "avatar_color": "#a29bfe",
+      "initial": "郭",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我的未来式",
+        "笨的可以-《无敌珊宝妹》电视剧片尾曲"
+      ],
+      "spk_id": "SPK0345"
+    },
+    {
+      "name": "郭静",
+      "avatar_color": "#dfe6e9",
+      "initial": "郭",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "爱情讯息",
+        "心墙"
+      ],
+      "spk_id": "SPK0346"
+    },
+    {
+      "name": "金志文",
+      "avatar_color": "#00b894",
+      "initial": "金",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "为爱痴狂",
+        "为爱痴狂2026"
+      ],
+      "spk_id": "SPK0347"
+    },
+    {
+      "name": "金池",
+      "avatar_color": "#e94560",
+      "initial": "金",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "夜夜夜夜",
+        "好好过"
+      ],
+      "spk_id": "SPK0348"
+    },
+    {
+      "name": "金海心",
+      "avatar_color": "#0f3460",
+      "initial": "金",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "金海心《阳光下的星星》百万豪装录音棚大声听",
+        "金海心经典歌曲《那么骄傲》，耳朵一听就怀孕的声音！",
+        "把耳朵叫醒-《都是天使惹的祸》电视剧插曲",
+        "那么骄傲-《都是天使惹的祸》电视剧片头曲"
+      ],
+      "spk_id": "SPK0349"
+    },
+    {
+      "name": "钟镇涛",
+      "avatar_color": "#fd79a8",
+      "initial": "钟",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "漫漫人生路",
+        "大海"
+      ],
+      "spk_id": "SPK0350"
+    },
+    {
+      "name": "银临",
+      "avatar_color": "#74b9ff",
+      "initial": "银",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "棠梨煎雪",
+        "不老梦"
+      ],
+      "spk_id": "SPK0351"
+    },
+    {
+      "name": "门丽",
+      "avatar_color": "#2ecc71",
+      "initial": "门",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "死心塌地去爱你",
+        "勇往直前"
+      ],
+      "spk_id": "SPK0352"
+    },
+    {
+      "name": "队长",
+      "avatar_color": "#fdcb6e",
+      "initial": "队",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "哪里都是你",
+        "同和"
+      ],
+      "spk_id": "SPK0353"
+    },
+    {
+      "name": "阿冗",
+      "avatar_color": "#d63031",
+      "initial": "阿",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "你的答案",
+        "以为"
+      ],
+      "spk_id": "SPK0354"
+    },
+    {
+      "name": "阿宝",
+      "avatar_color": "#00b894",
+      "initial": "阿",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "王二妮&amp;阿宝这首《张灯结彩》歌声嘹亮，欢快喜庆，太好听了",
+        "山西民歌《为你跑成罗圈腿》-阿宝",
+        "山丹丹开花红艳艳",
+        "老爸老妈"
+      ],
+      "spk_id": "SPK0355"
+    },
+    {
+      "name": "阿杜",
+      "avatar_color": "#dfe6e9",
+      "initial": "阿",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "你很好【𝗛𝗶-𝗥𝗲𝘀无损】",
+        "阿杜《他一定很爱你》百万豪装录音棚大声听【Hi-res】",
+        "天黑",
+        "他一定很爱你"
+      ],
+      "spk_id": "SPK0356"
+    },
+    {
+      "name": "阿桑",
+      "avatar_color": "#fdcb6e",
+      "initial": "阿",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "一直很安静"
+      ],
+      "spk_id": "SPK0357"
+    },
+    {
+      "name": "阿牛",
+      "avatar_color": "#2ecc71",
+      "initial": "阿",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "爱我久久",
+        "桃花朵朵开"
+      ],
+      "spk_id": "SPK0358"
+    },
+    {
+      "name": "阿肆",
+      "avatar_color": "#dfe6e9",
+      "initial": "阿",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "热爱105℃的你",
+        "我在人民广场吃炸鸡-《情圣》电影插曲"
+      ],
+      "spk_id": "SPK0359"
+    },
+    {
+      "name": "陈乐基",
+      "avatar_color": "#0f3460",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "月半小夜曲"
+      ],
+      "spk_id": "SPK0360"
+    },
+    {
+      "name": "陈坤",
+      "avatar_color": "#0f3460",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "月半弯",
+        "寻龙诀-《寻龙诀》电影主题曲"
+      ],
+      "spk_id": "SPK0361"
+    },
+    {
+      "name": "陈奕迅",
+      "avatar_color": "#1a1a2e",
+      "initial": "陈",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "在百万豪装录音棚大声听 陈奕迅《最佳损友》【Hi-res】",
+        "在百万豪装录音棚大声听陈奕迅《富士山下》【Hi-res】",
+        "陈奕迅 – 旧欢如梦 修哥演唱会嘉宾！"
+      ],
+      "spk_id": "SPK0362"
+    },
+    {
+      "name": "陈小春",
+      "avatar_color": "#e17055",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "借过一下",
+        "街角的晚风"
+      ],
+      "spk_id": "SPK0363"
+    },
+    {
+      "name": "陈建年",
+      "avatar_color": "#d63031",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "山有多高",
+        "海洋"
+      ],
+      "spk_id": "SPK0364"
+    },
+    {
+      "name": "陈思思",
+      "avatar_color": "#74b9ff",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "纳西情歌",
+        "美人吟-曾在CCTV“一路芬芳”三·八国际劳动妇女节特别节目中演唱"
+      ],
+      "spk_id": "SPK0365"
+    },
+    {
+      "name": "陈慧娴",
+      "avatar_color": "#00cec9",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【高清修复】情意结MV-陈慧娴",
+        "傻女MV原版 无水印",
+        "千千阙歌",
+        "傻女的爱"
+      ],
+      "spk_id": "SPK0366"
+    },
+    {
+      "name": "陈慧琳",
+      "avatar_color": "#636e72",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "多啦A梦-《哆啦A梦》TV动画大陆主题曲",
+        "大日子"
+      ],
+      "spk_id": "SPK0367"
+    },
+    {
+      "name": "陈明",
+      "avatar_color": "#74b9ff",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "快乐老家-陈明 磁带试听 跟我走吧 天亮就出发",
+        "心中只有你-毛宁&amp;陈明",
+        "快乐老家",
+        "枕着你的名字入眠"
+      ],
+      "spk_id": "SPK0368"
+    },
+    {
+      "name": "陈明真",
+      "avatar_color": "#2d3436",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "变心的翅膀",
+        "念念不忘的情人"
+      ],
+      "spk_id": "SPK0369"
+    },
+    {
+      "name": "陈晓东",
+      "avatar_color": "#74b9ff",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "划火柴-《百分百感觉》电视剧主题曲",
+        "风一样的男子"
+      ],
+      "spk_id": "SPK0370"
     },
     {
       "name": "陈楚生",
+      "avatar_color": "#e84393",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "《经过》-陈楚生、何洁 “若我爱你的方式  已不同开始  不如我们变换下位置  看一看原来它的样子 我害怕那种坚持  无声的休止  浪漫被岁月滴水穿石”",
+        "陈楚生《我愿意》MV 诠释经典温暖呈现",
+        "【陈楚生】开口跪瞬间《信仰》",
+        "庙堂之外-《长安的荔枝》电影片尾曲",
+        "巴拉莱卡&nbsp;(The&nbsp;Rod)"
+      ],
+      "spk_id": "SPK0371"
+    },
+    {
+      "name": "陈洁仪",
+      "avatar_color": "#0984e3",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "从前的我-《西游记之大圣归来》电影主题曲",
+        "喜欢你"
+      ],
+      "spk_id": "SPK0372"
+    },
+    {
+      "name": "陈洁灵",
+      "avatar_color": "#1a1a2e",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "千个太阳",
+        "他的眼光"
+      ],
+      "spk_id": "SPK0373"
+    },
+    {
+      "name": "陈淑桦",
+      "avatar_color": "#0984e3",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "梦醒时分",
+        "滾滾紅塵"
+      ],
+      "spk_id": "SPK0374"
+    },
+    {
+      "name": "陈瑞",
+      "avatar_color": "#16213e",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "红色眼泪"
+      ],
+      "spk_id": "SPK0375"
+    },
+    {
+      "name": "陈百强",
+      "avatar_color": "#1a1a2e",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "一生何求--电视《义不容情》主题曲",
+        "偏偏喜欢你"
+      ],
+      "spk_id": "SPK0376"
+    },
+    {
+      "name": "陈粒",
+      "avatar_color": "#e17055",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "试运行",
+        "小半"
+      ],
+      "spk_id": "SPK0377"
+    },
+    {
+      "name": "陈红",
       "avatar_color": "#fd79a8",
       "initial": "陈",
-      "video_count": 3,
-      "slice_count": 10,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "经过",
-        "我愿意",
-        "信仰"
+        "常回家看看",
+        "喜乐年华"
       ],
-      "spk_id": "SPK0122"
+      "spk_id": "SPK0378"
+    },
+    {
+      "name": "陈绮贞",
+      "avatar_color": "#0984e3",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【4K修复】陈绮贞《太聪明》MV 猜得没错 想得太多 不会有结果",
+        "【4K修复】陈绮贞《还是会寂寞》MV 别对我小心翼翼 别让我看轻你",
+        "我喜欢上你时的内心活动-《喜欢你》电影主题曲",
+        "旅行的意义"
+      ],
+      "spk_id": "SPK0379"
+    },
+    {
+      "name": "陈雷",
+      "avatar_color": "#16213e",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "欢喜就好",
+        "欢喜就好(DJ版)"
+      ],
+      "spk_id": "SPK0380"
+    },
+    {
+      "name": "陈鸿宇",
+      "avatar_color": "#fd79a8",
+      "initial": "陈",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "理想三旬"
+      ],
+      "spk_id": "SPK0381"
+    },
+    {
+      "name": "陶喆",
+      "avatar_color": "#fd79a8",
+      "initial": "陶",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "在百万豪装录音棚大声听 陶喆《爱我还是他》【Hi-res】",
+        "【4K60FPS Hi-Res】陶喆 &amp; 关诗敏《好好说再见》 | 为什么有些人的感情可以说不联系就不联系，当没发生过呢？",
+        "在百万豪装录音棚大声听 陶喆《爱,很简单》【Hi-res】",
+        "爱，很简单"
+      ],
+      "spk_id": "SPK0382"
+    },
+    {
+      "name": "雪儿",
+      "avatar_color": "#fdcb6e",
+      "initial": "雪",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "小镇警长的故事",
+        "天堂的妈妈"
+      ],
+      "spk_id": "SPK0383"
+    },
+    {
+      "name": "雷·查尔斯",
+      "avatar_color": "#e84393",
+      "initial": "雷",
+      "video_count": 3,
+      "slice_count": 0,
+      "representative_songs": [
+        "打路杰克"
+      ],
+      "spk_id": "SPK0384"
+    },
+    {
+      "name": "雷佳",
+      "avatar_color": "#636e72",
+      "initial": "雷",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "壁上观",
+        "焚心以火"
+      ],
+      "spk_id": "SPK0385"
+    },
+    {
+      "name": "霍尊",
+      "avatar_color": "#6c5ce7",
+      "initial": "霍",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "钉子",
+        "卷珠帘"
+      ],
+      "spk_id": "SPK0386"
     },
     {
       "name": "韦唯",
       "avatar_color": "#1a1a2e",
       "initial": "韦",
       "video_count": 2,
-      "slice_count": 12,
+      "slice_count": 0,
       "representative_songs": [
-        "心愿",
-        "在水一方"
+        "韦唯《心愿》，一代人生活的主旋律",
+        "【韦唯】《在水一方》（Live）全曲音高测量",
+        "命运不是辘轳",
+        "爱的奉献",
+        "辘轳、井、女人"
       ],
-      "spk_id": "SPK0123"
+      "spk_id": "SPK0387"
+    },
+    {
+      "name": "韦礼安",
+      "avatar_color": "#d63031",
+      "initial": "韦",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "很久很久",
+        "有没有"
+      ],
+      "spk_id": "SPK0388"
     },
     {
       "name": "韩磊",
       "avatar_color": "#1a1a2e",
       "initial": "韩",
-      "video_count": 4,
-      "slice_count": 12,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "花房姑娘 "
+        "【Hi-Res无损音质】韩磊《花房姑娘 》这歌原来这么好听 ！百万音质经典歌曲最好听的版本 4K60P",
+        "韩磊-鸿雁（韩磊歌迷会出品MV）",
+        "韩磊+何思渔-中华崛起（韩磊歌迷会出品MV）",
+        "向天再借五百年-《康熙王朝》电视剧主题曲",
+        "等待-《汉武大帝》电视剧片尾曲"
       ],
-      "spk_id": "SPK0124"
+      "spk_id": "SPK0389"
     },
     {
       "name": "韩红",
-      "avatar_color": "#00cec9",
+      "avatar_color": "#fd79a8",
       "initial": "韩",
       "video_count": 3,
-      "slice_count": 15,
+      "slice_count": 0,
       "representative_songs": [
-        "我爱祖国的蓝天"
+        "韩红经典歌曲《我爱祖国的蓝天》",
+        "韩红 - 『超高无损音质』【动态歌词Lyrics】",
+        "天亮了-韩红 国语MV",
+        "珊瑚颂",
+        "小尖尖"
       ],
-      "spk_id": "SPK0094"
+      "spk_id": "SPK0390"
     },
     {
-      "name": "飞儿乐团",
-      "avatar_color": "#fd79a8",
-      "initial": "飞",
-      "video_count": 3,
-      "slice_count": 21,
+      "name": "音频怪物",
+      "avatar_color": "#1a1a2e",
+      "initial": "音",
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "我们的爱"
+        "百鬼夜行",
+        "盗墓笔记·无邪"
       ],
-      "spk_id": "SPK0095"
+      "spk_id": "SPK0391"
+    },
+    {
+      "name": "颜人中",
+      "avatar_color": "#16213e",
+      "initial": "颜",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "孤单心事",
+        "小情歌"
+      ],
+      "spk_id": "SPK0392"
+    },
+    {
+      "name": "马頔",
+      "avatar_color": "#1a1a2e",
+      "initial": "马",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "南山南",
+        "傲寒"
+      ],
+      "spk_id": "SPK0393"
+    },
+    {
+      "name": "高明骏",
+      "avatar_color": "#00cec9",
+      "initial": "高",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "我獨自在風雨中",
+        "年轻的喝彩"
+      ],
+      "spk_id": "SPK0394"
+    },
+    {
+      "name": "高胜美",
+      "avatar_color": "#6c5ce7",
+      "initial": "高",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "潇洒的走",
+        "点燃一根烟"
+      ],
+      "spk_id": "SPK0395"
+    },
+    {
+      "name": "魏如萱",
+      "avatar_color": "#2d3436",
+      "initial": "魏",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "金曲奖歌后魏如萱的代表作，你听过几首？",
+        "你啊你啊",
+        "心酸",
+        "末路狂花"
+      ],
+      "spk_id": "SPK0396"
     },
     {
       "name": "鹿晗",
-      "avatar_color": "#fd79a8",
+      "avatar_color": "#e84393",
       "initial": "鹿",
-      "video_count": 3,
-      "slice_count": 13,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
+        "在百万豪装录音棚大声听 鹿晗《勋章》【Hi-res】",
+        "【Hi-Res无损】鹿晗新歌《吹吹风》纯享，好浪漫！",
+        "鹿晗动漫MV版《慢慢》",
         "勋章",
-        "吹吹风",
-        "慢慢"
+        "纵横宇宙-《蜘蛛侠：纵横宇宙》电影中文主题曲"
       ],
-      "spk_id": "SPK0097"
+      "spk_id": "SPK0397"
+    },
+    {
+      "name": "麦当娜",
+      "avatar_color": "#e84393",
+      "initial": "麦",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "vogue",
+        "别为我哭泣"
+      ],
+      "spk_id": "SPK0398"
     },
     {
       "name": "黄义达",
-      "avatar_color": "#636e72",
+      "avatar_color": "#00b894",
       "initial": "黄",
-      "video_count": 3,
-      "slice_count": 20,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "那女孩对我说"
+        "黄义达歌曲MV:Set Me Free III",
+        "一个人心中只有一个宝贝 黄义达《那女孩对我说》磁带分享",
+        "黄义达",
+        "那女孩对我说",
+        "啸烽烟-《戚继光》动画片尾曲"
       ],
-      "spk_id": "SPK0098"
+      "spk_id": "SPK0399"
+    },
+    {
+      "name": "黄乙玲",
+      "avatar_color": "#e17055",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "一支小雨伞",
+        "等无人"
+      ],
+      "spk_id": "SPK0400"
+    },
+    {
+      "name": "黄凯芹",
+      "avatar_color": "#e17055",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "再见",
+        "解情还须系情人"
+      ],
+      "spk_id": "SPK0401"
+    },
+    {
+      "name": "黄品源",
+      "avatar_color": "#fd79a8",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "小薇",
+        "海浪"
+      ],
+      "spk_id": "SPK0402"
+    },
+    {
+      "name": "黄大炜",
+      "avatar_color": "#e84393",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "告别",
+        "为了你"
+      ],
+      "spk_id": "SPK0403"
+    },
+    {
+      "name": "黄妃",
+      "avatar_color": "#1a1a2e",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "追追追",
+        "被爱拖磨"
+      ],
+      "spk_id": "SPK0404"
     },
     {
       "name": "黄子韬",
-      "avatar_color": "#fdcb6e",
+      "avatar_color": "#a29bfe",
       "initial": "黄",
-      "video_count": 3,
-      "slice_count": 19,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "夜空中最闪亮的星",
-        "Beggar",
-        "舍不得"
+        "六小龄童给黄子韬亲自示范孙悟空的身姿，真的是回忆满满啊",
+        "《夜空中最闪亮的星》发布片头曲MV 黄子韬吴倩版《Beggar》上线",
+        "【黄子韬】《舍不得》(影视版)-黄子韬  金晨小姐姐很美啊！",
+        "好不好",
+        "救赎"
       ],
-      "spk_id": "SPK0099"
+      "spk_id": "SPK0405"
+    },
+    {
+      "name": "黄安",
+      "avatar_color": "#74b9ff",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "新鸳鸯蝴蝶梦-《包青天》电视剧主题曲|《路边野餐》电影插曲",
+        "样样红-《倩女幽魂前传》话剧主题曲"
+      ],
+      "spk_id": "SPK0406"
+    },
+    {
+      "name": "黄小琥",
+      "avatar_color": "#0984e3",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "没那么简单",
+        "新不了情"
+      ],
+      "spk_id": "SPK0407"
+    },
+    {
+      "name": "黄旭",
+      "avatar_color": "#2ecc71",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "【中国新说唱】黄旭-给妈妈的歌",
+        "【韵脚检查】惜败刘炫廷！输给节目？说唱教官黄旭《生存法则》&quot;精酿着灵感 元年的味道&quot;",
+        "生存法则",
+        "大力水手"
+      ],
+      "spk_id": "SPK0408"
+    },
+    {
+      "name": "黄晓明",
+      "avatar_color": "#2ecc71",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "街角的晚风",
+        "何以笙箫默-《何以笙箫默》电影同名主题曲"
+      ],
+      "spk_id": "SPK0409"
+    },
+    {
+      "name": "黄绮珊",
+      "avatar_color": "#636e72",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "黄绮珊【Hi-Res无损音质】用灵魂演绎的极致唱功",
+        "【定风波/黄绮珊】官方无损音质，高清画面自制版",
+        "一生有你",
+        "活着-《问心》影视剧片尾曲"
+      ],
+      "spk_id": "SPK0410"
+    },
+    {
+      "name": "黄舒骏",
+      "avatar_color": "#74b9ff",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "改变1995",
+        "马不停蹄的忧伤"
+      ],
+      "spk_id": "SPK0411"
+    },
+    {
+      "name": "黄莺莺",
+      "avatar_color": "#16213e",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "葬心",
+        "云河"
+      ],
+      "spk_id": "SPK0412"
+    },
+    {
+      "name": "黄雅莉",
+      "avatar_color": "#e84393",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "渺小的灿烂",
+        "杀破狼"
+      ],
+      "spk_id": "SPK0413"
+    },
+    {
+      "name": "黄霄雲",
+      "avatar_color": "#2d3436",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "Hi-Res无损｜黄霄雲 全新演绎《劫》全网上线~（原唱：音频怪物 影视剧《琉璃》插曲）",
+        "影视剧《朝雪录》插曲：别叹-黄霄云",
+        "一路荣光-《云秀行》影视剧片头曲",
+        "劫"
+      ],
+      "spk_id": "SPK0414"
+    },
+    {
+      "name": "黄龄",
+      "avatar_color": "#16213e",
+      "initial": "黄",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "《风月》黄龄【高音质/纯享歌词版MV】",
+        "【黄龄】新歌《天地劫》MV 人声增强 独享版",
+        "琵琶行",
+        "锁"
+      ],
+      "spk_id": "SPK0415"
     },
     {
       "name": "黎明",
-      "avatar_color": "#a29bfe",
+      "avatar_color": "#00cec9",
       "initial": "黎",
-      "video_count": 3,
-      "slice_count": 12,
+      "video_count": 2,
+      "slice_count": 0,
       "representative_songs": [
-        "黎明前的黑暗",
-        "黎明"
+        "【4K·无损】张韶涵/王晰《黎明前的黑暗》风伴着黎明前的歌声，敲响命运的钟，是不灭的灯。",
+        "《黎明》【快速上手-意大利歌曲集】，你们期待的版本。三连走起来吧学歌认准快速上手系列。",
+        "全日爱 [原版MV]",
+        "甜蜜蜜",
+        "堆积情感"
       ],
-      "spk_id": "SPK0101"
+      "spk_id": "SPK0416"
+    },
+    {
+      "name": "齐秦",
+      "avatar_color": "#636e72",
+      "initial": "齐",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "外面的世界-《熊出没之熊心归来》电影片尾曲",
+        "原來的我"
+      ],
+      "spk_id": "SPK0417"
+    },
+    {
+      "name": "齐豫",
+      "avatar_color": "#e84393",
+      "initial": "齐",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "这世界那么多人",
+        "大海"
+      ],
+      "spk_id": "SPK0418"
+    },
+    {
+      "name": "龙千玉",
+      "avatar_color": "#a29bfe",
+      "initial": "龙",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "阿郎-《再见阿郎》台视八点档电视剧配乐",
+        "风中的玫瑰"
+      ],
+      "spk_id": "SPK0419"
+    },
+    {
+      "name": "龚琳娜",
+      "avatar_color": "#00cec9",
+      "initial": "龚",
+      "video_count": 2,
+      "slice_count": 0,
+      "representative_songs": [
+        "《忐忑》-龚琳娜，值得你单曲循环的100首中文歌曲合集，好听音乐推荐！开车/作业/运动",
+        "【特约龚琳娜】千秋梦【忘川风华录】公测主题曲MV",
+        "何处是天堂",
+        "忐忑"
+      ],
+      "spk_id": "SPK0420"
     }
   ],
-  "total": 78
+  "total": 421
 }

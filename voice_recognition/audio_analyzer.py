@@ -292,6 +292,9 @@ def compute_star_mix(results: List[Dict]) -> List[Dict]:
     return star_mix
 
 
+SHARE_LINK = "https://whovoice.online/"
+
+
 def build_share_text(star_mix: List[Dict], fun_title: str) -> str:
     """
     生成分享文案
@@ -301,14 +304,14 @@ def build_share_text(star_mix: List[Dict], fun_title: str) -> str:
         fun_title: "被天使吻过的烟嗓"
 
     Returns:
-        "我的声音像 52% 的周杰伦 + 25% 的陈奕迅！WhoVoice 说我是「被天使吻过的烟嗓」，快来测测你的声纹身份证 ->"
+        "我的声音像 52% 的周杰伦 + 25% 的陈奕迅！WhoVoice 说我是「被天使吻过的烟嗓」，快来测测你的声纹身份证 https://whovoice.online/"
     """
     if not star_mix:
-        return f"WhoVoice 说我是「{fun_title}」，快来测测你的声纹身份证 ->"
+        return f"WhoVoice 说我是「{fun_title}」，快来测测你的声纹身份证 {SHARE_LINK}"
 
     mix_parts = []
     for s in star_mix[:3]:  # 最多 3 个
         mix_parts.append(f"{s['percent']}% 的{s['name']}")
 
     mix_str = " + ".join(mix_parts)
-    return f"我的声音像 {mix_str}！WhoVoice 说我是「{fun_title}」，快来测测你的声纹身份证 ->"
+    return f"我的声音像 {mix_str}！WhoVoice 说我是「{fun_title}」，快来测测你的声纹身份证 {SHARE_LINK}"

@@ -131,8 +131,10 @@ def build_faiss_index(embedding_matrix: np.ndarray, celeb_names: List[str], appe
             "num_celebrities": len(celeb_names),
             "model_type": "cam++",
             "index_path": str(FAISS["index_path"]),
-            "name_to_id": {name: abs(hash(name)) % (2**63) for name in celeb_names},
         }
+        # 使用 build_index 中的确定性哈希
+        from vector_database.build_index import _hash_name
+        metadata["name_to_id"] = {name: _hash_name(name) for name in celeb_names}
         with open(METADATA_PATH, "w", encoding="utf-8") as f:
             json.dump(metadata, f, ensure_ascii=False, indent=2)
 

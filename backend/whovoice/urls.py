@@ -13,16 +13,10 @@ urlpatterns = [
     path("api/accounts/", include("apps.accounts.urls")),
     path("api/celebrities/", include("apps.celebrities.urls")),
     path("api/voice-matching/", include("apps.voice_matching.urls")),
-]
-
-# 提供 Vue 构建产物的静态文件（JS / CSS / 图片等）
-urlpatterns += [
+    # 提供 Vue 构建产物的静态文件
     re_path(r"^assets/(?P<path>.*)$", serve, {
         "document_root": settings.BASE_DIR.parent / "frontend" / "dist" / "assets",
     }),
-]
-
-# SPA 兜底：所有非 API / 非静态路径返回 index.html
-urlpatterns += [
+    # SPA 兜底：所有非 API / 非静态路径返回 index.html
     re_path(r"^.*$", TemplateView.as_view(template_name="index.html")),
 ]

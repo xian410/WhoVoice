@@ -8,6 +8,7 @@ export const useVoiceStore = defineStore('voice', () => {
   const matchResults = ref([])
   const posterData = ref(null)
   const currentLyric = ref(null)
+  const totalCelebrities = ref(0)
 
   async function uploadAndMatch(audioBlob, selectedLyric = null) {
     isMatching.value = true
@@ -19,6 +20,7 @@ export const useVoiceStore = defineStore('voice', () => {
 
       const response = await api.post('/voice-matching/match/', formData)
       matchResults.value = response.data.results
+      totalCelebrities.value = response.data.total_celebrities || 0
       if (response.data.poster_data) {
         posterData.value = response.data.poster_data
       }
@@ -35,6 +37,7 @@ export const useVoiceStore = defineStore('voice', () => {
     isMatching,
     matchResults,
     posterData,
+    totalCelebrities,
     uploadAndMatch,
   }
 })

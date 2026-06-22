@@ -10,8 +10,6 @@
           top: index === 0 && item.likely_match,
           low: index === 0 && !item.likely_match,
         }"
-        @click="goToSinger(item.name)"
-        style="cursor: pointer"
       >
         <div class="rank">#{{ index + 1 }}</div>
         <div
@@ -37,21 +35,30 @@
             {{ item.note }}
           </p>
           <p v-if="!item.likely_match && index === 0" class="hint">
-            💡 当前声纹库仅注册了 <strong>{{ results.length }}</strong> 位明星，
+            💡 当前声纹库仅注册了 <strong>{{ totalCelebrities || results.length }}</strong> 位明星，
             且特征来自<strong>唱歌</strong>音频，说话声很难匹配到。
             建议上传明星的歌曲片段测试。
           </p>
-          <!-- 试听按钮 -->
-          <div class="preview-row">
+          <!-- 操作按钮区域 -->
+          <div class="action-row">
             <button
-              class="preview-btn"
+              v-if="item.has_audio"
+              class="action-btn preview-btn"
               :class="{ playing: playingIndex === index }"
-              @click="togglePreview(index, item.name)"
+              @click.stop="togglePreview(index, item.name)"
               :disabled="loadingIndex === index"
+              :title="playingIndex === index ? '暂停' : '试听15秒演唱片段'"
             >
               <span v-if="loadingIndex === index" class="spinner"></span>
-              <span v-else>{{ playingIndex === index ? "⏸" : "▶" }}</span>
+              <span v-else>{{ playingIndex === index ? "⏸" : "🎧" }}</span>
               {{ playingIndex === index ? "暂停" : "试听" }}
+            </button>
+            <span v-else class="no-audio-tag" title="暂无音频样本">🔇 无试听</span>
+            <button
+              class="action-btn detail-btn"
+              @click.stop="goToSinger(item.name)"
+            >
+              📋 详情
             </button>
           </div>
         </div>
@@ -99,6 +106,10 @@ const props = defineProps({
   posterData: {
     type: Object,
     default: null,
+  },
+  totalCelebrities: {
+    type: Number,
+    default: 0,
   },
 });
 
@@ -355,23 +366,28 @@ function onAudioError() {
   line-height: 1.8;
 }
 
-/* 试听按钮 */
-.preview-row {
+/* 操作按钮区域 */
+.action-row {
   margin-top: 0.5rem;
+  display: flex;
+  gap: 8px;
 }
 
-.preview-btn {
+.action-btn {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 14px;
+  padding: 5px 16px;
   font-size: 0.8rem;
-  color: #1a1a2e;
-  background: #e8eaf6;
-  border: 1px solid #c5cae9;
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s;
+}
+
+.preview-btn {
+  color: #1a1a2e;
+  background: #e8eaf6;
+  border: 1px solid #c5cae9;
 }
 
 .preview-btn:hover:not(:disabled) {
@@ -392,6 +408,29 @@ function onAudioError() {
 .preview-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.detail-btn {
+  color: #1565c0;
+  background: #e3f2fd;
+  border: 1px solid #bbdefb;
+}
+
+.detail-btn:hover {
+  background: #bbdefb;
+  border-color: #90caf9;
+}
+
+.no-audio-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 16px;
+  font-size: 0.8rem;
+  border-radius: 16px;
+  color: #999;
+  background: #f5f5f5;
+  border: 1px solid #eee;
 }
 
 /* 加载旋转动画 */

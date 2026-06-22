@@ -79,3 +79,11 @@ cookies_copy*
 
 # 启动脚本（开发用）
 backend/start_server.py
+
+data/test_samples/
+vector_database/faiss_index/embeddings_npy/
+vector_database/faiss_index/eval_cache/
+vector_database/faiss_index/*.bak
+_*.wav
+_*.json
+scripts/_run_*.py

@@ -34,6 +34,7 @@
         v-if="voiceStore.matchResults.length && !voiceStore.isMatching"
         :results="voiceStore.matchResults"
         :poster-data="voiceStore.posterData"
+        :total-celebrities="voiceStore.totalCelebrities"
         @error="handlePreviewError"
       />
 
@@ -44,9 +45,19 @@
     </main>
 
     <footer class="footer">
-      <p class="celeb-toggle" @click="showCelebList = !showCelebList">
-        已注册明星: {{ celebCount }} 位 <span class="toggle-icon">{{ showCelebList ? '▲' : '▼' }}</span>
-      </p>
+      <div class="footer-links">
+        <a :href="visualizerUrl" class="footer-link" target="_blank">
+          🔬 FAISS 可视化
+        </a>
+        <span class="footer-sep">|</span>
+        <a :href="scatterUrl" class="footer-link" target="_blank">
+          📊 声纹散点图
+        </a>
+        <span class="footer-sep">|</span>
+        <p class="celeb-toggle" @click="showCelebList = !showCelebList">
+          已注册明星: {{ celebCount }} 位 <span class="toggle-icon">{{ showCelebList ? '▲' : '▼' }}</span>
+        </p>
+      </div>
       <div v-if="showCelebList" class="celeb-list">
         <div
           v-for="item in celebList"
@@ -81,6 +92,8 @@ const errorMsg = ref("");
 const celebCount = ref(0);
 const celebList = ref([]);
 const showCelebList = ref(false);
+const visualizerUrl = ref("/api/voice-matching/faiss-visualizer/");
+const scatterUrl = ref("/api/voice-matching/faiss-scatter/");
 
 onMounted(async () => {
   try {
@@ -220,6 +233,30 @@ function handlePreviewError(msg) {
   padding: 1rem;
   color: #999;
   font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: #1565c0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #e94560;
+  text-decoration: underline;
+}
+
+.footer-sep {
+  color: #ddd;
 }
 
 .celeb-toggle {

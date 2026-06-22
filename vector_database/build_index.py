@@ -17,7 +17,10 @@ _NAME_BY_HASH = {}
 
 
 def _hash_name(name: str) -> int:
-    return abs(hash(name)) % (2 ** 63)
+    """使用确定性哈希（MD5），确保跨进程一致"""
+    import hashlib
+    h = hashlib.md5(name.encode("utf-8")).hexdigest()
+    return abs(int(h, 16)) % (2 ** 63)
 
 
 def _load_metadata() -> dict:
