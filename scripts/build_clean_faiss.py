@@ -34,11 +34,16 @@ SKIP_LIST = set(f.stem for f in NPY_DIR.glob("*.npy")) if NPY_DIR.exists() else 
 
 
 def find_ffmpeg():
+    """跨平台查找可用 ffmpeg（复用 views.py 的逻辑）"""
+    import shutil
     candidates = [
-        r"C:\Users\17367\AppData\Local\Microsoft\WinGet\Links\ffmpeg.exe",
-        r"D:\anaconda3\Library\bin\ffmpeg.exe",
-        "ffmpeg", "ffmpeg.exe",
+        shutil.which("ffmpeg"),
+        shutil.which("ffmpeg.exe"),
+        "/usr/bin/ffmpeg",
+        "/usr/local/bin/ffmpeg",
+        "ffmpeg",
     ]
+    candidates = [c for c in candidates if c]
     for c in candidates:
         try:
             r = subprocess.run([c, "-version"], capture_output=True, timeout=5)

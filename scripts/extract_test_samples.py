@@ -33,12 +33,16 @@ TEST_SINGERS = [
 
 
 def find_ffmpeg():
-    """查找可用的 ffmpeg 路径"""
+    """跨平台查找可用 ffmpeg"""
+    import shutil
     candidates = [
-        r"C:\Users\17367\AppData\Local\Microsoft\WinGet\Links\ffmpeg.exe",
-        r"D:\anaconda3\Library\bin\ffmpeg.exe",
-        "ffmpeg", "ffmpeg.exe",
+        shutil.which("ffmpeg"),
+        shutil.which("ffmpeg.exe"),
+        "/usr/bin/ffmpeg",
+        "/usr/local/bin/ffmpeg",
+        "ffmpeg",
     ]
+    candidates = [c for c in candidates if c]
     for c in candidates:
         try:
             r = subprocess.run([c, "-version"], capture_output=True, timeout=5)
