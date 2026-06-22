@@ -1,5 +1,50 @@
-D:\github_files\WhoVoice\data\processed\艾拉·费兹杰拉\vocals_standardized_0000.wav	SPK0459
-D:\github_files\WhoVoice\data\processed\艾拉·费兹杰拉\vocals_standardized_0001.wav	SPK0459
-D:\github_files\WhoVoice\data\processed\艾拉·费兹杰拉\vocals_standardized_0002.wav	SPK0459
-D:\github_files\WhoVoice\data\processed\艾拉·费兹杰拉\vocals_standardized_0003.wav	SPK0459
-D:\github_files\WhoVoice\data\processed\艾拉·费兹杰拉\vocals_standardized_0004.wav	SPK0459
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0000.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0001.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0002.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0003.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0004.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0005.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0006.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0007.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0008.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0009.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0010.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0011.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0012.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0013.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0014.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0015.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0016.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0017.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_【4K】鞠婧祎《FIND THE WAY》官方版动态歌词MV_standardized_0018.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0000.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0001.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0002.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0003.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0004.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0005.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0006.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0007.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0008.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0009.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0010.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0011.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\000_鞠婧祎 - 青城山下白素贞-《新白娘子传奇》电视剧插曲_standardized_0012.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0000.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0001.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0002.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0003.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0004.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0005.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0006.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0007.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0008.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0009.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0010.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0011.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0012.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0013.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0014.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0015.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0016.wav	SPK0421
+D:\github_files\WhoVoice\data\processed\鞠婧祎\001_鞠婧祎 - 着火的沉默世界-《万花世界》电视剧系统先行曲_standardized_0017.wav	SPK0421
