@@ -14,6 +14,13 @@ export const useVoiceStore = defineStore('voice', () => {
   // ── 排队状态 ──
   const queueInfo = ref(null)
   const isQueued = ref(false)
+  const currentTaskId = ref('')
+
+  // ── 排行榜状态 ──
+  const leaderboardEntries = ref([])
+  const leaderboardGlobal = ref([])
+  const submitResult = ref(null)
+  const isSubmitting = ref(false)
 
   async function uploadAndMatch(audioBlob, selectedLyric = null) {
     isMatching.value = true
@@ -37,6 +44,7 @@ export const useVoiceStore = defineStore('voice', () => {
       const data = resp.data
 
       if (data.task_id) {
+        currentTaskId.value = data.task_id
         await pollTask(data.task_id)
       } else if (data.results) {
         matchResults.value = data.results
@@ -109,6 +117,62 @@ export const useVoiceStore = defineStore('voice', () => {
       posterData.value = null
       queueInfo.value = null
       isQueued.value = false
+      currentTaskId.value = ''
+    }
+  }
+
+  // ── 排行榜 ──
+
+  async function submitToLeaderboard(celebrityName, score, audioBlob, nickname, taskId) {
+    isSubmitting.value = true
+    submitResult.value = null
+
+    const formData = new FormData()
+    formData.append('celebrity_name', celebrityName)
+    formData.append('score', score)
+    formData.append('audio', audioBlob, 'leaderboard_audio.webm')
+    if (nickname) formData.append('nickname', nickname)
+    if (taskId) formData.append('task_id', taskId)
+
+    try {
+      const resp = await api.post('/voice-matching/leaderboard/submit/', formData, {
+        timeout: 30000,
+      })
+      submitResult.value = resp.data
+      return resp.data
+    } catch (err) {
+      console.error('排行榜提交失败:', err)
+      throw err
+    } finally {
+      isSubmitting.value = false
+    }
+  }
+
+  async function fetchLeaderboard(celebrityName, top = 50) {
+    try {
+      const resp = await api.get(`/voice-matching/leaderboard/${encodeURIComponent(celebrityName)}/`, {
+        params: { top },
+      })
+      leaderboardEntries.value = resp.data
+      return resp.data
+    } catch (err) {
+      console.error('获取排行榜失败:', err)
+      leaderboardEntries.value = { celebrity_name: celebrityName, total_entries: 0, entries: [] }
+      throw err
+    }
+  }
+
+  async function fetchGlobalLeaderboard(top = 100) {
+    try {
+      const resp = await api.get('/voice-matching/leaderboard/', {
+        params: { top },
+      })
+      leaderboardGlobal.value = resp.data.leaderboard || []
+      return resp.data
+    } catch (err) {
+      console.error('获取全局排行榜失败:', err)
+      leaderboardGlobal.value = []
+      throw err
     }
   }
 
@@ -121,8 +185,16 @@ export const useVoiceStore = defineStore('voice', () => {
     indexType,
     queueInfo,
     isQueued,
+    currentTaskId,
+    leaderboardEntries,
+    leaderboardGlobal,
+    submitResult,
+    isSubmitting,
     uploadAndMatch,
     switchIndex,
+    submitToLeaderboard,
+    fetchLeaderboard,
+    fetchGlobalLeaderboard,
   }
 })
 

@@ -70,7 +70,9 @@
         :results="voiceStore.matchResults"
         :poster-data="voiceStore.posterData"
         :total-celebrities="voiceStore.totalCelebrities"
+        :task-id="voiceStore.currentTaskId"
         @error="handlePreviewError"
+        @leaderboard-submit="handleLeaderboardSubmit"
       />
 
       <!-- 错误提示 -->
@@ -78,6 +80,37 @@
         <p>❌ {{ errorMsg }}</p>
       </div>
     </main>
+
+    <!-- 排行榜提交确认弹窗 -->
+    <LeaderboardConfirmModal
+      :visible="showLeaderboardModal"
+      :celebrity-name="leaderboardData.name"
+      :score="leaderboardData.score"
+      :submitting="voiceStore.isSubmitting"
+      @close="showLeaderboardModal = false"
+      @confirm="handleLeaderboardConfirm"
+    />
+
+    <!-- 排行榜提交结果提示 -->
+    <div v-if="voiceStore.submitResult" class="submit-result">
+      <div class="result-card">
+        <p class="result-icon">🎉</p>
+        <p class="result-title">上榜成功！</p>
+        <p>
+          你在 <strong>{{ voiceStore.submitResult.celebrity_name }}</strong> 的
+          排行榜中排名 <strong>#{{ voiceStore.submitResult.rank }}</strong>
+          （共 {{ voiceStore.submitResult.total }} 人）
+        </p>
+        <div class="result-actions">
+          <button class="btn-view" @click="goToLeaderboard(voiceStore.submitResult.celebrity_name)">
+            📊 查看完整排行榜
+          </button>
+          <button class="btn-close" @click="voiceStore.submitResult = null">
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="footer-links">
@@ -92,6 +125,8 @@
         <p class="celeb-toggle" @click="showCelebList = !showCelebList">
           已注册明星: {{ celebCount }} 位 <span class="toggle-icon">{{ showCelebList ? '▲' : '▼' }}</span>
         </p>
+        <span class="footer-sep">|</span>
+        <router-link to="/leaderboard" class="footer-link">🏆 排行榜</router-link>
       </div>
       <div class="footer-info">
         <div class="index-selector">
@@ -106,7 +141,7 @@
           >🎤 纯净人声</button>
         </div>
         <div class="footer-meta">
-          <span class="version"  @click="showVersionInfo = !showVersionInfo" style="cursor:pointer">版本: v0.0.3</span>
+          <span class="version"  @click="showVersionInfo = !showVersionInfo" style="cursor:pointer">版本: v0.0.4</span>
           <span class="footer-sep"> | </span>
           <span>作者: ljx</span>
           <span class="footer-sep"> | </span>
@@ -117,16 +152,16 @@
       <div v-if="showVersionInfo" class="version-popup" @click="showVersionInfo = false">
         <div class="version-popup-content" @click.stop>
           <button class="popup-close" @click="showVersionInfo = false">&times;</button>
-          <h3>WhoVoice v0.0.3</h3>
-          <p class="version-date">发布日期: 2026-06-22</p>
+          <h3>WhoVoice v0.0.4</h3>
+          <p class="version-date">发布日期: 2026-06-23</p>
           <hr>
           <div class="version-log">
             <p><strong>本次更新</strong></p>
             <ul>
-              <li>🎤 新增纯净人声声纹库，两种声纹库可切换</li>
-              <li>🧹 去除伴奏干扰，匹配更精准</li>
-              <li>🔄 页面底部一键切换声纹库版本</li>
-              <li>📐 页脚布局优化，信息展示更清晰</li>
+              <li>🏆 新增声纹挑战排行榜（明星榜 + 人气总榜）</li>
+              <li>🎤 匹配后可上传音频参与明星挑战排行</li>
+              <li>📊 全新排行榜页面，双 Tab 切换浏览</li>
+              <li>🔐 匿名昵称保护隐私，低分门槛防刷榜</li>
             </ul>
           </div>
         </div>
@@ -156,6 +191,7 @@ import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import AudioRecorder from "../components/AudioRecorder.vue";
 import ResultCard from "../components/ResultCard.vue";
+import LeaderboardConfirmModal from "../components/LeaderboardConfirmModal.vue";
 import { useVoiceStore } from "../stores/voiceStore";
 import api from "../api";
 
@@ -168,6 +204,11 @@ const showCelebList = ref(false);
 const showVersionInfo = ref(false);
 const visualizerUrl = ref("/api/voice-matching/faiss-visualizer/");
 const scatterUrl = ref("/api/voice-matching/faiss-scatter/");
+
+// ── 排行榜状态 ──
+const showLeaderboardModal = ref(false);
+const leaderboardData = ref({ name: "", score: 0, taskId: "" });
+const lastAudioBlob = ref(null); // 保存最近一次录音，用于排行榜上传
 
 onMounted(async () => {
   try {
@@ -183,8 +224,45 @@ function goToSinger(name) {
   router.push(`/celebrities/${encodeURIComponent(name)}`);
 }
 
+function goToLeaderboard(name) {
+  voiceStore.submitResult = null;
+  router.push(`/leaderboard/${encodeURIComponent(name)}`);
+}
+
+function handleLeaderboardSubmit(data) {
+  leaderboardData.value = {
+    name: data.name,
+    score: data.score,
+    taskId: data.taskId || "",
+  };
+  showLeaderboardModal.value = true;
+}
+
+async function handleLeaderboardConfirm(nickname) {
+  showLeaderboardModal.value = false;
+  if (!lastAudioBlob.value) {
+    errorMsg.value = "音频数据丢失，请重新录音后再试";
+    return;
+  }
+  try {
+    await voiceStore.submitToLeaderboard(
+      leaderboardData.value.name,
+      leaderboardData.value.score,
+      lastAudioBlob.value,
+      nickname,
+      leaderboardData.value.taskId,
+    );
+  } catch (err) {
+    errorMsg.value =
+      err.response?.data?.error || "排行榜提交失败，请稍后重试";
+    console.error("排行榜提交错误:", err);
+  }
+}
+
 async function handleAudioReady(audioBlob, selectedLyric) {
   errorMsg.value = "";
+  voiceStore.submitResult = null; // 清除上次排行榜结果
+  lastAudioBlob.value = audioBlob; // 保存音频用于后续排行榜上传
   try {
     await voiceStore.uploadAndMatch(audioBlob, selectedLyric);
     if (voiceStore.matchResults.length === 0) {
@@ -590,5 +668,99 @@ function handlePreviewError(msg) {
   font-size: 0.8rem;
   color: #333;
   white-space: nowrap;
+}
+
+/* 排行榜提交结果 */
+.submit-result {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.submit-result .result-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.submit-result .result-icon {
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
+}
+
+.submit-result .result-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 0.8rem;
+}
+
+.submit-result p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.submit-result strong {
+  color: #1a1a2e;
+}
+
+.submit-result .result-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-view {
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #1a1a2e, #2d1b69);
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-view:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.3);
+}
+
+.btn-close {
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  color: #666;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-close:hover {
+  background: #e0e0e0;
 }
 </style>

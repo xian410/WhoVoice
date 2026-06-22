@@ -98,3 +98,60 @@
 | 数据源 | data/raw/ 原始音频 | Demucs 分离后纯人声 |
 | 构建方式 | GPU 分批提取 | 子进程串行（防 OOM） |
 | 默认启用 | ❌ | ✅ |
+
+
+---
+
+# WhoVoice v0.0.4 版本说明
+
+## 版本信息
+
+- **版本号**: v0.0.4
+- **发布日期**: 2026-06-23
+- **基于**: v0.0.3
+
+---
+
+## v0.0.4 新增功能
+
+### 1. 🏆 声纹挑战排行榜
+
+- **明星挑战榜** — 每位明星拥有独立的相似度排行榜，展示 Top 50 挑战者排名
+- **全局人气总榜** — 按被挑战次数排序的明星人气榜，支持一键跳转对应明星挑战榜
+- **匿名昵称** — 默认生成「声纹探险家#1234」式趣味昵称，保护用户隐私
+- **相似度门槛** — score ≥ 0.3 才显示「挑战上榜」按钮，避免低分刷榜
+- **确认弹窗** — 上传前展示匹配分数 + 可选自定义昵称
+- **上榜结果展示** — 提交后显示当前排名 + 一键跳转完整排行榜
+
+### 2. 后端 API
+
+| 端点 | 方法 | 功能 |
+|------|------|------|
+| `/api/voice-matching/leaderboard/submit/` | POST | 提交排行榜条目 |
+| `/api/voice-matching/leaderboard/<name>/` | GET | 查询明星挑战榜 |
+| `/api/voice-matching/leaderboard/` | GET | 查询全局人气总榜 |
+| `/api/voice-matching/leaderboard/my/` | GET | 查询我的挑战记录 |
+
+- **LeaderboardEntry 模型** — 存储 celebrity_name, nickname, score, audio_path, task_id
+- **Admin 后台注册** — MatchTask + LeaderboardEntry 均可在 Django Admin 中管理
+- **模型预加载容错** — funasr 未安装时管理命令不再崩溃
+
+### 3. 前端页面
+
+- **ResultCard 增强** — Top-1 结果卡片新增 🏆 挑战上榜 按钮（金色渐变）
+- **LeaderboardPage** — 全新排行榜页面，支持明星挑战榜 / 人气总榜双 Tab 切换
+- **LeaderboardConfirmModal** — 确认提交弹窗组件
+- **路由** — 新增 `/leaderboard/:name?` 路由
+- **页脚入口** — 页脚新增「🏆 排行榜」链接
+
+### 4. voiceStore 扩展
+
+- `submitToLeaderboard()` — 提交排行榜条目
+- `fetchLeaderboard()` — 获取指定明星排行榜
+- `fetchGlobalLeaderboard()` — 获取全局人气总榜
+- `currentTaskId` — 记录当前匹配任务 ID，关联排行榜提交
+
+### 5. 开发流程
+
+- **任务文档化** — 新增 `docs/tasks/001-voice-leaderboard.md` 开发任务文档
+- **标准化目录** — `docs/tasks/` 用于记录后续开发任务

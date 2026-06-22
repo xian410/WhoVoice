@@ -14,6 +14,11 @@ const routes = [
     component: SingerDetail,
     props: true,
   },
+  {
+    path: '/leaderboard/:name?',
+    name: 'Leaderboard',
+    component: () => import('./views/LeaderboardPage.vue'),
+  },
 ]
 
 const router = createRouter({

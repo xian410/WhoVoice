@@ -40,7 +40,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import status
-from .models import MatchTask
+from .models import MatchTask, LeaderboardEntry
+from .serializers import LeaderboardSubmitSerializer, LeaderboardEntrySerializer
 
 # 确保能导入项目模块
 BASE_DIR = Path(__file__).resolve().parent.parent.parent  # /WhoVoice/backend/
@@ -188,7 +189,11 @@ def _resolve_faiss_path() -> Path:
 
 # ── 服务启动时预加载模型和索引，避免首次请求超时 ──
 print("[VoiceMatch] 预加载声纹模型...")
-_PRELOAD_RECOGNIZER = VoiceprintRecognizer(use_gpu=_resolve_device_from_env())
+try:
+    _PRELOAD_RECOGNIZER = VoiceprintRecognizer(use_gpu=_resolve_device_from_env())
+except Exception as e:
+    print(f"[VoiceMatch] 模型预加载失败（管理命令可忽略）: {e}")
+    _PRELOAD_RECOGNIZER = None
 
 # 带伴奏索引 (默认)
 _PRELOAD_INDEX_PATH = _resolve_faiss_path()
@@ -1168,3 +1173,211 @@ class TaskStatusView(APIView):
             data["error"] = task.error_message or "处理失败"
 
         return Response(data)
+
+
+# ═══════════════════════════════════════════════════════════
+# 排行榜 API
+# ═══════════════════════════════════════════════════════════
+
+# 排行榜音频存储目录
+LEADERBOARD_AUDIO_DIR = PROJECT_ROOT / "data" / "leaderboard_audio"
+
+
+def _generate_anonymous_nickname() -> str:
+    """生成匿名昵称：声纹探险家#随机4位数字"""
+    import random
+    return f"声纹探险家#{random.randint(1000, 9999)}"
+
+
+def _get_celebrity_rank(celebrity_name: str, score: float) -> int:
+    """计算提交分数在指定明星排行榜中的排名"""
+    better_count = LeaderboardEntry.objects.filter(
+        celebrity_name=celebrity_name,
+        score__gt=score,
+    ).count()
+    return better_count + 1
+
+
+class LeaderboardSubmitView(APIView):
+    """
+    提交排行榜条目
+    POST /api/voice-matching/leaderboard/submit/
+    """
+    parser_classes = (MultiPartParser, FormParser)
+
+    def post(self, request):
+        serializer = LeaderboardSubmitSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(
+                {"error": "参数校验失败", "details": serializer.errors},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        data = serializer.validated_data
+        celebrity_name = data['celebrity_name']
+        score = data['score']
+        audio_file = data['audio']
+        nickname = data.get('nickname', '').strip() or _generate_anonymous_nickname()
+        task_id = data.get('task_id', '')
+
+        # 校验明星是否在声纹库中
+        metadata = _PRELOAD_METADATA or _CLEAN_METADATA
+        if metadata and celebrity_name not in metadata.get("celebrities", []):
+            return Response(
+                {"error": f"明星 [{celebrity_name}] 不在声纹库中，无法参与排行榜"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # 保存音频
+        celeb_audio_dir = LEADERBOARD_AUDIO_DIR / celebrity_name
+        celeb_audio_dir.mkdir(parents=True, exist_ok=True)
+        entry_id = uuid.uuid4()
+        safe_filename = f"{entry_id}_{audio_file.name}"
+        audio_path = celeb_audio_dir / safe_filename
+        with open(str(audio_path), "wb") as f:
+            for chunk in audio_file.chunks():
+                f.write(chunk)
+
+        # 创建排行榜条目
+        entry = LeaderboardEntry.objects.create(
+            id=entry_id,
+            celebrity_name=celebrity_name,
+            nickname=nickname,
+            score=score,
+            audio_path=str(audio_path),
+            task_id=task_id,
+        )
+
+        # 计算排名
+        rank = _get_celebrity_rank(celebrity_name, score)
+        total = LeaderboardEntry.objects.filter(celebrity_name=celebrity_name).count()
+
+        return Response({
+            "id": str(entry.id),
+            "rank": rank,
+            "total": total,
+            "nickname": nickname,
+            "score": round(score, 4),
+            "celebrity_name": celebrity_name,
+        }, status=status.HTTP_201_CREATED)
+
+
+class LeaderboardCelebrityView(APIView):
+    """
+    查询指定明星的排行榜
+    GET /api/voice-matching/leaderboard/<celebrity_name>/
+    """
+
+    def get(self, request, celebrity_name):
+        top = int(request.query_params.get("top", 50))
+        top = min(max(top, 1), 200)  # 限制 1~200
+
+        entries = LeaderboardEntry.objects.filter(
+            celebrity_name=celebrity_name
+        ).order_by("-score", "created_at")[:top]
+
+        total = LeaderboardEntry.objects.filter(celebrity_name=celebrity_name).count()
+
+        result_entries = []
+        for i, entry in enumerate(entries):
+            # 精确计算 rank：比当前分数高的 + 1
+            better = LeaderboardEntry.objects.filter(
+                celebrity_name=celebrity_name,
+                score__gt=entry.score,
+            ).count()
+            result_entries.append({
+                "rank": better + 1,
+                "nickname": entry.nickname or "匿名",
+                "score": round(entry.score, 4),
+                "created_at": entry.created_at.isoformat(),
+            })
+
+        return Response({
+            "celebrity_name": celebrity_name,
+            "total_entries": total,
+            "entries": result_entries,
+        })
+
+
+class LeaderboardGlobalView(APIView):
+    """
+    查询全局人气总榜
+    GET /api/voice-matching/leaderboard/
+    按挑战人数降序排列
+    """
+
+    def get(self, request):
+        from django.db.models import Count, Max
+
+        top = int(request.query_params.get("top", 100))
+        top = min(max(top, 1), 200)
+
+        # 聚合：按 celebrity_name 分组，统计条目数和最高分
+        agg = (
+            LeaderboardEntry.objects
+            .values("celebrity_name")
+            .annotate(
+                entry_count=Count("id"),
+                best_score=Max("score"),
+            )
+            .order_by("-entry_count", "-best_score")[:top]
+        )
+
+        results = []
+        for item in agg:
+            # 获取最高分对应的昵称
+            best_entry = (
+                LeaderboardEntry.objects
+                .filter(
+                    celebrity_name=item["celebrity_name"],
+                    score=item["best_score"],
+                )
+                .first()
+            )
+            results.append({
+                "celebrity_name": item["celebrity_name"],
+                "entry_count": item["entry_count"],
+                "best_score": round(item["best_score"], 4),
+                "best_nickname": best_entry.nickname if best_entry else "",
+            })
+
+        return Response({
+            "leaderboard": results,
+            "total_celebrities": len(results),
+        })
+
+
+class LeaderboardMyView(APIView):
+    """
+    查询我的挑战记录
+    GET /api/voice-matching/leaderboard/my/?task_id=<task_id>
+    """
+
+    def get(self, request):
+        task_id = request.query_params.get("task_id", "")
+        if task_id:
+            entries = LeaderboardEntry.objects.filter(task_id=task_id).order_by("-created_at")
+        else:
+            # 无 task_id 时返回最近 20 条（公开浏览）
+            entries = LeaderboardEntry.objects.order_by("-created_at")[:20]
+
+        result_entries = []
+        for entry in entries:
+            rank = _get_celebrity_rank(entry.celebrity_name, entry.score)
+            total = LeaderboardEntry.objects.filter(
+                celebrity_name=entry.celebrity_name
+            ).count()
+            result_entries.append({
+                "id": str(entry.id),
+                "celebrity_name": entry.celebrity_name,
+                "nickname": entry.nickname or "匿名",
+                "score": round(entry.score, 4),
+                "rank": rank,
+                "total": total,
+                "created_at": entry.created_at.isoformat(),
+            })
+
+        return Response({
+            "entries": result_entries,
+            "count": len(result_entries),
+        })

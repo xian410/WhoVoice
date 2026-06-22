@@ -60,6 +60,13 @@
             >
               📋 详情
             </button>
+            <button
+              v-if="index === 0 && item.score >= 0.3"
+              class="action-btn leaderboard-btn"
+              @click.stop="$emit('leaderboard-submit', { name: item.name, score: item.score, taskId: props.taskId })"
+            >
+              🏆 挑战上榜
+            </button>
           </div>
         </div>
       </div>
@@ -111,9 +118,13 @@ const props = defineProps({
     type: Number,
     default: 0,
   },
+  taskId: {
+    type: String,
+    default: "",
+  },
 });
 
-const emit = defineEmits(["error"]);
+const emit = defineEmits(["error", "leaderboard-submit"]);
 const router = useRouter();
 const showPoster = ref(false);
 
@@ -419,6 +430,17 @@ function onAudioError() {
 .detail-btn:hover {
   background: #bbdefb;
   border-color: #90caf9;
+}
+
+.leaderboard-btn {
+  color: #fff;
+  background: linear-gradient(135deg, #f9a825, #ff8f00);
+  border: 1px solid #f57f17;
+}
+
+.leaderboard-btn:hover {
+  background: linear-gradient(135deg, #ff8f00, #f57f17);
+  transform: scale(1.05);
 }
 
 .no-audio-tag {
