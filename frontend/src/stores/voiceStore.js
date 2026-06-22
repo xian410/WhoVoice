@@ -9,6 +9,7 @@ export const useVoiceStore = defineStore('voice', () => {
   const posterData = ref(null)
   const currentLyric = ref(null)
   const totalCelebrities = ref(0)
+  const indexType = ref('clean')
 
   async function uploadAndMatch(audioBlob, selectedLyric = null) {
     isMatching.value = true
@@ -17,6 +18,7 @@ export const useVoiceStore = defineStore('voice', () => {
     try {
       const formData = new FormData()
       formData.append('audio', audioBlob, 'recording.webm')
+      formData.append('index', indexType.value)
 
       const response = await api.post('/voice-matching/match/', formData)
       matchResults.value = response.data.results
@@ -32,12 +34,22 @@ export const useVoiceStore = defineStore('voice', () => {
     }
   }
 
+  function switchIndex(type) {
+    if (type !== indexType.value) {
+      indexType.value = type
+      matchResults.value = []
+      posterData.value = null
+    }
+  }
+
   return {
     isRecording,
     isMatching,
     matchResults,
     posterData,
     totalCelebrities,
+    indexType,
     uploadAndMatch,
+    switchIndex,
   }
 })

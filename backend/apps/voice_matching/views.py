@@ -118,17 +118,32 @@ def _resolve_faiss_path() -> Path:
 # ── 服务启动时预加载模型和索引，避免首次请求超时 ──
 print("[VoiceMatch] 预加载声纹模型...")
 _PRELOAD_RECOGNIZER = VoiceprintRecognizer(use_gpu=_resolve_device_from_env())
+
+# 带伴奏索引 (默认)
 _PRELOAD_INDEX_PATH = _resolve_faiss_path()
 _PRELOAD_META_PATH = _PRELOAD_INDEX_PATH.parent / "celebrity_metadata.json"
 if _PRELOAD_INDEX_PATH.exists() and _PRELOAD_META_PATH.exists():
     _PRELOAD_INDEX = faiss.read_index(str(_PRELOAD_INDEX_PATH))
     with open(_PRELOAD_META_PATH, "r", encoding="utf-8") as _f:
         _PRELOAD_METADATA = json.load(_f)
-    print(f"[VoiceMatch] 索引预加载完成: {_PRELOAD_METADATA.get('num_celebrities', 0)} 位明星")
+    print(f"[VoiceMatch] 带伴奏索引: {_PRELOAD_METADATA.get('num_celebrities', 0)} 位明星")
 else:
     _PRELOAD_INDEX = None
     _PRELOAD_METADATA = None
-    print("[VoiceMatch] FAISS 索引未找到，将在首次请求时加载")
+
+# 纯净人声索引 (可选)
+_CLEAN_INDEX_PATH = _PRELOAD_INDEX_PATH.parent / "celebrity_clean.index"
+_CLEAN_META_PATH = _PRELOAD_INDEX_PATH.parent / "celebrity_clean_metadata.json"
+if _CLEAN_INDEX_PATH.exists() and _CLEAN_META_PATH.exists():
+    _CLEAN_INDEX = faiss.read_index(str(_CLEAN_INDEX_PATH))
+    with open(_CLEAN_META_PATH, "r", encoding="utf-8") as _f:
+        _CLEAN_METADATA = json.load(_f)
+    print(f"[VoiceMatch] 纯净人声索引: {_CLEAN_METADATA.get('num_celebrities', 0)} 位明星")
+else:
+    _CLEAN_INDEX = None
+    _CLEAN_METADATA = None
+
+print("[VoiceMatch] 索引预加载完成")
 
 
 class VoiceMatchView(APIView):
@@ -139,28 +154,28 @@ class VoiceMatchView(APIView):
     _recognizer = None
     _index = None
     _metadata = None
+    _current_index_type = "raw"  # "raw" 或 "clean"
 
-    def _ensure_loaded(self):
-        """懒加载模型和索引（顺序ID匹配，无需hash映射）"""
+    def _ensure_loaded(self, index_type="raw"):
+        """懒加载模型和索引，支持 index_type="raw" 或 "clean"""
         if self.__class__._recognizer is None:
             self.__class__._recognizer = _PRELOAD_RECOGNIZER
 
-        if self.__class__._index is None:
-            if _PRELOAD_INDEX is not None:
-                self.__class__._index = _PRELOAD_INDEX
-                self.__class__._metadata = _PRELOAD_METADATA
+        # 如果索引类型切换了，重新加载
+        if self.__class__._current_index_type != index_type or self.__class__._index is None:
+            if index_type == "clean" and _CLEAN_INDEX is not None:
+                self.__class__._index = _CLEAN_INDEX
+                self.__class__._metadata = _CLEAN_METADATA
+                self.__class__._current_index_type = "clean"
+                print(f"[VoiceMatch] 切换到纯净人声索引 ({len(_CLEAN_METADATA['celebrities'])} 位)")
             else:
-                index_path = _resolve_faiss_path()
-                meta_path = index_path.parent / "celebrity_metadata.json"
-
-                if not index_path.exists():
-                    raise FileNotFoundError(f"FAISS 索引不存在: {index_path}")
-                if not meta_path.exists():
-                    raise FileNotFoundError(f"元数据不存在: {meta_path}")
-
-                self.__class__._index = faiss.read_index(str(index_path))
-                with open(meta_path, "r", encoding="utf-8") as f:
-                    self.__class__._metadata = json.load(f)
+                # 默认使用带伴奏索引
+                if _PRELOAD_INDEX is not None:
+                    self.__class__._index = _PRELOAD_INDEX
+                    self.__class__._metadata = _PRELOAD_METADATA
+                    self.__class__._current_index_type = "raw"
+                    if index_type == "clean":
+                        print("[VoiceMatch] 纯净人声索引不可用，使用带伴奏索引")
 
         return (
             self.__class__._recognizer,
@@ -170,8 +185,13 @@ class VoiceMatchView(APIView):
 
     def post(self, request):
         """处理音频上传并返回匹配结果"""
+        # 获取索引选择参数
+        index_type = request.data.get("index", "clean")
+        if index_type not in ("raw", "clean"):
+            index_type = "raw"
+
         try:
-            recognizer, index, metadata = self._ensure_loaded()
+            recognizer, index, metadata = self._ensure_loaded(index_type)
         except FileNotFoundError as e:
             return Response({"error": str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
 
@@ -288,6 +308,7 @@ class VoiceMatchView(APIView):
             response_data = {
                 "results": results,
                 "total_celebrities": len(metadata["celebrities"]),
+                "index_type": self.__class__._current_index_type,
             }
             if poster_data:
                 response_data["poster_data"] = poster_data

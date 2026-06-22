@@ -59,28 +59,39 @@
         </p>
       </div>
       <div class="footer-info">
-        <span class="version" @click="showVersionInfo = !showVersionInfo" style="cursor:pointer">v0.0.2</span>
-        <span class="footer-sep">|</span>
-        <span>作者: ljx</span>
-        <span class="footer-sep">|</span>
-        <a href="mailto:1736728480@qq.com" class="footer-link">1736728480@qq.com</a>
+        <div class="index-selector">
+          <span class="index-label">声纹库:</span>
+          <button
+            :class="['index-btn', { active: voiceStore.indexType === 'raw' }]"
+            @click="voiceStore.switchIndex('raw')"
+          >🎵 带伴奏</button>
+          <button
+            :class="['index-btn', { active: voiceStore.indexType === 'clean' }]"
+            @click="voiceStore.switchIndex('clean')"
+          >🎤 纯净人声</button>
+        </div>
+        <div class="footer-meta">
+          <span class="version"  @click="showVersionInfo = !showVersionInfo" style="cursor:pointer">版本: v0.0.3</span>
+          <span class="footer-sep"> | </span>
+          <span>作者: ljx</span>
+          <span class="footer-sep"> | </span>
+          <span >邮箱: 1736728480@qq.com</span>
+        </div>
       </div>
       <!-- 版本信息弹窗 -->
       <div v-if="showVersionInfo" class="version-popup" @click="showVersionInfo = false">
         <div class="version-popup-content" @click.stop>
           <button class="popup-close" @click="showVersionInfo = false">&times;</button>
-          <h3>WhoVoice v0.0.2</h3>
+          <h3>WhoVoice v0.0.3</h3>
           <p class="version-date">发布日期: 2026-06-22</p>
           <hr>
           <div class="version-log">
             <p><strong>本次更新</strong></p>
             <ul>
-              <li>🎤 声纹库升级至 421 位明星，匹配更准更快</li>
-              <li>🎧 试听优化：智能跳转到副歌段落，告别前奏</li>
-              <li>📊 新增声纹评估工具，模型准确率 95.3%</li>
-              <li>🖼️ 修复海报加载失败的问题</li>
-              <li>📋 匹配结果卡新增「详情」按钮</li>
-              <li>🔗 分享文案加入链接 whovoice.online</li>
+              <li>🎤 新增纯净人声声纹库，两种声纹库可切换</li>
+              <li>🧹 去除伴奏干扰，匹配更精准</li>
+              <li>🔄 页面底部一键切换声纹库版本</li>
+              <li>📐 页脚布局优化，信息展示更清晰</li>
             </ul>
           </div>
         </div>
@@ -299,12 +310,16 @@ function handlePreviewError(msg) {
 
 .footer-info {
   margin-top: 0.6rem;
-  font-size: 0.8rem;
-  color: #bbb;
 }
 
 .footer-info .version {
   color: #999;
+}
+
+.footer-meta {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: #bbb;
 }
 
 /* 版本信息弹窗 */
@@ -375,6 +390,41 @@ function handlePreviewError(msg) {
 
 .popup-close:hover {
   color: #333;
+}
+
+/* 索引选择器 */
+.index-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.index-label {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.index-btn {
+  padding: 3px 12px;
+  font-size: 0.78rem;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  background: #f5f5f5;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.index-btn:hover {
+  border-color: #1565c0;
+  color: #1565c0;
+}
+
+.index-btn.active {
+  background: #1565c0;
+  color: #fff;
+  border-color: #1565c0;
 }
 
 .toggle-icon {
