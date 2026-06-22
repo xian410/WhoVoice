@@ -35,12 +35,16 @@ RAW_DIR = PROJECT_ROOT / "data" / "raw"
 
 
 # ── ffmpeg 转码辅助函数 ──
+import shutil
 _FFMPEG_CANDIDATES = [
-    r"C:\Users\17367\AppData\Local\Microsoft\WinGet\Links\ffmpeg.exe",
-    r"D:\anaconda3\Library\bin\ffmpeg.exe",
+    shutil.which("ffmpeg"),       # 系统 PATH
+    "/usr/bin/ffmpeg",            # Linux 常见路径
+    "/usr/local/bin/ffmpeg",      # 手动编译安装
     "ffmpeg",
     "ffmpeg.exe",
 ]
+# 过滤 None
+_FFMPEG_CANDIDATES = [c for c in _FFMPEG_CANDIDATES if c]
 _FFMPEG_PATH = None
 
 

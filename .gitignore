@@ -38,6 +38,9 @@ Thumbs.db
 backend/db.sqlite3
 
 # 临时输出文件
+*.zip
+*.tar.gz
+*.tar
 *_out.txt
 *_plan.txt
 *_status.txt
