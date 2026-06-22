@@ -5,10 +5,31 @@ POST /api/voice-matching/match/  — 上传音频，返回最相似的明星
 import os
 import sys
 import json
+import platform
 import numpy as np
 import shutil
 from pathlib import Path
 from typing import Optional
+
+# ── 修复 Gunicorn worker PATH 截断问题（跨平台）──
+# Gunicorn worker 进程的 PATH 可能被截断为仅 venv/bin，
+# 导致 FunASR 内部的 torchaudio/soundfile 回退到 ffmpeg 时找不到命令。
+# 在导入 FunASR 之前，先确保系统关键目录在 PATH 中。
+_IS_POSIX = platform.system() != "Windows"
+if _IS_POSIX:
+    _SYSTEM_BIN_DIRS = ["/usr/bin", "/usr/local/bin", "/bin"]
+else:
+    # Windows: 常见 ffmpeg 安装路径
+    _SYSTEM_BIN_DIRS = []
+    for _d in os.environ.get("PATH", "").split(os.pathsep):
+        if "ffmpeg" in _d.lower() or "ffmpeg" in _d.lower():
+            _SYSTEM_BIN_DIRS.append(_d)
+_current_path = os.environ.get("PATH", "")
+for _d in _SYSTEM_BIN_DIRS:
+    if _d not in _current_path.split(os.pathsep):
+        _current_path = _d + os.pathsep + _current_path
+os.environ["PATH"] = _current_path
+
 from collections import deque
 import uuid
 import time
@@ -39,7 +60,14 @@ import faiss
 
 # 预处理的音频样本目录
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
-RAW_DIR = PROJECT_ROOT / "data" / "raw"
+# raw 音频目录：优先使用环境变量 RAW_AUDIO_DIR，否则按平台取默认值
+_raw_env = os.environ.get("RAW_AUDIO_DIR", "")
+if _raw_env:
+    RAW_DIR = Path(_raw_env)
+elif not _IS_POSIX:
+    RAW_DIR = PROJECT_ROOT / "data" / "raw"
+else:
+    RAW_DIR = Path("/home/ubuntu/ljx/raw")
 
 
 # ── ffmpeg 转码辅助函数 ──
@@ -79,7 +107,7 @@ _FFMPEG_PATH = None
 def _find_ffmpeg() -> str:
     """查找可用的 ffmpeg 路径"""
     global _FFMPEG_PATH
-    if _FFMPEG_PATH is not None:
+    if _FFMPEG_PATH is not None and _FFMPEG_PATH != "":
         return _FFMPEG_PATH
     import subprocess
     for candidate in _FFMPEG_CANDIDATES:
@@ -90,7 +118,8 @@ def _find_ffmpeg() -> str:
                 return candidate
         except Exception:
             continue
-    _FFMPEG_PATH = ""
+    # 不永久缓存空结果，允许 PATH 更新后重试
+    _FFMPEG_PATH = None
     return ""
 
 
@@ -246,7 +275,11 @@ def _execute_match_task(task: MatchTask):
             raise RuntimeError('声纹索引未加载')
 
         # 提取声纹特征
-        embedding = _PRELOAD_RECOGNIZER.extract_embedding(str(audio_path))
+        # ── 先统一转码为 WAV，避免 FunASR 内部加载非 WAV 格式时回退到 ffmpeg ──
+        wav_for_embedding = Path(audio_path).with_suffix(".embedding.wav")
+        converted = _ffmpeg_convert_to_wav(str(audio_path), str(wav_for_embedding))
+        embedding_input = str(wav_for_embedding) if converted else str(audio_path)
+        embedding = _PRELOAD_RECOGNIZER.extract_embedding(embedding_input)
 
         # 归一化 + 搜索
         query = embedding.reshape(1, -1).astype(np.float32)
@@ -305,9 +338,8 @@ def _execute_match_task(task: MatchTask):
         # 生成海报数据
         poster_data = None
         try:
-            wav_for_poster = Path(audio_path).with_suffix(".poster.wav")
-            converted = _ffmpeg_convert_to_wav(str(audio_path), str(wav_for_poster))
-            poster_audio = str(wav_for_poster) if converted else str(audio_path)
+            # 复用 embedding 阶段已转码的 WAV，避免重复调用 ffmpeg
+            poster_audio = embedding_input
 
             audio_analysis = analyze_audio(poster_audio)
             star_mix = compute_star_mix(results)
@@ -322,12 +354,6 @@ def _execute_match_task(task: MatchTask):
             }
         except Exception:
             pass
-        finally:
-            if 'wav_for_poster' in dir() and wav_for_poster.exists():
-                try:
-                    wav_for_poster.unlink()
-                except Exception:
-                    pass
 
         result_data = {
             "results": results,
@@ -355,11 +381,12 @@ def _execute_match_task(task: MatchTask):
         task.save(update_fields=['status', 'error_message', 'completed_at'])
     finally:
         # 清理音频文件
-        try:
-            if Path(audio_path).exists():
-                Path(audio_path).unlink()
-        except Exception:
-            pass
+        for _p in (Path(audio_path), Path(audio_path).with_suffix(".embedding.wav")):
+            try:
+                if _p.exists():
+                    _p.unlink()
+            except Exception:
+                pass
 
 
 # ── 后台队列工作线程 ──
