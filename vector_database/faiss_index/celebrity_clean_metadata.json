@@ -426,6 +426,5 @@
   "embedding_dim": 192,
   "num_celebrities": 422,
   "model_type": "cam++",
-  "source": "demucs_clean_vocals",
   "index_path": "vector_database\\faiss_index\\celebrity_clean.index"
 }
