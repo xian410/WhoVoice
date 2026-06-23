@@ -13,6 +13,13 @@ frontend/node_modules/
 data/raw/
 data/processed/
 
+# 名人信息缓存和备份（可重新生成）
+data/metadata/celebrity_info_cache.json
+data/metadata/backups/
+
+# 排行榜用户上传音频
+data/leaderboard_audio/
+
 # 预训练模型（可自动下载）
 models/
 

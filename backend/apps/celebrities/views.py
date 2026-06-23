@@ -70,7 +70,7 @@ class CelebrityListView(APIView):
         print(f"[DEBUG] celeb_names count={len(celeb_names)}", file=sys.stderr)
         print(f"[DEBUG] info_dict count={len(info_dict)}", file=sys.stderr)
 
-        # 增强列表：附带头像颜色、首字母、歌曲数
+        # 增强列表：附带头像、简介、首字母、歌曲数
         enhanced = []
         for name in celeb_names:
             if name == "test":
@@ -79,10 +79,14 @@ class CelebrityListView(APIView):
             enhanced.append({
                 "name": name,
                 "avatar_color": info.get("avatar_color", "#1a1a2e"),
+                "avatar_url": info.get("avatar_url", ""),
                 "initial": info.get("initial", name[0] if name else "?"),
                 "video_count": info.get("video_count", 0),
                 "slice_count": info.get("slice_count", 0),
                 "has_songs": bool(info.get("representative_songs")),
+                "bio": (info.get("bio", "") or "")[:120],
+                "genre": info.get("genre", ""),
+                "nationality": info.get("nationality", ""),
             })
 
         return Response({
@@ -152,15 +156,19 @@ class CelebrityDetailView(APIView):
                 "url": link_cfg["url"].format(q=encoded_name),
             })
 
-        # 头像 URL（使用 DiceBear API 生成个性化头像）
-        avatar_style = "initials"  # 首字母风格
-        avatar_url = (
-            f"https://api.dicebear.com/9.x/{avatar_style}/svg"
-            f"?seed={encoded_name}"
-            f"&backgroundColor={info.get('avatar_color', '#1a1a2e').lstrip('#')}"
-            f"&textColor=ffffff"
-            f"&fontSize=42"
-        )
+        # 头像 URL — 优先使用真实头像，否则回退到 DiceBear 生成
+        real_avatar = info.get("avatar_url", "")
+        if real_avatar:
+            avatar_url = real_avatar
+        else:
+            avatar_style = "initials"  # 首字母风格
+            avatar_url = (
+                f"https://api.dicebear.com/9.x/{avatar_style}/svg"
+                f"?seed={encoded_name}"
+                f"&backgroundColor={info.get('avatar_color', '#1a1a2e').lstrip('#')}"
+                f"&textColor=ffffff"
+                f"&fontSize=42"
+            )
 
         # 代表作（从 info 获取，清理标题）
         rep_songs = info.get("representative_songs", [])
@@ -187,6 +195,11 @@ class CelebrityDetailView(APIView):
             "total_songs": len(all_songs),
             "representative_songs": rep_songs,
             "spk_id": info.get("spk_id", ""),
+            "bio": info.get("bio", ""),
+            "genre": info.get("genre", ""),
+            "nationality": info.get("nationality", ""),
+            "birth_date": info.get("birth_date", ""),
+            "info_source": info.get("info_source", ""),
             "songs": all_songs[:30],
             "platforms": platforms,
             "platform_counts": platform_counts,
